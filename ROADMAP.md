@@ -47,6 +47,19 @@ Trois pièces non critiques sélectionnées, fiches créées au statut `concept`
 
 Critère de sortie : trois prototypes montés, photographiés et mesurés.
 
+### Piste carrosserie ouverte en parallèle
+
+`993-BODY-FRONT-LID-0001`, capot avant en composite. Retenu comme premier pilote
+de carrosserie parce qu'il cumule quatre avantages : panneau **boulonné**, sans
+fonction structurale ni barre anti-intrusion ; **surface unique à courbure
+douce**, donc le moule le plus simple de la voiture ; **panneau d'origine en
+acier**, donc gain réel, avec une référence à battre déjà établie par Porsche
+Motorsport à 8 kg en aluminium ; et un **panneau donneur d'occasion peu coûteux**
+pour prendre l'empreinte, contrairement aux pièces mécaniques rares.
+
+L'allègement de carrosserie pèse environ 91 kg sur une voiture, contre 0,45 kg
+pour le berceau moteur en titane. C'est là qu'est la masse.
+
 Les trois dernières puces demandent l'accès physique au véhicule et aux pièces.
 Aucune cote n'est estimée en attendant : `parts/993-int-switch-blank-0001/source/switch_blank.py`
 refuse de se construire tant que les sept cotes qu'il exige ne sont pas mesurées.
