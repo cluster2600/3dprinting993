@@ -117,8 +117,19 @@ Deux conclusions :
    pas dans cette table.** La valeur voisine, 46 Nm, concerne le *support de
    boîte vers caisse*, une autre liaison. À ne pas reporter sur le berceau.
 
-La table ne donne pas de couple « berceau vers caisse » : à chercher ailleurs
-dans le manuel, ou à relever sur véhicule.
+**La table ne donne aucun couple « berceau vers caisse ».** Vérifié dans les deux
+volumes : la table du 911 Carrera indique « Engine carrier to engine mount », celle
+du Carrera 4 « Engine to engine mount », même filetage et même valeur. Ni l'une ni
+l'autre ne publie le serrage des fixations du berceau sur la caisse, et la
+procédure de dépose se contente de « Unbolt engine mount (use long-reach socket) ».
+
+Cette valeur est donc à chercher ailleurs dans le manuel, ou à relever sur
+véhicule. C'est une entrée manquante du cas de charge, au même titre que la
+répartition entre support moteur et support de boîte.
+
+Autre exigence relevée dans la procédure de remontage, et qui compte pour une
+pièce sollicitée en fatigue : **« Replace all fastening nuts »** — les écrous de
+fixation sont à remplacer, pas à réutiliser.
 
 Ce qu'ils contraignent une fois confirmés :
 
