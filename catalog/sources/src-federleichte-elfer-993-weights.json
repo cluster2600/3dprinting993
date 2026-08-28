@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+  "title": "Federleichte Elfer - table des masses, pieces exterieures 993 origine et allegees",
+  "url": "http://www.federleichte-elfer.de/dp93/aussen.html",
+  "publisher": "federleichte-elfer.de, d'apres le catalogue dp motorsport",
+  "source_type": "community",
+  "content_types": ["technical_data"],
+  "coverage": {
+    "generation": "993",
+    "variants": ["993_carrosserie"],
+    "parts": ["front_lid", "front_fenders", "doors", "roof_skin", "rear_spoiler", "mirrors", "glazing", "rear_bumper"]
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-08-28"
+  },
+  "rights": {
+    "license": "site-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "federleichte-elfer.de et dp motorsport"
+  },
+  "quality": {
+    "evidence_level": "C",
+    "dimensional_accuracy": "declared",
+    "verified_against": ["Capot aluminium Porsche Motorsport annonce a 8 kg par un autre preparateur, coherent avec un capot acier de 14 kg"]
+  },
+  "notes": "Trouvee en cherchant en allemand. Table comparative complete des pieces exterieures du 993, masse d'origine et masse allegee par matiere. Extraits utiles : capot avant 14,0 kg d'origine contre 4,1 kg en carbone epoxy, 4,9 kg en GFK epoxy, 5,0 kg en GFK polyester ; aile avant 7,2 kg contre 2,2 kg en carbone ; becquet arriere 12,5 kg contre 4,8 kg ; bandeau de feux 1,26 kg contre 0,26 kg ; pare-chocs arriere 5,05 kg contre 3,1 kg ; retroviseurs 1,8 kg la paire contre 0,25 kg. Egalement porte 32,0 kg contre 5,9 a 7,5 kg et pavillon 22,0 kg contre 2,5 kg, deux valeurs a ne pas exploiter telles quelles : la porte allegee est une porte de course sans barre anti-intrusion, sans leve-vitre et en plexiglas, et le pavillon est un panneau soude structural. Masses declarees par un preparateur, non pesees par ce projet."
+}

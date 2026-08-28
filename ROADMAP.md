@@ -57,8 +57,29 @@ acier**, donc gain réel, avec une référence à battre déjà établie par Por
 Motorsport à 8 kg en aluminium ; et un **panneau donneur d'occasion peu coûteux**
 pour prendre l'empreinte, contrairement aux pièces mécaniques rares.
 
-L'allègement de carrosserie pèse environ 91 kg sur une voiture, contre 0,45 kg
-pour le berceau moteur en titane. C'est là qu'est la masse.
+Masses d'origine établies par une table comparative allemande
+(`SRC-FEDERLEICHTE-ELFER-993-WEIGHTS`), ce qui permet enfin de chiffrer le
+programme au lieu de l'estimer :
+
+| Pièce | Origine | Carbone | Gain |
+|---|---:|---:|---:|
+| Capot avant | 14,0 kg | 4,1 kg | **9,9 kg** |
+| Ailes avant, la paire | 14,4 kg | 4,4 kg | 10,0 kg |
+| Becquet arrière | 12,5 kg | 4,8 kg | 7,7 kg |
+| Pare-chocs arrière | 5,05 kg | 3,1 kg | 2,0 kg |
+| Rétroviseurs, la paire | 1,8 kg | 0,25 kg | 1,6 kg |
+| Bandeau de feux arrière | 1,26 kg | 0,26 kg | 1,0 kg |
+| **Total** | **49,0 kg** | **16,9 kg** | **32,1 kg** |
+
+Trente-deux kilos sans toucher à une seule pièce structurale ni supprimer un seul
+élément de sécurité — contre 0,45 kg pour le berceau moteur en titane.
+
+Deux lignes de cette table sont volontairement écartées. Les **portes**, 32,0 kg
+contre 5,9 kg, affichent le plus gros gain du tableau, mais la version allégée est
+une porte de course : le gain vient de la suppression des barres anti-intrusion,
+du lève-vitre et du vitrage, pas de la matière. Le **pavillon**, 22,0 kg contre
+2,5 kg, est un panneau soudé structural. Ni l'un ni l'autre n'est un remplacement
+équivalent.
 
 Les trois dernières puces demandent l'accès physique au véhicule et aux pièces.
 Aucune cote n'est estimée en attendant : `parts/993-int-switch-blank-0001/source/switch_blank.py`
