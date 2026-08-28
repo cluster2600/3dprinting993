@@ -149,6 +149,38 @@ Recoupement EF contre théorie des poutres : +2,3 % (acier), +2,2 % (titane).
 L'écart est du bon signe et du bon ordre — cisaillement et effet d'encastrement
 assouplissent le modèle volumique.
 
+### Ce que la fiche produit du vendeur a établi
+
+Quatre photographies et une fiche technique changent trois choses.
+
+**La pièce est monobloc.** Une lame incurvée à section variable, percée de deux
+grands trous d'allègement et de plusieurs trous de fixation, terminée à chaque
+extrémité par un bossage cylindrique, avec une finition dorée évoquant une
+zingaison passivée jaune. Rien n'indique une construction soudée.
+
+Cela ne contredit pas les forums, cela les explique : les renforts soudés dont
+ils parlent sont des **goussets rapportés sur une pièce monobloc**. Souder sur
+une pièce forgée et traitée, c'est exactement ce qui la voile.
+
+**La matière est presque certainement de l'acier.** Recoupement de densité, à
+1,96 kg pour 600 mm de long :
+
+| Matière | Volume | Section moyenne équivalente |
+|---|---:|---|
+| Acier | 250 cm³ | 416 mm², soit ~10 mm sur 40 mm de haut |
+| Aluminium | 726 cm³ | 1210 mm², soit ~30 mm sur 40 mm de haut |
+| Ti-6Al-4V | 442 cm³ | 737 mm², soit ~18 mm sur 40 mm de haut |
+
+La lame visible sur les photographies est élancée. L'hypothèse aluminium
+demanderait une pièce trois fois plus épaisse : elle est écartée.
+
+**Le prix était faux d'un ordre de grandeur.** Le berceau Turbo neuf est affiché
+à **1 788 USD** hors port, disponibilité « available soon ». Le chiffre de 225 à
+270 € rapporté plus tôt par un résumé de recherche ne tenait pas.
+
+Et l'encombrement de 600 × 50 × 50 mm concorde avec les proportions visibles :
+il décrit vraisemblablement la pièce arrondie au centimètre, pas un colis.
+
 ### Conclusion technique, révisée par la masse annoncée
 
 Le raisonnement matériau reste valable : le titane est défendable sur une pièce
@@ -169,6 +201,22 @@ Le défaut constaté sur la famille n'est d'ailleurs pas la masse : c'est la
 **fissuration**. La pièce utile n'est donc pas une pièce plus légère, c'est une
 pièce plus endurante. C'est exactement ce que le marché traite déjà, par un
 renfort vendu autour de 614 € et par de la soudure d'atelier.
+
+### Ce que le prix change, en revanche
+
+À 1 788 USD la pièce neuve, sans alternative de rechange connue, sur une
+référence donnée « available soon » donc pas en stock, l'argument de reproduction
+cesse d'être la masse et devient **la disponibilité et le coût**.
+
+C'est un motif légitime, et c'est même le cœur du projet. Il ne déplace en rien
+la barre de sécurité : la pièce reste présumée critique, donc revue d'ingénierie
+formelle, cas de charge, contrôle. Mais reproduire une lame en acier à géométrie
+équivalente est un problème d'ingénierie ordinaire, là où gagner 450 g en titane
+n'en valait pas la peine.
+
+Le procédé plausible n'est d'ailleurs plus la fabrication additive : une lame
+monobloc en acier relève de l'usinage dans la masse, du forgeage ou de la
+découpe-pliage, selon ce que la géométrie réelle révélera.
 
 Cette conclusion tient sur des chiffres communiqués sans source, et tombe si la
 masse réelle est différente. Elle est de toute façon plus solide que le silence :
