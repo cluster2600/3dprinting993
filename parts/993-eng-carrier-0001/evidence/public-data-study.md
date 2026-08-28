@@ -149,14 +149,30 @@ Recoupement EF contre théorie des poutres : +2,3 % (acier), +2,2 % (titane).
 L'écart est du bon signe et du bon ordre — cisaillement et effet d'encastrement
 assouplissent le modèle volumique.
 
-### Conclusion technique
+### Conclusion technique, révisée par la masse annoncée
 
-Le titane est défendable sur ce type de pièce, **à une condition** : pouvoir
-grossir la section. Une copie au même encombrement serait presque deux fois plus
-souple, ce que `docs/TITANIUM.md` exclut déjà explicitement.
+Le raisonnement matériau reste valable : le titane est défendable sur une pièce
+en flexion **si la section peut grossir de 17 %**.
 
-Or le dégagement disponible dans la baie moteur est précisément ce que les
-données publiques ne donnent pas. La décision reste donc suspendue à une mesure.
+Mais une masse annoncée de 1,96 kg change la réponse. Le gain à raideur égale
+serait d'environ **0,45 kg**, soit **0,03 % de la masse du véhicule**.
+
+C'est le prix total du concours. Pour l'empocher il faudrait redessiner les
+sections, établir des cas de charge complets, passer une revue d'ingénierie
+formelle, qualifier un procédé LPBF, contrôler la pièce, et maîtriser grippage
+et couple galvanique dans un environnement dont la corrosion est documentée.
+
+**Sur ces chiffres, le titane n'est pas justifié sur cette pièce**, et
+`docs/TITANIUM.md` le disait déjà dans sa liste « quand il ne l'est pas ».
+
+Le défaut constaté sur la famille n'est d'ailleurs pas la masse : c'est la
+**fissuration**. La pièce utile n'est donc pas une pièce plus légère, c'est une
+pièce plus endurante. C'est exactement ce que le marché traite déjà, par un
+renfort vendu autour de 614 € et par de la soudure d'atelier.
+
+Cette conclusion tient sur des chiffres communiqués sans source, et tombe si la
+masse réelle est différente. Elle est de toute façon plus solide que le silence :
+elle dit ce qu'il faudrait mesurer pour la renverser.
 
 ## Chemins réellement ouverts, sans pièce ni outillage
 

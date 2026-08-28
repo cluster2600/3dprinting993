@@ -108,7 +108,7 @@
     "preferred_process": "undecided",
     "material": {
       "family": "a_determiner",
-      "grade": "matiere d'origine non identifiee, a confirmer sur piece",
+      "grade": "matiere d'origine non identifiee ; masse annoncee 1,96 kg, coherente avec environ 250 cm3 d'acier",
       "standard": "aucune"
     },
     "post_processing": [],
@@ -147,8 +147,10 @@
       "Aucun cas de charge complet : la masse moteur supportee n'est etablie par aucune source lue directement.",
       "Couple moteur Carrera 330 Nm a 5000 tr/min retenu faute de mieux ; la valeur Turbo, plus elevee, n'a pas ete relevee.",
       "Un tirage polymere de cette piece ne peut servir qu'a verifier des interfaces, jamais a porter le moteur.",
-      "Etude materiau realisee : a geometrie identique le Ti-6Al-4V serait 1,84 fois plus souple ; a raideur egale il reste 23 pour cent plus leger mais exige une section 17 pour cent plus grande.",
-      "Aucune publication possible avant revue d'ingenierie formelle et plan de validation approuve."
+      "Arbitrage titane tranche par la masse annoncee : a 1,96 kg annonces, le gain a raideur egale serait d'environ 0,45 kg, soit 0,03 pour cent de la masse du vehicule, contre une revue d'ingenierie complete, une qualification de procede et un controle non destructif. Le titane n'est pas justifie sur cette piece en l'etat. Le defaut constate sur la famille est la fissuration, pas la masse.",
+      "Aucune publication possible avant revue d'ingenierie formelle et plan de validation approuve.",
+      "Couples de serrage communiques et non sources : 85 Nm support moteur vers berceau, 45 a 50 Nm berceau vers moteur, le second annonce comme approximatif. Consignes dans load-cases.md comme piste, hors de tout calcul tant que l'origine n'est pas etablie.",
+      "Masse et encombrement communiques sans source : 1,96 kg et 600 x 50 x 50 mm. Forme typique de donnees logistiques de revendeur, donc masse d'expedition et dimensions de colis. Retenus comme enveloppe maximale, pas comme mesure."
     ]
   }
 }
