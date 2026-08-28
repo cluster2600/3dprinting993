@@ -1,0 +1,250 @@
+{
+  "$comment": "Valeurs declarees par des tiers, jamais mesurees par ce projet. Chaque entree porte le source_id de la fiche qui l'atteste, et le validateur refuse une entree dont la source n'existe pas au registre. Le champ caveat signale les cas ou la version allegee n'est pas un remplacement equivalent mais une suppression de fonction ou de securite.",
+  "generation_scope": [
+    "993",
+    "964"
+  ],
+  "entries": [
+    {
+      "entry_id": "993-FRONT-LID",
+      "name": "Capot avant",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Version aluminium Porsche Motorsport annoncee a 8,0 kg. Cibles allegees : 5,0 kg GFK polyester, 4,9 kg GFK epoxy, 4,1 kg carbone epoxy.",
+      "mass_kg": 14.0,
+      "material": "acier"
+    },
+    {
+      "entry_id": "993-FRONT-FENDER",
+      "name": "Aile avant, une piece",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees : 3,1 kg GFK, 2,2 kg carbone. La valeur 964 correspondante est plus elevee, 8,5 kg Carrera et 8,7 kg Turbo.",
+      "mass_kg": 7.2,
+      "material": "acier"
+    },
+    {
+      "entry_id": "993-REAR-SPOILER",
+      "name": "Becquet arriere",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees : 6,7 a 7,3 kg GFK, 4,8 a 5,5 kg carbone selon la forme.",
+      "mass_kg": 12.5,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-REAR-BUMPER",
+      "name": "Pare-chocs arriere",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees : 4,5 kg GFK, 3,1 kg carbone. Gain faible, l'origine est deja un plastique.",
+      "mass_kg": 5.05,
+      "material": "polyurethane"
+    },
+    {
+      "entry_id": "993-MIRRORS-PAIR",
+      "name": "Retroviseurs, la paire",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Version course annoncee a 0,25 kg la paire.",
+      "mass_kg": 1.8,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-REAR-LIGHT-PANEL",
+      "name": "Bandeau central de feux arriere",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees : 0,47 kg GFK, 0,26 kg carbone.",
+      "mass_kg": 1.26,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-BRAKE-AIR-OPENING",
+      "name": "Ouie d'air de frein",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Version allegee 0,128 kg la paire en GFK.",
+      "mass_kg": 1.135,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-HOOD-STRUT",
+      "name": "Bequille de capot, la paire",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Version aluminium 0,08 kg.",
+      "mass_kg": 0.4,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-DASHBOARD",
+      "name": "Planche de bord",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees : 1,25 kg GFK, 0,95 kg carbone.",
+      "mass_kg": 2.1,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-DOOR-TRIM-STRIP",
+      "name": "Baguette d'habillage de porte",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees : 0,17 kg GFK, 0,24 kg recouvert. Petite piece, non critique : candidat direct a l'impression polymere.",
+      "mass_kg": 0.55,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-DOOR-PANEL-RS",
+      "name": "Panneau de porte, version RS",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Masse d'origine du panneau garni.",
+      "mass_kg": 7.5,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-DOOR-GLASS",
+      "name": "Vitre de porte",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Equivalent plexiglas 0,955 kg. Le vitrage releve d'une reglementation propre.",
+      "mass_kg": 2.5,
+      "material": "verre"
+    },
+    {
+      "entry_id": "993-SIDE-GLASS",
+      "name": "Vitre laterale arriere",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Equivalent plexiglas 0,44 kg.",
+      "mass_kg": 2.0,
+      "material": "verre"
+    },
+    {
+      "entry_id": "993-REAR-GLASS",
+      "name": "Lunette arriere",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Equivalent plexiglas 2,3 kg. Verre allege 964 annonce a 4,9 kg contre 6,7 kg.",
+      "mass_kg": 7.1,
+      "material": "verre"
+    },
+    {
+      "entry_id": "993-DOOR-COMPLETE",
+      "name": "Porte complete",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Masse d'origine, porte garnie avec vitrage et mecanisme.",
+      "mass_kg": 32.0,
+      "material": "acier",
+      "caveat": "La version allegee a 5,9 a 7,5 kg est une porte de course : suppression des barres anti-intrusion, du leve-vitre et du vitrage. Ce n'est pas un remplacement equivalent."
+    },
+    {
+      "entry_id": "993-ROOF-SKIN",
+      "name": "Peau de pavillon",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Cibles allegees annoncees : 3,2 kg GFK, 2,5 kg carbone.",
+      "mass_kg": 22.0,
+      "material": "acier",
+      "caveat": "Panneau soude et structural. Hors perimetre de ce projet."
+    },
+    {
+      "entry_id": "993-VENTILATION-SET",
+      "name": "Ensemble de ventilation",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Masse d'origine de l'ensemble.",
+      "mass_kg": 12.0,
+      "material": "a_determiner",
+      "caveat": "Le remplacement annonce a 0,6 kg correspond a une depose du chauffage, pas a un remplacement equivalent."
+    },
+    {
+      "entry_id": "993-SEAT",
+      "name": "Siege, reference d'origine",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Siege course GFK compare a 8,5 kg.",
+      "mass_kg": 21.0,
+      "material": "a_determiner",
+      "caveat": "Un siege participe a la retenue des occupants : classe presumee critique."
+    },
+    {
+      "entry_id": "993-STEERING-WHEEL",
+      "name": "Volant",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Volants sport compares a 0,9 a 1,6 kg.",
+      "mass_kg": 2.8,
+      "material": "a_determiner",
+      "caveat": "Les volants allegees suppriment l'airbag."
+    },
+    {
+      "entry_id": "993-ENGINE-CARRIER-TURBO",
+      "name": "Berceau moteur, Turbo",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-ENGINE-CARRIER",
+      "notes": "Masse et encombrement issus de la fiche produit du vendeur. Matiere deduite par recoupement de densite : 1,96 kg sur 600 mm donne 416 mm2 de section moyenne en acier, contre 1210 mm2 en aluminium, incompatible avec la lame elancee visible en photographie.",
+      "mass_kg": 1.96,
+      "dimensions_mm": [
+        600.0,
+        50.0,
+        50.0
+      ],
+      "material": "acier",
+      "oem_reference": "993 115 021 53"
+    },
+    {
+      "entry_id": "993-FRONT-LID-ALU-MOTORSPORT",
+      "name": "Capot avant aluminium Porsche Motorsport",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-PSAUTOART-993R",
+      "notes": "Reference a battre pour une reproduction composite du capot.",
+      "mass_kg": 8.0,
+      "material": "aluminium"
+    },
+    {
+      "entry_id": "964-HEADLIGHT-RING",
+      "name": "Enjoliveur de phare, la paire",
+      "generation": "964",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Version carbone 0,13 kg. Donnee 964, a verifier avant transposition au 993.",
+      "mass_kg": 0.24,
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "964-UNDERTRAY",
+      "name": "Protection de soubassement",
+      "generation": "964",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
+      "notes": "Version carbone 0,65 kg. Donnee 964.",
+      "mass_kg": 2.0,
+      "material": "a_determiner"
+    }
+  ]
+}
