@@ -99,13 +99,28 @@ tomographie et vérification de montage sur véhicule.
 C'est à la fois une validation de la démarche et la barre à franchir. Le
 constructeur ne publie pas ces données.
 
-### La piste qui passerait à l'échelle
+### La piste qui aurait passé à l'échelle, et qui est fermée
 
 `SRC-CAR-CLOUDS-POINT-CLOUDS` vend des nuages de points laser de véhicules
-entiers, autour de 195 USD, avec cinq modèles Porsche annoncés sans détail. Un
-scan de véhicule complet donnerait l'environnement de montage de nombreuses
-pièces d'un coup, là où une mesure de pièce n'en sert qu'une. Reste à savoir si
-un 993 en fait partie : à demander avant tout achat.
+entiers à 195 USD. Un scan de voiture complète donnerait l'environnement de
+montage de dizaines de pièces d'un coup, là où une mesure de pièce n'en sert
+qu'une : c'était la meilleure réponse au problème d'échelle.
+
+Catalogue interrogé en entier le 28 août 2026 — 906 produits, cinq Porsche :
+
+| Modèle | Prix |
+|---|---|
+| Porsche 911 Cabriolet (996) 2001 | 195 USD |
+| Porsche 911 2015 (991) | 195 USD |
+| Porsche Cayenne 2019 et 2020 | 195 USD |
+| Porsche Macan 2019 | 195 USD |
+
+**Aucun 993, et aucun refroidi par air.** Le plus proche est un 996 : génération
+suivante, caisse entièrement différente. Ce n'est pas un substitut.
+
+Le livrable est un nuage de points E57, intérieur inclus. La piste ne se
+rouvrirait que par une commande de numérisation dédiée, d'un tout autre ordre de
+prix — ou par un autre prestataire, restant à identifier.
 
 ## Reste à faire en Phase 1
 
