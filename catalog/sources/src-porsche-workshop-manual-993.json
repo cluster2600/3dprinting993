@@ -5,15 +5,22 @@
   "url": "https://www.pelicanparts.com/More_Info/WKD483121.htm?pn=WKD-483-121-OEM",
   "publisher": "Porsche AG",
   "source_type": "official",
-  "content_types": ["manual", "technical_data", "drawing"],
+  "content_types": [
+    "manual",
+    "technical_data",
+    "drawing"
+  ],
   "coverage": {
     "generation": "993",
-    "variants": ["Carrera_1995_1998"],
+    "variants": [
+      "Carrera_1995_1998",
+      "Carrera_4"
+    ],
     "parts": []
   },
   "access": {
-    "status": "purchase_required",
-    "method": "not_accessed",
+    "status": "available",
+    "method": "manual_reference",
     "accessed_on": "2026-08-28"
   },
   "rights": {
@@ -26,5 +33,5 @@
     "dimensional_accuracy": "unknown",
     "verified_against": []
   },
-  "notes": "Manuel d'atelier d'usine en huit volumes, 993 de 1995 a 1998, vendu par plusieurs revendeurs. Reference WKD 483 121 ; une reference WKD 483 150 apparait egalement. Prix non releve : toutes les pages marchandes rencontrees refusent l'acces automatise. Contenu attendu : couples de serrage, procedures, ordre de depose et vues d'assemblage. Ne contient pas de plans cotes de pieces : il ne fournira pas la geometrie du berceau moteur. Les copies PDF circulant sur Scribd, SlideShare et revendeurs de manuels sont ecartees, faute de droit de rediffusion demontrable."
+  "notes": "Manuel d'atelier d'usine, huit volumes, 1481 pages, couvrant 911 Carrera et Carrera 4 du 993. Un exemplaire numerise a ete consulte localement le 2026-08-28 ; sa provenance n'est pas documentee et le document n'est pas verse au depot. Seules des valeurs factuelles en sont reportees, avec leur emplacement. Releve utile : table « Tightening torques: Removing and installing the engine », groupe 10, qui donne berceau moteur vers support moteur M12 a 85 Nm, support de boite vers caisse M12 a 46 Nm, traverse arriere vers panneaux lateraux M12x1,5 a 120 Nm. Aucun volume Turbo : la reference 993 115 021 53 n'y est donc pas traitee. Conforme a l'attendu, le manuel donne procedures et couples, aucun plan cote de piece. Les copies PDF circulant sur Scribd, SlideShare et revendeurs de manuels restent ecartees du registre."
 }

@@ -24,12 +24,33 @@ ou soudée — ce que le surnom allemand de la pièce, *Schwert*, suggère aussi
 
 ## 1. Ce que la pièce reprend
 
-- Masse du groupe motopropulseur supportée par ce berceau : ____ kg
-  - source de la valeur : ____
-  - méthode : pesée, documentation officielle, ou répartition mesurée
-- Position du centre de gravité par rapport aux points de fixation : ____
-- Répartition entre ce berceau et les autres points d'ancrage : ____
-- Couple de réaction moteur en première : ____ Nm, bras de levier ____ mm
+### Masse du moteur — pesée, source communautaire nommée
+
+Pesées au marbre de pesée par roue, attribuées à Steve Timmins (Instant G),
+publiées sur forum. Méthode et périmètre déclarés, ce qui est rare : première
+colonne moteur et admission seuls, seconde colonne complet prêt à tourner avec
+volant léger, collecteurs et silencieux, sans climatisation.
+
+| Moteur | Moteur + admission | Complet, prêt à tourner |
+|---|---:|---:|
+| 993 de 1995 (Carrera) | 150,1 kg | 186,9 kg |
+| 993 Varioram | 159,2 kg | 195,9 kg |
+| **993 GT2 Race** (biturbo) | **154,2 kg** | **195,0 kg** |
+| 996 GT3 Cup 2003, pour comparaison | 185,1 kg | 217,7 kg |
+
+Le moteur du Turbo n'est pas pesé ici ; le GT2 Race en est le plus proche, avec
+un échappement de course qui compense turbos et échangeur. **Retenir environ
+195 kg pour un groupe 993 biturbo complet, hors boîte.**
+
+Ce que cela ne dit pas encore :
+
+- **la fraction reprise par ce berceau.** Le groupe est tenu par le support
+  moteur, porté par le berceau, et par le support de boîte. La répartition entre
+  les deux n'est pas connue ;
+- la position du centre de gravité par rapport aux fixations ;
+- le couple de réaction moteur en première, et son bras de levier.
+
+Sans répartition, la masse pesée reste un majorant, pas une charge.
 
 ## 2. Facteurs dynamiques retenus
 
@@ -45,16 +66,30 @@ Un facteur retenu sans source est une hypothèse : le noter comme telle.
 
 ## 3. Interfaces et conditions aux limites
 
-### Couples de serrage — piste à sourcer
+### Couples de serrage — table d'usine
 
-| Liaison | Couple annoncé | Statut |
-|---|---:|---|
-| Support moteur vers berceau | 85 Nm | communiqué, source non établie |
-| Berceau vers moteur | 45 à 50 Nm | communiqué comme approximatif, source non établie |
+Relevés dans le manuel d'atelier 993, groupe 10, table « Tightening torques:
+Removing and installing the engine ». Le document n'est pas versé au dépôt ;
+seules les valeurs, qui sont des faits, y sont reportées.
 
-Origine à préciser : manuel d'atelier, fil de forum, ou expérience d'atelier. Le
-second est annoncé « around », donc explicitement approximatif. Tant que
-l'origine n'est pas connue, aucun des deux n'entre dans un calcul.
+| Liaison | Filetage | Couple |
+|---|---|---:|
+| **Berceau moteur vers support moteur** | **M12** | **85 Nm (63 ft-lb)** |
+| Support de boîte vers caisse | M12 | 46 Nm (34) |
+| Traverse arrière vers panneaux latéraux | M12 × 1,5 | 120 Nm (88) |
+| Traverse avant vers panneau latéral | M10 | 65 Nm (48) |
+| Arbre de transmission vers bride | M10 | 81 Nm (60) |
+
+Deux conclusions :
+
+1. **Les 85 Nm communiqués sont confirmés par l'usine**, et la vis est bien une
+   **M12** — la déduction faite à partir des tables de couple était juste.
+2. **Le second chiffre communiqué, 45 à 50 Nm « berceau vers moteur », ne figure
+   pas dans cette table.** La valeur voisine, 46 Nm, concerne le *support de
+   boîte vers caisse*, une autre liaison. À ne pas reporter sur le berceau.
+
+La table ne donne pas de couple « berceau vers caisse » : à chercher ailleurs
+dans le manuel, ou à relever sur véhicule.
 
 Ce qu'ils contraignent une fois confirmés :
 
