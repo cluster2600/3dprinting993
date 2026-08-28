@@ -118,10 +118,9 @@
     "candidate_processes": [
       "CNC",
       "casting",
-      "sheet_metal",
-      "LPBF"
+      "sheet_metal"
     ],
-    "preferred_process": "undecided",
+    "preferred_process": "CNC",
     "material": {
       "family": "acier, deduit du recoupement de densite",
       "grade": "nuance inconnue ; finition doree evoquant une zingaison passivee jaune",
@@ -168,7 +167,8 @@
       "Couples : 85 Nm sur M12 pour berceau vers support moteur, confirme par la table d'usine du groupe 10. Le second chiffre communique, 45 a 50 Nm, ne figure pas dans cette table ; la valeur voisine de 46 Nm concerne le support de boite vers caisse. Aucun couple berceau vers caisse n'a ete trouve.",
       "Masse 1,96 kg et encombrement 600 x 50 x 50 mm proviennent de la fiche produit du vendeur. La longueur concorde avec les proportions visibles sur les photographies : ces valeurs decrivent vraisemblablement la piece, arrondie au centimetre, et non un colis. Elles restent declarees, non mesurees.",
       "Contradiction ouverte sur la masse du moteur Turbo : 268 kg annonces sans perimetre contre 195 kg peses au marbre sur un GT2 Race complet hors boite. Ecart de 73 kg, du meme ordre qu'une boite de vitesses. Non tranchee.",
-      "Construction observee sur photographies vendeur : piece monobloc en forme de lame incurvee a section variable, deux grands trous d'allegement, bossage cylindrique a chaque extremite. Rien n'indique une construction soudee. Les renforts soudes evoques sur les forums sont donc des ajouts rapportes sur une piece monobloc, ce qui reste coherent avec le voilage constate."
+      "Construction observee sur photographies vendeur : piece monobloc en forme de lame incurvee a section variable, deux grands trous d'allegement, bossage cylindrique a chaque extremite. Rien n'indique une construction soudee. Les renforts soudes evoques sur les forums sont donc des ajouts rapportes sur une piece monobloc, ce qui reste coherent avec le voilage constate.",
+      "Fabrication additive metal ecartee sur cette piece : 600 mm ne tiennent pas dans un volume de fabrication LPBF courant de 250 x 250 x 325 mm, la geometrie n'appelle aucun avantage de l'additif, et le mode de defaillance constate est la fissuration alors que le brut de fusion perd de l'ordre de 25 pour cent de limite d'endurance face a l'etat usine ou corroye. L'additif reste pertinent pour un renfort rapporte et pour le prototype polymere."
     ]
   }
 }

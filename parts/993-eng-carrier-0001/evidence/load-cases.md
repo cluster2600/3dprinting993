@@ -160,9 +160,53 @@ Ce qu'ils contraignent une fois confirmés :
 |---|---|---|---|---|---|---|
 | Pièce d'origine (référence) | 1,96 kg annoncé | ~225-270 € neuf, non vérifié | référence | fissuration constatée sur la famille | connu | référence |
 | Renfort rapporté sur pièce d'origine | + quelques centaines de g | 614 € annoncé, ou soudure atelier | augmentée | vise justement ce défaut | voilage au soudage constaté | **la piste utile** |
-| Acier soudé / tubulaire | | | | | | |
-| Aluminium usiné | | | | | | |
+| **Usinage dans la masse, acier** | ≈ pièce d'origine | copeau élevé, matière peu chère | maîtrisée | **matière corroyée, le meilleur cas** | faible | **le plus probable** |
+| Découpe laser plus pliage, bossages soudés | ≈ pièce d'origine | faible | maîtrisée | soudures là où la famille fissure | moyen | à éviter sur cette pièce |
+| Forgeage | = pièce d'origine | outillage à amortir | = origine | = origine | faible | seulement en série |
+| Aluminium usiné | plus léger | moyen | section à tripler | à qualifier | fluage, corrosion galvanique | écarté par le recoupement de densité |
 | Ti-6Al-4V LPBF | ~1,51 kg à raideur égale | milliers d'euros | égale par croissance de section | à qualifier entièrement | grippage, couple galvanique, revue obligatoire | **gain 0,45 kg, soit 0,03 % du véhicule** |
+
+### Pourquoi la fabrication additive métal ne convient pas à cette pièce
+
+Quatre obstacles, dans l'ordre où ils bloquent.
+
+**La taille.** La pièce fait 600 mm. Le volume de fabrication d'une machine LPBF
+courante de type EOS M290 est de 250 × 250 × 325 mm : la pièce n'y entre pas,
+même en diagonale. Il faudrait une machine grand format, du type 800 × 800 ×
+600 mm, matériel rare dont le coût horaire n'a rien à voir.
+
+**La géométrie n'appelle pas l'additif.** Une lame percée de trous
+d'allègement, sans canal interne, sans consolidation de sous-ensemble, sans
+forme impossible à usiner. `docs/TITANIUM.md` écarte déjà explicitement ce cas :
+« plaque, axe, entretoise ou bride simple facilement usinable ».
+
+**La fatigue, et c'est l'obstacle dirimant.** Le mode de défaillance constaté sur
+la famille est la fissuration. Or l'état de surface brut de fabrication LPBF est
+précisément l'endroit où s'amorcent les fissures : la littérature rapporte des
+limites d'endurance de l'ordre de 25 % inférieures en brut de fabrication par
+rapport à l'état usiné ou corroyé. La pièce d'origine est vraisemblablement
+forgée, donc dans le meilleur état métallurgique possible. Remplacer du forgé par
+du brut de fusion revient à reculer sur la seule propriété qui décide de la vie
+de la pièce.
+
+Le rattrapage existe — HIP, détensionnement, usinage de toutes les surfaces
+fonctionnelles — mais sur une lame de 600 mm il faut alors tout reprendre, et le
+coût dépasse celui d'un usinage direct.
+
+**Le coût.** Une pièce d'origine neuve est à 1 788 USD. Une pièce LPBF de 2 kg
+sur machine grand format, avec HIP et reprise d'usinage, coûterait
+vraisemblablement davantage, pour une tenue en fatigue moins bien connue.
+
+### Là où l'additif reste pertinent sur ce dossier
+
+- **Le prototype polymère de vérification d'interfaces**, déjà prévu, qui ne
+  porte aucune charge.
+- **Un renfort rapporté**, petit, complexe, optimisé en topologie, qui tient
+  dans une machine courante et vise justement le mode de défaillance observé.
+  C'est le seul emploi de l'additif métal qui se défende ici, et il reste soumis
+  à revue d'ingénierie.
+- **Les pièces d'habillage** issues de la liste courte de sélection, où
+  l'impression polymère est exactement le bon procédé.
 
 ### Ce que la masse annoncée décide
 
