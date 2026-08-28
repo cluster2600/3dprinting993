@@ -80,13 +80,22 @@ Critère de sortie : rapport matière, fabrication, contrôle et essai disponibl
 - Commercialisation de pièces
 - Homologation routière
 - **Remplacement de la structure autoportante**, notamment par un monocoque
-  composite : la caisse porte le numéro de châssis, la protection des occupants
-  et l'absorption de choc. Un monocoque se conçoit comme tel, il ne se traduit
-  pas depuis une caisse en tôle, et sa validation passe par des essais de choc
-  physiques. Les panneaux de carrosserie, eux, restent un objectif légitime :
-  voir `SRC-GUNTHER-WERKS-CARBON-993`, où le restomod de 993 le plus poussé du
-  marché habille l'auto de carbone tout en conservant et renforçant la caisse
-  acier.
+  composite. La caisse porte le numéro de châssis, la protection des occupants et
+  l'absorption de choc ; un monocoque se conçoit comme tel et ne se traduit pas
+  depuis une caisse en tôle ; sa validation passe par des essais de choc
+  physiques.
+
+  Précision nécessaire : un tel monocoque **existe commercialement** pour 964 et
+  993 (`SRC-ZESAD-CARBON-MONOCOQUE-964-993`), de 129 990 à 219 990 €. Il n'est
+  donc pas exclu du périmètre parce qu'il serait impossible, mais parce que ce
+  dépôt ne peut ni le documenter, ni le vérifier, ni le reproduire : la fiche
+  produit ne publie ni masse, ni raideur en torsion, ni essai de choc, ni
+  homologation. Une structure de sécurité sans donnée structurelle publiée est
+  exactement ce que `docs/QUALITY_GATES.md` interdit d'inscrire au catalogue.
+
+  Les panneaux de carrosserie, eux, restent un objectif légitime : voir
+  `SRC-GUNTHER-WERKS-CARBON-993`, où le restomod de 993 le plus poussé du marché
+  habille l'auto de carbone tout en conservant et renforçant la caisse acier.
 - Hébergement de manuels ou scans protégés
 - Publication de pièces critiques non qualifiées
 - Achat ou exploitation d’une machine LPBF
