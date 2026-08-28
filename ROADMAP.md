@@ -79,6 +79,14 @@ Critère de sortie : rapport matière, fabrication, contrôle et essai disponibl
 
 - Commercialisation de pièces
 - Homologation routière
+- **Remplacement de la structure autoportante**, notamment par un monocoque
+  composite : la caisse porte le numéro de châssis, la protection des occupants
+  et l'absorption de choc. Un monocoque se conçoit comme tel, il ne se traduit
+  pas depuis une caisse en tôle, et sa validation passe par des essais de choc
+  physiques. Les panneaux de carrosserie, eux, restent un objectif légitime :
+  voir `SRC-GUNTHER-WERKS-CARBON-993`, où le restomod de 993 le plus poussé du
+  marché habille l'auto de carbone tout en conservant et renforçant la caisse
+  acier.
 - Hébergement de manuels ou scans protégés
 - Publication de pièces critiques non qualifiées
 - Achat ou exploitation d’une machine LPBF
