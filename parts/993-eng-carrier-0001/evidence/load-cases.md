@@ -208,6 +208,17 @@ coût dépasse celui d'un usinage direct.
 sur machine grand format, avec HIP et reprise d'usinage, coûterait
 vraisemblablement davantage, pour une tenue en fatigue moins bien connue.
 
+**Le contre-argument, et sa limite.** La presse technique documente des supports
+et carters en aluminium ou titane optimisés en topologie, décrits comme « des
+pièces qui se montent, se serrent et roulent », pas des maquettes. Le procédé
+sait donc produire des pièces de structure secondaire qui tiennent.
+
+La différence avec ce berceau tient en trois points : ces supports entrent dans
+un volume de fabrication courant, ils ne mesurent pas 600 mm ; ils ne sont pas la
+pièce dont la rupture laisse tomber le groupe motopropulseur ; et le même article
+rappelle que la pièce imprimée qui dure est une pièce **HIP puis usinée sur ses
+surfaces fonctionnelles**, ce qui ramène au coût que l'usinage direct évite.
+
 ### Là où l'additif reste pertinent sur ce dossier
 
 - **Le prototype polymère de vérification d'interfaces**, déjà prévu, qui ne

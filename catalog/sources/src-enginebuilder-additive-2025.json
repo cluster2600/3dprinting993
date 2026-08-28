@@ -5,15 +5,23 @@
   "url": "https://www.enginebuildermag.com/2025/11/how-additive-manufacturing-is-reshaping-engine-building/",
   "publisher": "Engine Builder Magazine",
   "source_type": "community",
-  "content_types": ["technical_data"],
+  "content_types": [
+    "technical_data"
+  ],
   "coverage": {
     "generation": "generic_automotive",
-    "variants": ["moteurs_a_combustion"],
-    "parts": ["pistons", "cylinder_heads", "exhaust"]
+    "variants": [
+      "moteurs_a_combustion"
+    ],
+    "parts": [
+      "pistons",
+      "cylinder_heads",
+      "exhaust"
+    ]
   },
   "access": {
-    "status": "access_blocked",
-    "method": "not_accessed",
+    "status": "available",
+    "method": "manual_reference",
     "accessed_on": "2026-08-28"
   },
   "rights": {
@@ -22,9 +30,9 @@
     "attribution": "Engine Builder Magazine"
   },
   "quality": {
-    "evidence_level": "D",
+    "evidence_level": "C",
     "dimensional_accuracy": "unknown",
     "verified_against": []
   },
-  "notes": "Article de presse technique de novembre 2025 sur la fabrication additive appliquee au moteur. Page refusant l'acces automatise, contenu connu par resume de recherche uniquement. Trois usages cites : noyaux de fonderie imprimes en sable, pistons et pieces d'echappement metalliques pleinement denses en LPBF aluminium, titane ou Inconel, et consolidation de pieces, avec l'exemple d'une turbine passant de plus de 600 composants a une cinquantaine. Utile comme grille de decision : l'additif gagne sur les passages internes inusinables, les fonderies impossibles a noyauter autrement et la consolidation. Aucun de ces trois criteres ne s'applique au berceau moteur du 993."
+  "notes": "Article de presse technique de novembre 2025. La page refuse l'acces automatise ; le texte a ete lu via une capture PDF fournie par le proprietaire du projet, puis reconnu par OCR. Points verifies, utiles a ce depot : la chaine de post-traitement d'une piece LPBF est « heat treatment and hot isostatic pressing (HIP) to close internal porosity », puis « surface finishing, shot peening and chemical smoothing remove roughness that can harm fatigue life », et enfin « critical surfaces are CNC-machined to exact tolerances ». Le controle passe par tomographie, essai de pression et scan laser apres usinage. Les noyaux de fonderie imprimes en sable sont presentes comme decisifs pour « legacy engines with obsolete patterns », ce qui vise directement la reproduction de pieces anciennes. Le piston Porsche, Mahle et Trumpf du 911 GT2 RS est cite comme ayant « survived full engine validation on the dyno ». L'article recommande enfin de commencer par le polymere, puis les noyaux sable, avant le metal chez un prestataire fournissant « full documentation, CT scans and post-process certifications »."
 }

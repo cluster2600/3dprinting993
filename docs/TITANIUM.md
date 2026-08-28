@@ -44,7 +44,32 @@ consolider — voir `parts/993-eng-carrier-0001/evidence/load-cases.md`.
 
 Les noyaux imprimés méritent en revanche d'être gardés en tête pour ce projet :
 ils ouvrent la petite série fondue sans modèle ni outillage, ce qui est le verrou
-habituel de la reproduction de pièces classiques.
+habituel de la reproduction de pièces classiques. La presse technique les décrit
+d'ailleurs comme décisifs pour les « moteurs anciens dont les modèles de fonderie
+n'existent plus ».
+
+## Le coût réel d'une pièce métallique imprimée
+
+Une pièce LPBF n'est pas finie quand elle sort de la machine. La chaîne
+couramment décrite est : traitement thermique, **compression isostatique à chaud
+pour refermer la porosité**, finition de surface, grenaillage et lissage
+chimique — parce que la rugosité brute **dégrade la tenue en fatigue** — puis
+**usinage des surfaces fonctionnelles** aux tolérances. Le contrôle ajoute
+tomographie, essai de pression et scan laser après usinage.
+
+Autrement dit, une pièce imprimée destinée à durer est aussi une pièce usinée.
+Ce n'est pas un argument contre l'additif : c'est ce qui doit entrer dans la
+comparaison de coût, et ce qui explique qu'une géométrie simple soit rarement
+rentable à imprimer.
+
+## Progression recommandée
+
+Commencer par le polymère, pour les gabarits et les vérifications d'interface.
+Passer ensuite aux noyaux de fonderie imprimés, qui restent dans un procédé
+connu. N'aborder le métal qu'ensuite, chez un prestataire fournissant
+documentation complète, tomographies et certificats de post-traitement.
+
+C'est exactement l'ordre des phases 2 et 3 de ce projet.
 
 ## Dossier minimal du fabricant
 
