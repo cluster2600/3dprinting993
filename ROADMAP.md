@@ -104,6 +104,24 @@ qu'en acier. Cas de charge et comparaison de procédés à remplir dans
 
 Critère de sortie : rapport matière, fabrication, contrôle et essai disponible.
 
+## Objectif transverse — couverture du jumeau numérique
+
+L'avancement du jumeau se mesure en part de masse à vide décrite par des pièces
+documentées et sourcées, via `make twin`.
+
+| Jalon | Couverture | État |
+|---|---:|---|
+| Premier relevé | 30,4 % | atteint le 28 août 2026, 416,5 kg sur 1 370 kg |
+| Carrosserie et habillage complets | ~45 % | en cours |
+| Groupe motopropulseur détaillé | ~60 % | moteur global connu, pièces à détailler |
+| Train roulant et freins | ~75 % | non commencé |
+| Reste | 100 % | non commencé |
+
+Une masse sans position ne donne ni centre de gravité, ni répartition, ni
+inertie. La dimension suivante du jumeau est donc la **position des pièces**, que
+les catalogues ne donnent pas et qu'un relevé de géométrie de caisse pourrait
+amorcer côté ancrages.
+
 ## Phase 4 — Catalogue public
 
 - [ ] Publier uniquement les pièces ayant franchi leurs portes qualité

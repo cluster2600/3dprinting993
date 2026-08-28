@@ -13,7 +13,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Version aluminium Porsche Motorsport annoncee a 8,0 kg. Cibles allegees : 5,0 kg GFK polyester, 4,9 kg GFK epoxy, 4,1 kg carbone epoxy.",
       "mass_kg": 14.0,
-      "material": "acier"
+      "material": "acier",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-FRONT-FENDER",
@@ -23,7 +24,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Cibles allegees : 3,1 kg GFK, 2,2 kg carbone. La valeur 964 correspondante est plus elevee, 8,5 kg Carrera et 8,7 kg Turbo.",
       "mass_kg": 7.2,
-      "material": "acier"
+      "material": "acier",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-REAR-SPOILER",
@@ -33,7 +35,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Cibles allegees : 6,7 a 7,3 kg GFK, 4,8 a 5,5 kg carbone selon la forme.",
       "mass_kg": 12.5,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-REAR-BUMPER",
@@ -43,7 +46,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Cibles allegees : 4,5 kg GFK, 3,1 kg carbone. Gain faible, l'origine est deja un plastique.",
       "mass_kg": 5.05,
-      "material": "polyurethane"
+      "material": "polyurethane",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-MIRRORS-PAIR",
@@ -53,7 +57,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Version course annoncee a 0,25 kg la paire.",
       "mass_kg": 1.8,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-REAR-LIGHT-PANEL",
@@ -63,7 +68,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Cibles allegees : 0,47 kg GFK, 0,26 kg carbone.",
       "mass_kg": 1.26,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-BRAKE-AIR-OPENING",
@@ -73,7 +79,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Version allegee 0,128 kg la paire en GFK.",
       "mass_kg": 1.135,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-HOOD-STRUT",
@@ -83,7 +90,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Version aluminium 0,08 kg.",
       "mass_kg": 0.4,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-DASHBOARD",
@@ -93,7 +101,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Cibles allegees : 1,25 kg GFK, 0,95 kg carbone.",
       "mass_kg": 2.1,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-DOOR-TRIM-STRIP",
@@ -103,7 +112,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Cibles allegees : 0,17 kg GFK, 0,24 kg recouvert. Petite piece, non critique : candidat direct a l'impression polymere.",
       "mass_kg": 0.55,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-DOOR-PANEL-RS",
@@ -113,7 +123,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Masse d'origine du panneau garni.",
       "mass_kg": 7.5,
-      "material": "a_determiner"
+      "material": "a_determiner",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-DOOR-GLASS",
@@ -123,7 +134,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Equivalent plexiglas 0,955 kg. Le vitrage releve d'une reglementation propre.",
       "mass_kg": 2.5,
-      "material": "verre"
+      "material": "verre",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-SIDE-GLASS",
@@ -133,7 +145,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Equivalent plexiglas 0,44 kg.",
       "mass_kg": 2.0,
-      "material": "verre"
+      "material": "verre",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-REAR-GLASS",
@@ -143,7 +156,8 @@
       "source_id": "SRC-FEDERLEICHTE-ELFER-993-WEIGHTS",
       "notes": "Equivalent plexiglas 2,3 kg. Verre allege 964 annonce a 4,9 kg contre 6,7 kg.",
       "mass_kg": 7.1,
-      "material": "verre"
+      "material": "verre",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-DOOR-COMPLETE",
@@ -154,7 +168,8 @@
       "notes": "Masse d'origine, porte garnie avec vitrage et mecanisme.",
       "mass_kg": 32.0,
       "material": "acier",
-      "caveat": "La version allegee a 5,9 a 7,5 kg est une porte de course : suppression des barres anti-intrusion, du leve-vitre et du vitrage. Ce n'est pas un remplacement equivalent."
+      "caveat": "La version allegee a 5,9 a 7,5 kg est une porte de course : suppression des barres anti-intrusion, du leve-vitre et du vitrage. Ce n'est pas un remplacement equivalent.",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-ROOF-SKIN",
@@ -165,7 +180,8 @@
       "notes": "Cibles allegees annoncees : 3,2 kg GFK, 2,5 kg carbone.",
       "mass_kg": 22.0,
       "material": "acier",
-      "caveat": "Panneau soude et structural. Hors perimetre de ce projet."
+      "caveat": "Panneau soude et structural. Hors perimetre de ce projet.",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-VENTILATION-SET",
@@ -176,7 +192,8 @@
       "notes": "Masse d'origine de l'ensemble.",
       "mass_kg": 12.0,
       "material": "a_determiner",
-      "caveat": "Le remplacement annonce a 0,6 kg correspond a une depose du chauffage, pas a un remplacement equivalent."
+      "caveat": "Le remplacement annonce a 0,6 kg correspond a une depose du chauffage, pas a un remplacement equivalent.",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-SEAT",
@@ -187,7 +204,8 @@
       "notes": "Siege course GFK compare a 8,5 kg.",
       "mass_kg": 21.0,
       "material": "a_determiner",
-      "caveat": "Un siege participe a la retenue des occupants : classe presumee critique."
+      "caveat": "Un siege participe a la retenue des occupants : classe presumee critique.",
+      "quantity_per_car": 2
     },
     {
       "entry_id": "993-STEERING-WHEEL",
@@ -198,7 +216,8 @@
       "notes": "Volants sport compares a 0,9 a 1,6 kg.",
       "mass_kg": 2.8,
       "material": "a_determiner",
-      "caveat": "Les volants allegees suppriment l'airbag."
+      "caveat": "Les volants allegees suppriment l'airbag.",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-ENGINE-CARRIER-TURBO",
@@ -214,7 +233,8 @@
         50.0
       ],
       "material": "acier",
-      "oem_reference": "993 115 021 53"
+      "oem_reference": "993 115 021 53",
+      "quantity_per_car": 1
     },
     {
       "entry_id": "993-FRONT-LID-ALU-MOTORSPORT",

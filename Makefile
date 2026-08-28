@@ -1,4 +1,4 @@
-.PHONY: check validate test container-recon container-cadsim container-smoke container-push
+.PHONY: check validate test twin container-recon container-cadsim container-smoke container-push
 
 REGISTRY ?= ghcr.io/cluster2600
 IMAGE_TAG ?= dev
@@ -13,6 +13,9 @@ validate:
 
 test:
 	python3 -m unittest discover -s tests -v
+
+twin:
+	python3 scripts/twin_coverage.py
 
 container-recon:
 	docker build -f containers/recon.Dockerfile -t 3dprinting993-recon:$(IMAGE_TAG) .

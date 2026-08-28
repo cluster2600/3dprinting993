@@ -23,7 +23,7 @@ CONFIDENCE = {"declared", "inferred", "weighed_by_third_party"}
 UNITS_MM = re.compile(r"^\d+(\.\d+)?$")
 
 REQUIRED = {"entry_id", "name", "generation", "confidence", "source_id", "notes"}
-OPTIONAL = {"oem_reference", "mass_kg", "dimensions_mm", "material", "variant", "caveat"}
+OPTIONAL = {"oem_reference", "mass_kg", "dimensions_mm", "material", "variant", "caveat", "quantity_per_car"}
 
 
 def known_source_ids() -> set[str]:
@@ -75,6 +75,10 @@ def validate_entry(entry: Any, label: str, sources: set[str]) -> list[str]:
     # An entry that carries no fact at all is noise.
     if mass is None and entry.get("dimensions_mm") is None and not entry.get("material"):
         errors.append(f"{label}: entry carries neither mass, dimensions nor material")
+
+    quantity = entry.get("quantity_per_car")
+    if quantity is not None and (not isinstance(quantity, int) or isinstance(quantity, bool) or quantity < 1):
+        errors.append(f"{label}.quantity_per_car: expected a positive integer")
 
     if not isinstance(entry.get("notes"), str):
         errors.append(f"{label}.notes: expected a string")

@@ -4,9 +4,30 @@ Projet ouvert de rétroconception et de fabrication de pièces pour la Porsche
 911 type 993, avec un accent particulier sur les pièces en titane fabriquées par
 fusion laser sur lit de poudre (LPBF/DMLS).
 
-Le dépôt ne cherche pas à produire immédiatement une voiture numérique complète.
-Il construit une bibliothèque traçable de composants : sources, mesures, CAO
-paramétrique, prototypes, fichiers de fabrication et preuves de validation.
+L'objectif est un **jumeau numérique** de la 993. Pas une image de synthèse : un
+modèle du véhicule pièce par pièce, où chaque élément porte sa référence, sa
+place dans l'assemblage, sa variante, sa masse, sa matière et son encombrement,
+chacun relié à une source vérifiable.
+
+Deux jumeaux sont possibles, et ils n'ont pas le même coût :
+
+- le **jumeau géométrique**, où chaque pièce existe en CAO. Il exige la pièce
+  physique, donc un contributeur ou une donnée achetée. Il avance pièce par
+  pièce ;
+- le **jumeau structurel**, où chaque pièce existe comme donnée : référence,
+  arborescence, applicabilité, masse, matière, enveloppe. Il se construit à
+  partir de catalogues et de sources publiques, sans toucher une voiture.
+
+Ce dépôt construit le second et prépare le premier. L'avancement se mesure, il ne
+se raconte pas :
+
+```bash
+python3 scripts/twin_coverage.py
+```
+
+La couverture massique dit quelle part de la masse à vide est décrite par des
+pièces dont la masse est documentée et sourcée. Tout le reste est le travail qui
+reste.
 
 ## Principes
 
