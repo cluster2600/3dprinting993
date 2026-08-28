@@ -39,14 +39,19 @@ jamais des ensembles. Aucune masse publiée pour la boîte de vitesses, les trai
 la caisse nue, le réservoir vide ou le système de freinage. Ce n'est pas une
 lacune de recherche : ces valeurs ne sont pas publiées.
 
-**Donne quelque chose.** Les fiches produit de revendeurs portent une masse par
-référence. Un seul revendeur rencontré répond à la récupération automatisée et
-structure son catalogue par schémas PET, donc dans le même repère que le
-squelette d'assemblage : `SRC-ROSEPASSION-993-PARTS`. La masse n'apparaît que
-sur la fiche individuelle, une requête par pièce.
+**Donne quelque chose, mais pas automatiquement.** Les fiches produit de
+revendeurs portent une masse par référence, et l'un d'eux structure son
+catalogue par schémas PET, donc dans le même repère que le squelette
+d'assemblage : `SRC-ROSEPASSION-993-PARTS`.
 
-**Conséquence de méthode.** Le jumeau ne se remplira pas par ensembles, il se
-remplira **référence par référence**, en ciblant celles qui pèsent. Le squelette
-dit où elles sont, le sélecteur dit lesquelles comptent, et une fiche revendeur
-donne la masse. C'est lent, mais c'est la seule voie qui ne demande pas de
-toucher une voiture.
+**Correction du 28 août 2026.** Ce document affirmait que ce revendeur « répond
+à la récupération automatisée ». C'était faux : son `robots.txt` ferme
+l'intégralité du site aux agents Claude, nommément et en premier. Le fait qu'un
+serveur renvoie une page ne vaut pas autorisation. Voir
+[decisions/0003-no-vendor-harvesting.md](../../docs/decisions/0003-no-vendor-harvesting.md).
+
+**Conséquence de méthode.** Le jumeau se remplit **référence par référence**, en
+ciblant celles qui pèsent : le squelette dit où elles sont, le sélecteur dit
+lesquelles comptent. Mais la masse se relève **à la main, dans un navigateur**,
+ou s'obtient par autorisation écrite. Aucun outil de ce dépôt n'ira la chercher
+tout seul.
