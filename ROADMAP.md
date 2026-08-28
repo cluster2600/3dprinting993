@@ -46,6 +46,8 @@ Trois pièces non critiques sélectionnées, fiches créées au statut `concept`
 - [ ] Photographier et consigner les écarts
 
 Critère de sortie : trois prototypes montés, photographiés et mesurés.
+**Conditionné à un contributeur disposant des pièces** : voir la contrainte
+d'exploitation dans [docs/PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md).
 
 ### Piste carrosserie ouverte en parallèle
 
