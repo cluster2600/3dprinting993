@@ -23,6 +23,29 @@ commerciale de poudre.
 - Contact glissant non traité ou filetage répété exposé au grippage
 - Environnement créant un couple galvanique non maîtrisé avec aluminium ou magnésium
 
+## Le critère vaut au-delà du titane
+
+La même grille décide de l'emploi de la fabrication additive en général. Elle
+gagne sur trois familles de cas :
+
+- **les passages internes inusinables** — le piston LPBF développé par Porsche
+  avec MAHLE et TRUMPF porte un conduit de refroidissement fermé qu'aucune
+  fonderie classique ne noyaute ;
+- **les fonderies impossibles à noyauter autrement**, désormais accessibles par
+  noyaux imprimés en sable, qui est de l'additif appliqué à l'outillage et non
+  à la pièce ;
+- **la consolidation**, quand un sous-ensemble de dizaines de pièces devient une
+  seule.
+
+Une pièce qui ne relève d'aucune de ces trois familles n'a rien à gagner à être
+imprimée, quelle que soit sa matière. Le berceau moteur du 993 en est
+l'illustration : lame monobloc, sans canal interne, sans sous-ensemble à
+consolider — voir `parts/993-eng-carrier-0001/evidence/load-cases.md`.
+
+Les noyaux imprimés méritent en revanche d'être gardés en tête pour ce projet :
+ils ouvrent la petite série fondue sans modèle ni outillage, ce qui est le verrou
+habituel de la reproduction de pièces classiques.
+
 ## Dossier minimal du fabricant
 
 - `STEP` maître et plan PDF avec révision
