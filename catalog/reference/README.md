@@ -14,3 +14,18 @@ Deux garde-fous automatiques :
 
 Une masse sans source est une rumeur. C'est exactement ce que ce dossier existe
 pour empêcher.
+
+## Squelette d'assemblage
+
+`993-assembly-skeleton.json` porte l'autre moitié du jumeau : **où se trouve
+chaque pièce**. Dix systèmes, 239 illustrations, 12 864 références dénombrées,
+dérivés d'un catalogue d'usine tenu hors de ce dépôt.
+
+C'est un **agrégat**, et le validateur le maintient tel : une illustration ne
+peut porter que son numéro, son dénombrement et ses libellés. Toute clé
+supplémentaire — une référence de pièce, par exemple — fait échouer `make check`.
+
+Compter des pièces est un fait ; recopier les lignes d'un catalogue est une
+copie. La règle est donc appliquée par le validateur, pas par la bonne volonté.
+
+Régénérer : `python3 scripts/twin_structure.py --listing <atlas>/oem-listed.json --out catalog/reference/993-assembly-skeleton.json`

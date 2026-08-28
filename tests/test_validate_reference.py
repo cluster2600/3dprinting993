@@ -56,3 +56,26 @@ class ReferenceValidationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SkeletonValidationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.path = ROOT / "catalog" / "reference" / "993-assembly-skeleton.json"
+        cls.payload = json.loads(cls.path.read_text(encoding="utf-8"))
+
+    def test_skeleton_is_valid(self) -> None:
+        self.assertEqual(validate_file(self.payload, set()), [])
+
+    def test_counts_add_up(self) -> None:
+        total = sum(system["reference_count"] for system in self.payload["systems"])
+        self.assertEqual(self.payload["reference_count"], total)
+
+    def test_skeleton_refuses_catalogue_detail(self) -> None:
+        """The aggregate must not become a copy of someone else's catalogue."""
+        payload = deepcopy(self.payload)
+        payload["systems"][0]["illustrations"][0]["oemReference"] = "993 115 021 53"
+
+        errors = validate_file(payload, set())
+
+        self.assertTrue(any("must not carry catalogue detail" in error for error in errors))

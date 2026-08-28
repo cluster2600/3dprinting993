@@ -117,6 +117,31 @@ documentées et sourcées, via `make twin`.
 | Train roulant et freins | ~75 % | non commencé |
 | Reste | 100 % | non commencé |
 
+### Squelette d'assemblage — fait
+
+Le catalogue d'usine a fourni l'ossature : dix systèmes, 239 illustrations,
+12 864 références situées (`catalog/reference/993-assembly-skeleton.json`).
+
+| Système | Références | Illustrations |
+|---|---:|---:|
+| 8xx Carrosserie et habillage | 4 553 | 85 |
+| 1xx Moteur | 2 398 | 34 |
+| 9xx Électricité et équipements | 1 499 | 29 |
+| 3xx Boîte de vitesses | 1 368 | 34 |
+| 6xx Freinage et hydraulique | 820 | 13 |
+| 4xx Direction et train avant | 624 | 14 |
+| 2xx Carburant et échappement | 611 | 11 |
+| 7xx Commandes et embrayage | 494 | 8 |
+| 5xx Train arrière et transmission | 326 | 7 |
+| 0xx Consommables | 171 | 4 |
+
+Deux couvertures cohabitent, et elles ne disent pas la même chose : **0,18 % des
+références** portent une masse documentée, mais ces quelques pièces représentent
+**30,4 % de la masse à vide**. Le jumeau se remplit par la masse avant de se
+remplir par le nombre.
+
+### Position — non commencé
+
 Une masse sans position ne donne ni centre de gravité, ni répartition, ni
 inertie. La dimension suivante du jumeau est donc la **position des pièces**, que
 les catalogues ne donnent pas et qu'un relevé de géométrie de caisse pourrait

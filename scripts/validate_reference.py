@@ -85,9 +85,58 @@ def validate_entry(entry: Any, label: str, sources: set[str]) -> list[str]:
     return errors
 
 
+def validate_skeleton(payload: Any) -> list[str]:
+    """An assembly skeleton is an aggregate, and must stay one.
+
+    The catalogue it is derived from belongs to someone else. Counting parts is a
+    fact; reproducing their reference lines is a copy. The check below refuses the
+    second, so the rule cannot quietly erode.
+    """
+    errors: list[str] = []
+    systems = payload.get("systems")
+    if not isinstance(systems, list) or not systems:
+        return ["systems: expected a non-empty array"]
+
+    total = 0
+    for index, system in enumerate(systems):
+        label = f"systems[{index}]"
+        if not isinstance(system, dict):
+            errors.append(f"{label}: expected an object")
+            continue
+        for field in ("system_id", "name"):
+            if not isinstance(system.get(field), str) or not system[field].strip():
+                errors.append(f"{label}.{field}: expected a non-empty string")
+        count = system.get("reference_count")
+        if not isinstance(count, int) or count < 1:
+            errors.append(f"{label}.reference_count: expected a positive integer")
+        else:
+            total += count
+        illustrations = system.get("illustrations")
+        if not isinstance(illustrations, list) or not illustrations:
+            errors.append(f"{label}.illustrations: expected a non-empty array")
+            continue
+        for position, item in enumerate(illustrations):
+            if not isinstance(item, dict):
+                errors.append(f"{label}.illustrations[{position}]: expected an object")
+                continue
+            leaked = item.keys() - {"illustration", "reference_count", "labels"}
+            if leaked:
+                errors.append(
+                    f"{label}.illustrations[{position}]: aggregate must not carry "
+                    f"catalogue detail: {', '.join(sorted(leaked))}"
+                )
+
+    declared = payload.get("reference_count")
+    if isinstance(declared, int) and declared != total:
+        errors.append(f"reference_count: {declared} does not match the sum of systems ({total})")
+    return errors
+
+
 def validate_file(payload: Any, sources: set[str]) -> list[str]:
+    if isinstance(payload, dict) and "systems" in payload:
+        return validate_skeleton(payload)
     if not isinstance(payload, dict) or "entries" not in payload:
-        return ["root: expected an object with an entries array"]
+        return ["root: expected an object with an entries or systems array"]
     entries = payload["entries"]
     if not isinstance(entries, list) or not entries:
         return ["entries: expected a non-empty array"]
@@ -130,9 +179,13 @@ def main(arguments: list[str] | None = None) -> int:
             for error in errors:
                 print(f"  - {error}")
         else:
-            count = len(payload["entries"])
-            total += count
-            print(f"OK   {label} ({count} entries)")
+            if "systems" in payload:
+                count = payload.get("reference_count", 0)
+                print(f"OK   {label} (squelette, {len(payload['systems'])} systemes, {count} references agregees)")
+            else:
+                count = len(payload["entries"])
+                total += count
+                print(f"OK   {label} ({count} entries)")
     if failures:
         print(f"reference: {failures} invalid file(s)")
         return 1
