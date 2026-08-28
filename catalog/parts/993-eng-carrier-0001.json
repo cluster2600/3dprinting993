@@ -79,6 +79,22 @@
         "license": "porsche-ag-copyright-reference-only",
         "accessed_on": "2026-08-28",
         "notes": "Catalogue de pieces Porsche heberge par un tiers. Source du releve ci-dessus. Contenu protege : consultation seulement, aucune illustration ni extrait importe dans ce depot."
+      },
+      {
+        "title": "Porsche Club GB - Cracked engine mount bracket",
+        "url": "https://www.porscheclubgb.com/forum/threads/cracked-engine-mount-bracket.124901/",
+        "source_type": "community",
+        "license": "forum-user-content-rights-unclear",
+        "accessed_on": "2026-08-28",
+        "notes": "964 : fissuration, reparation par soudure, renfort rapporte, et voilage provoque par le soudage du gousset."
+      },
+      {
+        "title": "PFF - Rennline Motortraeger / Schwert",
+        "url": "https://www.pff.de/thread/2823902-rennline-motortraeger-schwert/",
+        "source_type": "community",
+        "license": "forum-user-content-rights-unclear",
+        "accessed_on": "2026-08-28",
+        "notes": "964 : berceau fissure avec photographies, revision usine renforcee evoquee vers 1991, renfort du marche autour de 614 EUR."
       }
     ]
   },
@@ -126,7 +142,7 @@
       "Aucune alternative de rechange connue pour le berceau Turbo : le berceau tubulaire du marche specialise est explicitement non Turbo.",
       "Piste non verifiee : la reference Turbo apparait annoncee neuve autour de 225 a 270 EUR chez un revendeur allemand, et un berceau standard -90 d'occasion a environ 175 USD. Prix vus dans des resumes de recherche, aucune page marchande ouverte.",
       "Matiere, masse et prix d'origine restent inconnus, y compris dans le releve PET : le catalogue ne les publie pas.",
-      "Construction soudee, fissuration en extremite et pratique de renfort sont rapportees par des resumes de recherche, mais aucune page ouverte ne les confirme : traitees comme pistes, pas comme faits.",
+      "Mode de defaillance etabli au niveau de la famille 964 et non sur cette reference : la piece fissure, se repare par soudure et recoit couramment un renfort rapporte (SRC-PCGB-CRACKED-ENGINE-MOUNT-BRACKET, SRC-PFF-RENNLINE-MOTORTRAEGER, pages lues). Le soudage d'un gousset de renfort peut voiler la piece. Une revision usine « legerement renforcee » a partir de 1991 environ est evoquee sans reference a l'appui.",
       "Corrosion documentee sur le 993 aux supports arriere de groupe motopropulseur et aux longerons arriere (forum 911uk, page lue) : l'environnement de la piece est corrosif.",
       "Aucun cas de charge complet : la masse moteur supportee n'est etablie par aucune source lue directement.",
       "Couple moteur Carrera 330 Nm a 5000 tr/min retenu faute de mieux ; la valeur Turbo, plus elevee, n'a pas ete relevee.",
