@@ -122,6 +122,44 @@ Le livrable est un nuage de points E57, intérieur inclus. La piste ne se
 rouvrirait que par une commande de numérisation dédiée, d'un tout autre ordre de
 prix — ou par un autre prestataire, restant à identifier.
 
+## Lot 3 — Masses d'origine, par la recherche en allemand
+
+`SRC-FEDERLEICHTE-ELFER-993-WEIGHTS` fournit ce qu'aucune source anglophone
+n'avait donné : les masses des pièces d'origine du 993, face aux versions
+allégées, matière par matière, sur trois pages — extérieur, intérieur, technique.
+
+### Ce qui est directement exploitable par ce projet
+
+Petites pièces d'habillage, non critiques, remplaçables à l'identique :
+
+| Pièce | Origine | Allégée | Gain |
+|---|---:|---:|---:|
+| Baguettes de porte | 550 g | 170 g | 380 g |
+| Planche de bord allégée | 2 100 g | 950 g | 1 150 g |
+| Dessus de planche de bord | — | 290 g | — |
+| Conduits d'air | — | 35 g | — |
+| Cache de chauffage | — | 10 g | — |
+
+Ce sont exactement les formes que le sélecteur fait remonter — `cover strip`,
+`cover`, `insert` — et exactement le domaine où l'impression polymère est le bon
+procédé.
+
+### Ce que les gros chiffres cachent
+
+Les plus grosses économies de ces tables ne sont **pas** des remplacements :
+
+| Ligne | Gain affiché | Ce que c'est réellement |
+|---|---:|---|
+| Ensemble de ventilation | 11,4 kg | Dépose du chauffage, pas un remplacement |
+| Siège course | 12,5 kg | Touche la retenue des occupants |
+| Volant allégé | 1,9 kg | Suppression de l'airbag |
+| Portes | 26 kg pièce | Perte des barres anti-intrusion et du vitrage |
+| Pavillon | 19,5 kg | Panneau soudé structural |
+| Roues, rotules | 1,5 à 3,3 kg | Classe présumée critique par `SAFETY.md` |
+
+Une table de masses ne dit pas ce qu'on a le droit de retirer. Classer avant de
+chiffrer, jamais l'inverse.
+
 ## Reste à faire en Phase 1
 
 - [x] Modèles 3D sous licence vérifiable — recensés, et le constat est net :
