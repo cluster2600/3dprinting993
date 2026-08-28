@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-ROSEPASSION-993-PARTS",
+  "title": "Rose Passion - catalogue 993 par schemas PET, avec masse par piece",
+  "url": "https://www.rosepassion.com/de/schemata-porsche-993-1995-eu-993-rs-coupe-6-gang-handschaltgetriebe/auspuff-106/abgasanlage-schalldampfer-katalysator-1037",
+  "publisher": "Rose Passion",
+  "source_type": "marketplace",
+  "content_types": ["parts_catalogue", "technical_data"],
+  "coverage": {
+    "generation": "993",
+    "variants": ["993_gamme"],
+    "parts": []
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-08-28"
+  },
+  "rights": {
+    "license": "vendor-site-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "Rose Passion"
+  },
+  "quality": {
+    "evidence_level": "C",
+    "dimensional_accuracy": "declared",
+    "verified_against": []
+  },
+  "notes": "Trouvaille methodologique la plus utile de cette recherche : ce revendeur structure son catalogue par schemas PET, comme le catalogue d'usine, et publie une masse sur chaque fiche produit. Exemple releve : embout d'echappement droit, 0,506 kg. Il repond a la recuperation automatisee, contrairement a tous les autres revendeurs rencontres. Limite : la masse n'apparait que sur la fiche individuelle, pas sur la page de groupe, donc une requete par piece. C'est la voie realiste pour remplir le jumeau piece par piece, en ciblant les references qui pesent."
+}

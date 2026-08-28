@@ -265,6 +265,57 @@
       "notes": "Version carbone 0,65 kg. Donnee 964.",
       "mass_kg": 2.0,
       "material": "a_determiner"
+    },
+    {
+      "entry_id": "VEHICLE-KERB-CARRERA",
+      "name": "Masse a vide, Carrera 2",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-KERB-WEIGHTS",
+      "mass_kg": 1370.0,
+      "variant": "Carrera 2 1993-1998",
+      "notes": "Fourchette annoncee 1370 a 1395 kg. Sans quantite : cette entree est une reference de comparaison, pas une piece a sommer."
+    },
+    {
+      "entry_id": "VEHICLE-KERB-TURBO",
+      "name": "Masse a vide, Turbo",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-KERB-WEIGHTS",
+      "mass_kg": 1500.0,
+      "variant": "Turbo 1995-1998",
+      "notes": "Reference de comparaison, pas une piece."
+    },
+    {
+      "entry_id": "VEHICLE-KERB-RS",
+      "name": "Masse a vide, Carrera RS",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-KERB-WEIGHTS",
+      "mass_kg": 1270.0,
+      "variant": "RS 1994",
+      "notes": "Reference de comparaison. Ecart de 100 kg avec la Carrera 2, utile comme borne de ce qu'un allegement d'usine atteint."
+    },
+    {
+      "entry_id": "VEHICLE-KERB-GT2",
+      "name": "Masse a vide, GT2",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FEDERLEICHTE-ELFER-993-KERB-WEIGHTS",
+      "mass_kg": 1295.0,
+      "variant": "GT2 1996-1998",
+      "notes": "Reference de comparaison."
+    },
+    {
+      "entry_id": "993-EXHAUST-TAILPIPE",
+      "name": "Embout d'echappement, droit",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-ROSEPASSION-993-PARTS",
+      "mass_kg": 0.506,
+      "material": "a_determiner",
+      "quantity_per_car": 2,
+      "notes": "Masse publiee sur la fiche produit du revendeur. Premiere piece renseignee par cette voie ; le meme catalogue en porte des milliers."
     }
   ]
 }
