@@ -39,8 +39,37 @@ volant léger, collecteurs et silencieux, sans climatisation.
 | 996 GT3 Cup 2003, pour comparaison | 185,1 kg | 217,7 kg |
 
 Le moteur du Turbo n'est pas pesé ici ; le GT2 Race en est le plus proche, avec
-un échappement de course qui compense turbos et échangeur. **Retenir environ
-195 kg pour un groupe 993 biturbo complet, hors boîte.**
+un échappement de course qui compense turbos et échangeur.
+
+### Contradiction ouverte sur la masse du Turbo
+
+Une seconde valeur circule pour le moteur du 993 Turbo : **268 kg**. Elle ne
+peut pas être vraie en même temps que la pesée, sous le même périmètre.
+
+| Source | Périmètre déclaré | 993 atmosphérique | 993 Turbo |
+|---|---|---:|---:|
+| Pesée au marbre, méthode déclarée | moteur complet prêt à tourner, hors boîte | 186,9 kg | 195,0 kg (GT2 Race) |
+| Chiffre en circulation, périmètre non déclaré | inconnu | 232 kg | 268 kg |
+| Écart | | 45,1 kg | 73,0 kg |
+
+Les deux écarts sont du même ordre de grandeur qu'une **boîte de vitesses de
+911**. L'hypothèse la plus économique est donc que les valeurs de 232 et 268 kg
+désignent un **ensemble moteur et boîte**, alors que les pesées portent sur le
+moteur seul.
+
+Elle reste une hypothèse. Trois autres explications tiennent debout : un moteur
+Turbo de route avec climatisation, échangeurs et échappement de série, là où le
+GT2 Race s'en passe ; des pleins comptés ou non ; ou simplement un chiffre repris
+sans périmètre.
+
+**Ce que ça change pour le calcul** : rien tant que ce n'est pas tranché, et
+c'est précisément le point. Une masse dont on ignore le périmètre ne peut pas
+devenir une charge. Si 268 kg inclut la boîte, une part importante repose sur le
+support de boîte et non sur ce berceau — l'erreur irait dans le sens dangereux,
+en surestimant puis en sous-estimant selon l'usage qu'on en fait.
+
+**Retenir en attendant : environ 195 kg pour un groupe 993 biturbo complet hors
+boîte, avec la contradiction signalée.**
 
 Ce que cela ne dit pas encore :
 

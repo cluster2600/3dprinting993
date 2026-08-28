@@ -158,7 +158,8 @@
       "Arbitrage titane tranche par la masse annoncee : a 1,96 kg annonces, le gain a raideur egale serait d'environ 0,45 kg, soit 0,03 pour cent de la masse du vehicule, contre une revue d'ingenierie complete, une qualification de procede et un controle non destructif. Le titane n'est pas justifie sur cette piece en l'etat. Le defaut constate sur la famille est la fissuration, pas la masse.",
       "Aucune publication possible avant revue d'ingenierie formelle et plan de validation approuve.",
       "Couples : 85 Nm sur M12 pour berceau vers support moteur, confirme par la table d'usine du groupe 10. Le second chiffre communique, 45 a 50 Nm, ne figure pas dans cette table ; la valeur voisine de 46 Nm concerne le support de boite vers caisse. Aucun couple berceau vers caisse n'a ete trouve.",
-      "Masse et encombrement communiques sans source : 1,96 kg et 600 x 50 x 50 mm. Forme typique de donnees logistiques de revendeur, donc masse d'expedition et dimensions de colis. Retenus comme enveloppe maximale, pas comme mesure."
+      "Masse et encombrement communiques sans source : 1,96 kg et 600 x 50 x 50 mm. Forme typique de donnees logistiques de revendeur, donc masse d'expedition et dimensions de colis. Retenus comme enveloppe maximale, pas comme mesure.",
+      "Contradiction ouverte sur la masse du moteur Turbo : 268 kg annonces sans perimetre contre 195 kg peses au marbre sur un GT2 Race complet hors boite. Ecart de 73 kg, du meme ordre qu'une boite de vitesses. Non tranchee."
     ]
   }
 }
