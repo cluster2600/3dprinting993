@@ -182,11 +182,28 @@ Les deux premières lignes sont la trouvaille : **le catalogue de pièces offici
 Porsche et les données de jantes sont autorisés**, et leur contenu n'a pas été
 lu uniquement faute de moteur de rendu.
 
-Un navigateur sans état exécuté côté serveur — Cloudflare Browser Run, avec son
-moteur Kitesurf — lève cet obstacle sans en franchir aucun autre. Il ne change en
-revanche **rien** aux deux dernières lignes : un hôte qui renvoie 403 reste fermé,
-et un site qui refuse les agents nommés continue de les refuser depuis n'importe
-quelle infrastructure.
+### Test effectué le 29 août 2026, et son résultat
+
+L'hypothèse était qu'un navigateur exécuté côté serveur lèverait l'obstacle. Elle
+a été testée, sur compte Cloudflare, via Browser Run et son moteur Kitesurf.
+
+**Le moteur fonctionne** : la page wheel-size a bien été rendue, 115 293
+caractères extraits là où une requête simple n'en donnait presque rien.
+
+**Et l'hypothèse est infirmée sur les deux cibles.**
+
+| Cible | Résultat du rendu |
+|---|---|
+| `wheel-size.com` | La page rendue affiche `Bolt Pattern (PCD): -`, `Thread Size: -`, `Wheel Tightening Torque: -`. Ces valeurs **ne sont pas publiées**, elles n'étaient pas masquées |
+| `porsche.com` catalogue | 722 caractères, les seules métadonnées, **identique avec Kitesurf et avec Chromium**. Le corps n'est servi à aucun navigateur sans tête |
+
+Ce que cela enseigne dépasse ces deux pages : un champ vide dans une page peut
+signifier « rendu plus tard » ou « jamais publié », et seuls un rendu réel les
+distingue. Ici, c'était la seconde réponse dans les deux cas.
+
+Browser Run ne change par ailleurs **rien** aux deux dernières lignes du tableau
+précédent : un hôte qui renvoie 403 reste fermé, et un site qui refuse les agents
+nommés continue de les refuser depuis n'importe quelle infrastructure.
 
 ## Reste à faire en Phase 1
 
