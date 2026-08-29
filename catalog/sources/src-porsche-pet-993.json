@@ -5,10 +5,16 @@
   "url": "https://www.porsche.com/australia/accessoriesandservice/classic/originalpartscatalogue/",
   "publisher": "Porsche AG",
   "source_type": "official",
-  "content_types": ["parts_catalogue", "drawing", "technical_data"],
+  "content_types": [
+    "parts_catalogue",
+    "drawing",
+    "technical_data"
+  ],
   "coverage": {
     "generation": "993",
-    "variants": ["model_range_pending_catalogue_breakdown"],
+    "variants": [
+      "model_range_pending_catalogue_breakdown"
+    ],
     "parts": []
   },
   "access": {
@@ -26,5 +32,5 @@
     "dimensional_accuracy": "unknown",
     "verified_against": []
   },
-  "notes": "Official reference for part numbers and assembly breakdown. Exploded drawings are not dimensional CAD."
+  "notes": "Official reference for part numbers and assembly breakdown. Exploded drawings are not dimensional CAD. Verification du 2026-08-29 : le robots.txt de porsche.com n'interdit pas ce chemin et ne nomme aucun agent, seuls /api/, /search/, /login/ et quelques archives le sont. Le contenu n'etait donc pas refuse, il etait seulement rendu en JavaScript. Un rendu de page cote serveur, tel Cloudflare Browser Run, permettrait de le lire sans enfreindre quoi que ce soit."
 }

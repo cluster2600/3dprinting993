@@ -160,6 +160,34 @@ Les plus grosses économies de ces tables ne sont **pas** des remplacements :
 Une table de masses ne dit pas ce qu'on a le droit de retirer. Classer avant de
 chiffrer, jamais l'inverse.
 
+## Lot 4 — Pages rendues en JavaScript
+
+Plusieurs sources ont été classées inexploitables le 28 août alors qu'elles
+n'étaient que **rendues côté client** : la page répondait, mais son contenu
+n'existait qu'après exécution du JavaScript. Ce n'est pas un refus, c'est un
+problème de rendu — et la distinction change tout, parce qu'un refus se respecte
+alors qu'un rendu se résout.
+
+Vérification des `robots.txt` le 29 août 2026 :
+
+| Source | Ce que dit son robots.txt | Verdict |
+|---|---|---|
+| `porsche.com` (catalogue Classic) | `User-agent: *`, n'interdit que `/api/`, `/search/`, `/login/` et des archives. **Aucun agent nommé.** | **Autorisé** |
+| `wheel-size.com` | Autorise `/size/`, n'interdit que `/admin/`, `/api/`, `/data/` et les combinaisons de filtres | **Autorisé** |
+| `newsroom.porsche.com` | `allow: /` | Autorisé, et déjà lisible |
+| `pcss-tsi.porsche.com` | Le `robots.txt` lui-même renvoie 403 | Hôte fermé, hors de portée |
+| `rosepassion.com` | `ClaudeBot` et `Claude-Web` en `Disallow: /` | **Refusé**, voir ADR 0003 |
+
+Les deux premières lignes sont la trouvaille : **le catalogue de pièces officiel
+Porsche et les données de jantes sont autorisés**, et leur contenu n'a pas été
+lu uniquement faute de moteur de rendu.
+
+Un navigateur sans état exécuté côté serveur — Cloudflare Browser Run, avec son
+moteur Kitesurf — lève cet obstacle sans en franchir aucun autre. Il ne change en
+revanche **rien** aux deux dernières lignes : un hôte qui renvoie 403 reste fermé,
+et un site qui refuse les agents nommés continue de les refuser depuis n'importe
+quelle infrastructure.
+
 ## Reste à faire en Phase 1
 
 - [x] Modèles 3D sous licence vérifiable — recensés, et le constat est net :
