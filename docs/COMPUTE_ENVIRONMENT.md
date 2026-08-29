@@ -104,6 +104,35 @@ est juste à un facteur près. Placer une référence de longueur connue dans la
 scène et recaler ensuite (`colmap model_aligner`), sinon le maillage n’est pas
 une mesure. Voir [SOURCE_POLICY.md](SOURCE_POLICY.md).
 
+## Lire une page rendue en JavaScript
+
+Plusieurs sources du registre répondent mais ne livrent rien : leur contenu
+n'existe qu'après exécution du script de page. C'est un problème de rendu, pas
+un refus, et il se résout par un navigateur exécuté côté serveur.
+
+**Cloudflare Browser Run** le fournit, avec deux moteurs : Chromium par défaut,
+et **Kitesurf**, moteur sans état conçu pour les agents, sorti le 6 août 2026,
+gratuit en bêta, annoncé à 3 à 7 fois moins de CPU et de mémoire que Chromium
+pour la capture et l'extraction HTML.
+
+Deux voies d'accès, et elles ne se valent pas :
+
+| Voie | Kitesurf | Ce qu'il faut |
+|---|---|---|
+| Binding Worker, `env.BROWSER.quickAction()` | **non documenté** | un Worker déployé, aucun jeton |
+| API REST, `?browser=kitesurf` | **oui** | un jeton `Browser Rendering - Edit` |
+
+Le moteur Kitesurf ne se sélectionne donc, à ce jour, que par l'API REST.
+
+Piège à connaître : `quickAction()` renvoie un objet `Response`, pas un objet
+nu. Le sérialiser directement produit `{}` et laisse croire à une page vide. Le
+corps utile est `{ success, result }`.
+
+Ce que Browser Run ne résout pas : un hôte qui renvoie 403, et un site qui
+refuse les agents nommés. La documentation précise d'ailleurs que Kitesurf ne
+sait pas négocier un défi anti-bot à empreintes TLS. Changer d'infrastructure ne
+change pas une permission.
+
 ## Hygiène des données
 
 Une machine louée appartient à quelqu’un d’autre.
