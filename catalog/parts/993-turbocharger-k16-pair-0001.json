@@ -85,6 +85,14 @@
         "license": "site-owner-confirmed-reference-only",
         "accessed_on": "2026-08-30",
         "notes": "Le depot local du site expose les groupes PET 202-16, 107-20 et 107-45 : nomenclature des turbocompresseurs, conduites, commande, suralimentation et echangeur. Les lignes sont des transcriptions PET, sans cotes, tolerances ou CAO ; voir SRC-PORSCHEFANATICS-993-TURBO-PET."
+      },
+      {
+        "title": "Porsche Austria - PET 993, groupe 107-45 echangeur d'air",
+        "url": "https://www.porsche.at/media/Kwc_Basic_DownloadTag_Component/4740-45397-124814-downloadTag/default/f5000535/1729608718/kat017-d-911-98-katalog.pdf",
+        "source_type": "official",
+        "license": "porsche-ag-copyright-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Planche PET officielle utilisee pour recouper les references, raccords, joints et colliers du circuit de suralimentation ; elle ne fournit pas de cotes de passage ni de CAO. Voir SRC-PORSCHE-AUSTRIA-993-107-45-PET."
       }
     ]
   },

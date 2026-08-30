@@ -3,6 +3,11 @@
 Ce document fixe le perimetre avant tout calcul sur Vast.ai. Il ne declare pas
 qu'une piece est exacte, ajustee, testee, sure ou liberable.
 
+La collecte specifique des conditions d'ecoulement, des interfaces PET et des
+enveloppes fournisseurs est detaillee dans
+[`TURBO_AIRFLOW_SIMULATION_DATA.md`](TURBO_AIRFLOW_SIMULATION_DATA.md). Les
+debits qui y sont calcules sont des bornes de sensibilite et non des mesures.
+
 ## Etat de la collecte
 
 | Donnee | Etat | Niveau d'usage |

@@ -29,6 +29,11 @@ La couverture massique dit quelle part de la masse à vide est décrite par des
 pièces dont la masse est documentée et sourcée. Tout le reste est le travail qui
 reste.
 
+Pour le circuit de suralimentation, voir aussi
+[docs/TURBO_AIRFLOW_SIMULATION_DATA.md](docs/TURBO_AIRFLOW_SIMULATION_DATA.md) :
+il rassemble l'identification K16, les interfaces PET, les dimensions
+fournisseurs et la première enveloppe de débit calculée avec ses hypothèses.
+
 ## Principes
 
 - **Source avant STL** : FreeCAD, OpenSCAD ou STEP restent les formats maîtres.

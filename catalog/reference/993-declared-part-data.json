@@ -385,6 +385,52 @@
       "material": "a_determiner"
     },
     {
+      "entry_id": "993-INTERCOOLER-TA-TECHNIX-CORE-MODULE",
+      "name": "Module de faisceau d'echangeur TA Technix 993",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-TA-TECHNIX-993-INTERCOOLER-DIMENSIONS",
+      "notes": "La fiche aftermarket 05PO002 annonce deux modules de faisceau de 260 x 260 x 100 mm chacun. Elle annonce aussi des raccords de 66 mm exterieur / 68 mm interieur, une largeur maximale de 860 mm, une hauteur maximale de 240 mm et un entraxe de fixation de 690 mm. Cette entree ne represente qu'un module de noyau ; elle ne definit ni l'assemblage complet, ni l'OEM 99311033053, ni une performance thermique ou de perte de charge.",
+      "dimensions_mm": [
+        260.0,
+        260.0,
+        100.0
+      ],
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-INTERCOOLER-PRESSURE-HOSE-KIT-FVD",
+      "name": "Kit de durites de pression renforcees FVD 993",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-REINFORCED-INTERCOOLER-HOSE-KIT-DIMENSIONS",
+      "notes": "Encombrement produit declare 440 x 160 x 100 mm et masse 1,08 kg. La fiche indique 43/57 mm x 410 mm pour le raccordement turbo-echangeur. Kit aftermarket renforce ; les diametres, la masse et l'enveloppe ne sont pas des cotes OEM, et la mention pressure-tested ne donne pas la pression d'essai.",
+      "mass_kg": 1.08,
+      "dimensions_mm": [
+        440.0,
+        160.0,
+        100.0
+      ],
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-INTERCOOLER-TEMPERATURE-SENSOR",
+      "name": "Sonde de temperature d'air de suralimentation",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-CHARGE-AIR-TEMPERATURE-SENSOR-DIMENSIONS",
+      "notes": "La fiche fournisseur de la reference Porsche 99360611400 declare 75 x 35 x 20 mm et 0,02 kg. Elle indique une sonde placee sur la tuyauterie d'entree d'echangeur a l'arriere de l'echangeur. La courbe electrique et le positionnement exact restent a confirmer sur la piece et le faisceau.",
+      "mass_kg": 0.02,
+      "dimensions_mm": [
+        75.0,
+        35.0,
+        20.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 606 114 00",
+      "quantity_per_car": 1
+    },
+    {
       "entry_id": "993-FRONT-LID-ALU-MOTORSPORT",
       "name": "Capot avant aluminium Porsche Motorsport",
       "generation": "993",
