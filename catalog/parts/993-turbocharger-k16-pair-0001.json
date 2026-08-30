@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "part_id": "993-TURBOCHARGER-K16-PAIR-0001",
+  "name": "Paire de turbocompresseurs K16 de 993 Turbo",
+  "description": "Cible de recherche du jumeau numerique : deux turbocompresseurs K16 montes en parallele sur la 993 Turbo. Cette fiche etablit l'identite fonctionnelle et les donnees publiques disponibles ; elle ne constitue ni une geometrie de remplacement ni une autorisation de fabrication.",
+  "vehicle": {
+    "generation": "993",
+    "variants": ["993_Turbo"],
+    "model_years": {"from": 1995, "to": 1998},
+    "porsche_part_numbers": [
+      "993 123 013 51",
+      "993 123 013 52",
+      "993 123 014 51",
+      "993 123 014 52"
+    ]
+  },
+  "classification": {
+    "category": "turbocharger",
+    "safety_class": "prohibited_pending_engineering",
+    "intended_use": "Recherche, identification, simulation et reconstruction dimensionnelle sous controle d'ingenierie ; aucune utilisation moteur ou routiere a ce stade"
+  },
+  "geometry": {
+    "source_type": "estimated",
+    "master_format": "none",
+    "master_file": "",
+    "units": "mm",
+    "accuracy_mm": null,
+    "derived_files": []
+  },
+  "provenance": {
+    "record_license": "MIT for the record, no third-party geometry redistributed",
+    "sources": [
+      {
+        "title": "Porsche Christophorus - Donnees techniques du 911 Turbo (993)",
+        "url": "https://newsroom.porsche.com/christophorus/fr/2020/394/turbo-engines.html",
+        "source_type": "official",
+        "license": "all-rights-reserved-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Architecture biturbo parallele, 3 600 cm3, 0,8 bar, 408 ch, 540 Nm et wastegate integree."
+      },
+      {
+        "title": "BorgWarner - Performance Turbocharger Catalog",
+        "url": "https://www.borgwarner.com/docs/default-source/iam/boosting-technologies/bw_turbo-performance-catalog.pdf",
+        "source_type": "manufacturer",
+        "license": "manufacturer-copyright-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Association commerciale de la 993 Turbo aux K16-6735 et K16-6736 ; aucune geometrie complete."
+      },
+      {
+        "title": "Design911 - Cross-reference des turbocompresseurs K16 de 993 Turbo",
+        "url": "https://www.design911.co.uk/b/borgwarner/2/",
+        "source_type": "community",
+        "license": "vendor-site-copyright-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Cross-reference gauche/droite Porsche et BorgWarner, a confirmer sur une plaque de turbo ou une source primaire."
+      },
+      {
+        "title": "TurboMaster - Eclate de pieces du BorgWarner K16 5316-988-6735",
+        "url": "https://www.turbomaster.com/eng/turbo/borgwarner/5316-988-6735/",
+        "source_type": "community",
+        "license": "commercial-catalogue-copyright-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "References de sous-ensembles et A/R declare ; pas de plan metrologique."
+      }
+    ]
+  },
+  "manufacturing": {
+    "candidate_processes": ["LPBF", "CNC", "casting"],
+    "preferred_process": "undecided",
+    "material": {
+      "family": "inconnue par sous-ensemble ; a identifier sur pieces et documentation fabricant",
+      "grade": "non determine",
+      "standard": "aucun"
+    },
+    "post_processing": [
+      "a definir apres geometrie et materiau",
+      "usinage des interfaces et portees",
+      "equilibrage de l'ensemble tournant si un rotor est etudie",
+      "controle dimensionnel et non destructif"
+    ],
+    "supplier_requirements": [
+      "Qualification du procede et traçabilite de lot",
+      "Dossier thermique, fatigue, rotordynamique et pression",
+      "Rapport de metrologie et de controle non destructif",
+      "Equilibrage haute vitesse par operateur qualifie",
+      "Revue d'ingenierie formelle avant tout essai moteur"
+    ]
+  },
+  "titanium": {
+    "applicable": false,
+    "alloy": "",
+    "heat_treatment": "",
+    "hip_required": "to_be_determined",
+    "machined_surfaces": [],
+    "inspection": [],
+    "galvanic_isolation": "a definir uniquement si un sous-ensemble en titane est retenu"
+  },
+  "validation": {
+    "status": "concept",
+    "vehicle_tested": [],
+    "evidence": [],
+    "reviewed_by": "",
+    "reviewed_on": null,
+    "known_limits": [
+      "Aucune piece, plaque signaletique, mesure physique, scan ou CAO licenciée n'est disponible dans le projet.",
+      "Les references gauche/droite sont issues de cross-references publiques et doivent etre confirmees sur une piece ou dans une source Porsche autorisee.",
+      "Aucune carte compresseur/turbine, courbe de rendement, debit massique, vitesse maximale, jeu de pointe, jeu axial/radial, pression d'huile ou temperature d'entree turbine n'a ete recueillie.",
+      "Les references de roue, carters, CHRA, actionneur et A/R sont des declarations de catalogue fournisseur ; elles ne definissent pas les surfaces aero ni les tolerances.",
+      "Le manuel Porsche 993 local est une source de procedures et specifications de service ; il ne fournit pas ici une definition CAO complete du K16.",
+      "Une roue de turbine, une roue de compresseur, un arbre, un palier ou un carter chaud sont des pieces chargees, thermiques et/ou tournantes : aucune impression, montage, essai moteur ou mise sur route n'est autorise par cette fiche.",
+      "Le premier demonstrateur du jumeau doit cibler un conduit ou adaptateur non rotatif cote froid, avec prototype d'encombrement avant toute version metal."
+    ]
+  }
+}
