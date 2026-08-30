@@ -114,6 +114,14 @@ Le modele de langage peut orchestrer les variantes, verifier les fichiers et
 produire des hypotheses. Il ne remplace ni le solveur, ni la metrologie, ni la
 qualification du procede additif.
 
+Le premier normalisateur 0D des donnees de banc est dans
+`simulation/993-turbo-dyno/`. Il convertit les points de couple et puissance,
+calcule le BMEP et attache une enveloppe de debit moteur aux regimes publies.
+Les points châssis, les cibles de preparateurs et les courbes moteur rapportees
+restent separes par type de banc ; aucune conversion whp vers puissance moteur
+n'est appliquee. `make turbo-dyno-check` doit passer avant d'utiliser le paquet
+dans un job Vast.ai.
+
 Le premier cas est maintenant dans
 `simulation/993-k16-cold-side-baseline/`. Il contient une geometrie OpenSCAD
 editable de diffuseur fixe et un harnais OpenFOAM `blockMesh` + `simpleFoam`.

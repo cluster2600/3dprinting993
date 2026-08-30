@@ -193,6 +193,28 @@ jeux et profils d'aubes. Une demande technique a leur adresser doit exiger ces
 valeurs, les conditions d'essai, l'incertitude et l'autorisation d'utilisation
 des donnees.
 
+## Donnees publiques de banc
+
+La recherche a trouve quelques points de banc, mais aucun dossier complet de
+calibration. Le registre [`dyno-reference.json`](../simulation/993-turbo-dyno/dyno-reference.json)
+conserve les valeurs publiees et leur contexte :
+
+| Cas | Donnees rapportees | Usage retenu |
+| --- | --- | --- |
+| RUF Turbo R a base K16 | Couple en lb-ft de 2 000 a 6 000 tr/min ; pics annonces 506 hp a 5 500 et 460 hp a 6 000 | Courbe d'ancrage incomplete ; controle de coherence couple/puissance |
+| Comparatif RS-Tuning/UMW | K24RS a 522 PS DIN contre K16 Stage 3 a 471 hp sur le meme moteur | Comparaison de niveau, sans points de courbe exploitables |
+| Powerhaus K24 | 500 whp et 525 lb-ft a 5 000 tr/min, environ 1 bar rapporte | Point d'ancrage châssis ; puissance aux roues, pas vilebrequin |
+| K16 reconstruits / DME Turbo S | 324 whp a 6 000 tr/min et 329 lb-ft a 4 600 tr/min, trois tirets rapportes | Ancrage châssis modifie, sans conversion vilebrequin |
+| Cargraphic K16/24 | 475 PS a 6 090 tr/min et 632 Nm a 4 550 tr/min | Cible fabricant, feuille de banc absente |
+| AP Car Design K26 | 610 PS et 920 Nm a 4 200 tr/min sur une conversion complete | Borne contextuelle hors K16/K24 |
+
+Le script `scripts/model_turbo_dyno_0d.py` derive pour chaque point la puissance
+du couple, le BMEP et une enveloppe de debit par turbo. Il compare aussi les
+valeurs puissance/couple publiees au meme regime et signale les discordances.
+La sortie est dans `simulation/993-turbo-dyno/derived-dyno-curves.json` et
+reste au statut `reference_only` : elle ne fabrique ni carte compresseur ni
+calibration CFD.
+
 ## Conditions moteur disponibles
 
 | Parametre | Valeur | Nature |
@@ -358,4 +380,9 @@ ce banc.
 - `SRC-ELFERWELT-993-K16-8055011W-KIT`
 - `SRC-TTH-993-K24-750-TURBO-PROCESSING`
 - `SRC-9FF-993-F64-K24-550-DATA`
+- `SRC-RENNLIST-993-RUF-TURBO-R-ENGINE-DYNO`
+- `SRC-RENNLIST-993-K16-K24-COMPARATIVE-ENGINE-DYNO`
+- `SRC-RENNLIST-993-POWERHAUS-K24-DYNO`
+- `SRC-RENNLIST-993-K16-CHASSIS-DYNO`
+- `SRC-AP-CAR-DESIGN-993-K26-DYNO-REPORT`
 - sources FVD, AKS DASIS et TA Technix des pieces adjacentes.

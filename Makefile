@@ -1,10 +1,10 @@
-.PHONY: check validate test twin twin-validate turbo-cold-side turbo-cold-side-check turbo-variants turbo-variants-check container-recon container-cadsim container-physicsml container-smoke container-smoke-physicsml container-smoke-all container-push
+.PHONY: check validate test twin twin-validate turbo-cold-side turbo-cold-side-check turbo-variants turbo-variants-check turbo-dyno turbo-dyno-check container-recon container-cadsim container-physicsml container-smoke container-smoke-physicsml container-smoke-all container-push
 
 REGISTRY ?= ghcr.io/cluster2600
 IMAGE_TAG ?= dev
 PHYSICSNEMO_EXTRAS ?= cu12,sym,mesh-extras,model-extras
 
-check: validate test turbo-cold-side-check turbo-variants-check
+check: validate test turbo-cold-side-check turbo-variants-check turbo-dyno-check
 
 validate:
 	python3 scripts/validate_catalog.py
@@ -34,6 +34,12 @@ turbo-variants:
 
 turbo-variants-check:
 	python3 scripts/generate_turbo_variants.py --check
+
+turbo-dyno:
+	python3 scripts/model_turbo_dyno_0d.py --write
+
+turbo-dyno-check:
+	python3 scripts/model_turbo_dyno_0d.py --check
 
 container-recon:
 	docker build -f containers/recon.Dockerfile -t 3dprinting993-recon:$(IMAGE_TAG) .

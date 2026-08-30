@@ -26,7 +26,9 @@
       "configuration": "K16 de serie, enveloppe froide synthetique",
       "source_ids": [
         "SRC-FVD-993-K16-OEM-DIMENSIONS",
-        "SRC-INVASIONAUTOPRODUCTS-993-K16-INTERNAL-DATA"
+        "SRC-INVASIONAUTOPRODUCTS-993-K16-INTERNAL-DATA",
+        "SRC-RENNLIST-993-RUF-TURBO-R-ENGINE-DYNO",
+        "SRC-RENNLIST-993-K16-CHASSIS-DYNO"
       ],
       "reference_data": [
         {
@@ -83,7 +85,8 @@
       "source_ids": [
         "SRC-FVD-993-K16-24-SPORT-TURBO-DATA",
         "SRC-CARGRAPHIC-993-K16-24-POWERKIT-DATA",
-        "SRC-TTP-993-TURBO-TUNING-STAGES"
+        "SRC-TTP-993-TURBO-TUNING-STAGES",
+        "SRC-RENNLIST-993-K16-K24-COMPARATIVE-ENGINE-DYNO"
       ],
       "reference_data": [
         {
@@ -139,7 +142,8 @@
       "configuration": "K24 prepare, enveloppe froide synthetique de sensibilite",
       "source_ids": [
         "SRC-TTH-993-K24-750-TURBO-PROCESSING",
-        "SRC-9FF-993-F64-K24-550-DATA"
+        "SRC-9FF-993-F64-K24-550-DATA",
+        "SRC-RENNLIST-993-POWERHAUS-K24-DYNO"
       ],
       "reference_data": [
         {
