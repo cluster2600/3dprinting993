@@ -162,6 +162,37 @@ ni profil de raccord, ni carte K16, ni debit massique HFM reproductible. Les
 valeurs de pression et de puissance de vehicules prepares ne doivent pas etre
 injectees dans le jumeau stock.
 
+## Preparateurs et fabricants de turbos
+
+Les preparateurs publient parfois plus de details que les forums, mais il s'agit
+de configurations proprietaires et de promesses de performance. Leur valeur
+pour le jumeau est de montrer quelles variables ont effectivement ete modifiees
+et quelles informations il faut demander.
+
+| Preparateur | Configuration publiee | Donnee utile | Limite |
+| --- | --- | --- | --- |
+| [FVD](https://www.fvd.net/fr/shop/turbocompr-sport-k16-24-g-pour-993-fvd123013~p262679) | Hybride K16/24 | Inducer compresseur annonce 47,5 mm, carter CNC, backing plate modifie, turbine et palier renforces, equilibriage, adaptateurs d'huile/DME | 555 hp est une cible de kit ; pas de carte ni de profil complet |
+| [Cargraphic](https://www.cargraphic.de/en/your-vehicle/for-porsche/for-911/for-993/for-turbo-turbo-s-36l/engine-upgrade-kits-porsche-993-turbo-s-36l/power-kit-2-for-porsche-993-turbo-36l/lkp93t300s2/) | K16/24 special + ECU + echappement + huile | 475 PS / 632 Nm annonces, essais revendiques sur banc RS-Tuning | Feuille de banc, boost, IAT et debit absents |
+| [TTP](https://t-t-p.de/motortuning-porsche/) | K16 450 PS, K16 modifie 500 PS, K24 550 PS | Echangeur eau-air integre, refroidissement d'huile, ECU programmable, niveaux 450/580, 500/620 et 550/640 | Chiffres de preparation, sans carte ni protocole de banc |
+| [Elferwelt](https://www.elferwelt.de/leistungen/porsche-993-turbo-gt2/) | K16/8055011W, kit 520-540 PS | Partie tournante allegee, optimisation des jeux, equilibriage statique/dynamique, injecteurs matches, DME CC460/OTP | La mention `80er CNC Druckseite` n'est pas une cote definie |
+| [TTH](https://www.turbo-technik-hamburg.de/shop/porsche/911/993/436/porsche-911-993-gt2-wls-i-ii-turbo-s-3-6-t-k24-750ps) | K24 avec carter chaud 10 | Extended Tip, carter CNC, turbine retouchee, paliers/capsules renforces, equilibriage annonce jusqu'a 0,05 g | Offre K24 jusqu'a 750 PS avec moteur et logiciel adaptes ; pas K16 stock |
+| [9ff](https://www.9ff.com/en/pages/993-konfigurator) | F64 twin turbo 550 avec 2x K24-24.80 | 550 hp / 700 Nm, echangeur eau, grosses conduites, injecteurs, pompe et carter renforces | Conversion complete ; aucune carte ou geometrie de roue |
+
+Deux enseignements sont directement utiles :
+
+1. Les hybrides K16/24 cherchent le compromis reponse bas regime / debit haut
+   regime. Ils ne doivent pas etre utilises comme geometrie du K16 d'origine.
+2. A partir des niveaux eleves, les preparateurs modifient simultanement
+   turbo, echangeur, carburant, ECU, echappement et bas moteur. Il est donc
+   impossible d'attribuer un gain de debit ou de temperature au turbo seul.
+
+Les pages de preparateurs ne publient pas les donnees dont nous avons besoin
+pour un modele aero : carte compresseur et turbine avec debit corrige, rapports
+de pression et ilots de rendement, vitesse d'arbre, T1/T3, pertes de charge,
+jeux et profils d'aubes. Une demande technique a leur adresser doit exiger ces
+valeurs, les conditions d'essai, l'incertitude et l'autorisation d'utilisation
+des donnees.
+
 ## Conditions moteur disponibles
 
 | Parametre | Valeur | Nature |
@@ -310,4 +341,11 @@ ce banc.
 - `SRC-PFF-993-BITURBO-VARIANT-FORUM`
 - `SRC-CARPASSION-993-TURBO-BOOST-HOSE-FORUM`
 - `SRC-MOTOR-TALK-993-TURBO-FORUM-TECHNICAL-LEADS`
+- `SRC-FVD-993-K16-24-SPORT-TURBO-DATA`
+- `SRC-CARGRAPHIC-993-K16-24-POWERKIT-DATA`
+- `SRC-CARGRAPHIC-993-MOTORSPORT-INTERCOOLER-DATA`
+- `SRC-TTP-993-TURBO-TUNING-STAGES`
+- `SRC-ELFERWELT-993-K16-8055011W-KIT`
+- `SRC-TTH-993-K24-750-TURBO-PROCESSING`
+- `SRC-9FF-993-F64-K24-550-DATA`
 - sources FVD, AKS DASIS et TA Technix des pieces adjacentes.

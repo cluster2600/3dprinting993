@@ -271,6 +271,21 @@
       "quantity_per_car": 1
     },
     {
+      "entry_id": "993-TURBOCHARGER-K16-24-FVD",
+      "name": "Turbocompresseur hybride K16/24 FVD",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-K16-24-SPORT-TURBO-DATA",
+      "notes": "FVD declare pour son produit hybride K16/24 un encombrement de 290 x 230 x 230 mm et une masse de 5,63 kg. La fiche decrit une roue compresseur a inducer 47,5 mm, mais pas le profil complet ni les tolerances. Cette entree concerne une preparation aftermarket et ne doit pas etre confondue avec le K16 OEM.",
+      "mass_kg": 5.63,
+      "dimensions_mm": [
+        290.0,
+        230.0,
+        230.0
+      ],
+      "material": "a_determiner"
+    },
+    {
       "entry_id": "993-TURBO-HEAT-SHIELD-COVER-LEFT",
       "name": "Couvercle de protection thermique du turbo gauche",
       "generation": "993",
