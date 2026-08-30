@@ -60,7 +60,7 @@ Compléter ensuite la fiche, ajouter les fichiers CAO autorisés dans
 catalog/parts/       fiches structurées des pièces
 catalog/sources/     registre des sources, droits et niveaux de preuve
 catalog/manual/      registre quantitatif dérivé du manuel 993, avec pages
-catalog/measurements/ séances de mesure, instruments et incertitudes
+catalog/measurements/ mesures physiques et spécifications documentaires sourcées
 parts/               géométries et livrables par pièce
 schemas/             contrat de données du catalogue
 containers/          images de calcul reproductibles, GPU et CPU
@@ -77,8 +77,9 @@ sources** est engagée : catalogues officiels, manuels accessibles et sources de
 mesure sont recensés dans `catalog/sources/`
 (voir [docs/PHASE1_SOURCE_INVENTORY.md](docs/PHASE1_SOURCE_INVENTORY.md)). La
 [cartographie du manuel 993](docs/993_MANUAL_DATA_MAP.md) relie désormais les
-données publiques de Porsche Fanatics aux pages techniques du manuel, sans
-importer le PDF ni créer de fausses mesures.
+données publiques de Porsche Fanatics aux pages techniques du manuel. Les
+spécifications sont importées dans le registre de mesures avec leur statut
+documentaire, sans importer le PDF ni les présenter comme des relevés physiques.
 Aucune pièce n’est encore déclarée imprimable ou validée. Voir
 [ROADMAP.md](ROADMAP.md) et [docs/PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md).
 

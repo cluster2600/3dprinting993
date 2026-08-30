@@ -2,8 +2,10 @@
 
 ## État
 
-Les trois pilotes polymères sont préparés, mais aucune séance de mesure n'est
-encore enregistrée dans `catalog/measurements/`. Le dépôt n'a pas accès à une
+Les trois pilotes polymères sont préparés, mais aucune séance de mesure
+physique n'est encore enregistrée dans `catalog/measurements/`. Le registre
+contient maintenant une fiche séparée de spécifications documentaires du manuel
+Porsche, qui ne remplace pas une campagne instrumentée. Le dépôt n'a pas accès à une
 993, à une pièce déposée ni à un instrument : ce document est donc un dossier
 de passation pour un contributeur extérieur. Il ne contient aucune cote
 inventée.

@@ -194,7 +194,8 @@ professionnelle, calculs, essais et validation réglementaire documentée.
 4. Prioriser les pièces intérieures non critiques, notamment la patte de
    console 964/993 recensée par `SRC-PRINTABLES-964-993-CONSOLE-SWITCH-TAB`.
 
-Le registre `catalog/measurements/` reste volontairement vide tant qu'aucun
-contributeur ne fournit une pièce ou un véhicule, l'instrument, les repères et
-les lectures brutes. Le manuel augmente la qualité de la préparation ; il ne
-crée pas une mesure du projet.
+Le registre `catalog/measurements/MEAS-MANUAL-993-ALL.json` contient désormais
+les 2 496 spécifications documentaires indexées. Il ne s'agit pas de mesures
+physiques du projet : aucune pièce, aucun véhicule et aucun instrument n'ont été
+utilisés. Les séances instrumentées des pièces resteront séparées et pourront
+être ajoutées lorsque les lectures brutes seront disponibles.

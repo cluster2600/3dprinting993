@@ -37,10 +37,11 @@ Phase 1, lot 7 — manuel et données Porsche Fanatics, 30 août 2026 :
   variantes ROW/USA, Carrera/Carrera 4/Carrera 4S et Carrera RS ;
 - ajout d’une piste Printables pour la patte d’interrupteur de console 964/993,
   sans copie du fichier et avec licence encore non vérifiée ;
-- aucune fiche de mesure projet créée : le registre métrologique reste vide
-  faute de véhicule et de pièce donneuse.
 - registre quantitatif exhaustif ajouté : 111 données techniques, 195 couples et
   2 190 occurrences OCR avec page, contexte court et statut de contrôle.
+- import de ces 2 496 spécifications dans `catalog/measurements/` comme fiche
+  documentaire séparée ; aucune séance physique n'est créée sans pièce,
+  instrument et lectures brutes.
 
 Traçabilité des mesures :
 
