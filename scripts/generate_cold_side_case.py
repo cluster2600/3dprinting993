@@ -103,7 +103,9 @@ def render_block_mesh(payload: dict[str, Any]) -> str:
         (0.0, inlet / 2, inlet / 2),
     ]
     vertex_lines = "\n".join(f"        ({_number(x)} {_number(y)} {_number(z)})" for x, y, z in vertices)
-    return dedent(
+    generation_source = payload.get("generation_source", "simulation/993-k16-cold-side-baseline/parameters.json")
+    variant_id = payload.get("variant_id")
+    rendered = dedent(
         f"""\
         /*--------------------------------*- C++ -*----------------------------------*\\
           =========                 |
@@ -118,7 +120,7 @@ def render_block_mesh(payload: dict[str, Any]) -> str:
             class       dictionary;
             object      blockMeshDict;
         }}
-        // Generated from simulation/993-k16-cold-side-baseline/parameters.json.
+        // Generated from {generation_source}.
         // The block is a rectangular equivalent diffuser, not K16 CAD.
 
         convertToMeters 1;
@@ -167,6 +169,12 @@ def render_block_mesh(payload: dict[str, Any]) -> str:
         );
         """
     )
+    if variant_id:
+        rendered = rendered.replace(
+            "// The block is a rectangular equivalent diffuser, not K16 CAD.",
+            f"// Variant: {variant_id}.\n// The block is a rectangular equivalent diffuser, not K16 CAD.",
+        )
+    return rendered
 
 
 def load(path: Path) -> dict[str, Any]:

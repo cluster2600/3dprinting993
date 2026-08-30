@@ -122,6 +122,16 @@ valider la chaine et comparer des variantes, pas a pretendre reproduire le K16.
 Les commandes sont `make turbo-cold-side` puis, dans le conteneur cadsim,
 `blockMesh`, `checkMesh` et `simpleFoam`.
 
+Le jeu de comparaison suivant est dans
+`simulation/993-turbo-variants/`. Son manifeste unique genere trois cas avec
+les memes champs solveur : controle `K16-OEM`, sensibilite `K16-24-HYBRID` et
+sensibilite haut debit `K24-REFERENCE`. Le debit commun est derive d'une plage
+de fonctionnement estimee ; les diametres et longueurs des trois diffuseurs
+sont des hypotheses de recherche marquees comme telles. Utiliser
+`make turbo-variants`, puis lancer `blockMesh`, `checkMesh` et `simpleFoam` dans
+chaque dossier `cases/<variant>/`. Ces cas ne valident ni les performances des
+preparateurs ni la geometrie d'un turbo reel.
+
 ## Premier demonstrateur recommande
 
 Le premier demonstrateur est un adaptateur ou conduit cote froid, non rotatif,

@@ -277,6 +277,16 @@ silencieusement : il sert a verifier la chaine OpenFOAM et les comparaisons
 relatives. Le prochain cas physique devra imposer un debit par banc justifie et
 une geometrie dont les sections sont connues.
 
+Trois variantes de sensibilite sont maintenant materialisees dans
+`simulation/993-turbo-variants/` : `K16-OEM`, `K16-24-HYBRID` et
+`K24-REFERENCE`. Elles utilisent le meme debit derive de `0,156 kg/s` par
+turbo, a densite constante, afin de comparer uniquement des enveloppes froides
+synthetiques. Les vitesses d'entree changent avec la section. Le manifeste
+attache les sources FVD, Cargraphic, TTP, TTH, Elferwelt et 9ff, mais les
+objectifs de puissance des preparateurs restent des declarations hors solveur.
+Les fichiers sont regenerables avec `make turbo-variants` et controles par
+`make turbo-variants-check`.
+
 ## Ce qui manque avant un CFD calibre
 
 ### Geometrie
