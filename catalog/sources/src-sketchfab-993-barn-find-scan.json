@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-SKETCHFAB-993-BARN-FIND-SCAN",
+  "title": "Sketchfab Store - Scan exterieur d'une Porsche Carrera 993",
+  "url": "https://sketchfab.com/3d-models/porsche-carrera-993-barn-find-3d-scan-6d150c0982f9416e94bd4aaca1bf02ab",
+  "publisher": "21 Design sur Sketchfab",
+  "source_type": "marketplace",
+  "content_types": ["scan", "mesh"],
+  "coverage": {
+    "generation": "993",
+    "variants": ["Carrera"],
+    "parts": ["exterior_body"]
+  },
+  "access": {
+    "status": "purchase_required",
+    "method": "browser_page_read",
+    "accessed_on": "2026-08-29"
+  },
+  "rights": {
+    "license": "sketchfab-store-royalty-free-terms-not-verified",
+    "redistribution": "unknown",
+    "attribution": "21 Design / Sketchfab"
+  },
+  "quality": {
+    "evidence_level": "D",
+    "dimensional_accuracy": "declared",
+    "verified_against": []
+  },
+  "notes": "La fiche Store decrit un scan grandeur reelle d'une Carrera 993, annonce a 2 mm pour un projet de restauration, avec 1,6 million de triangles et la possibilite de fichiers plus precis sur demande. Le fichier n'est pas accessible dans la page lue; le prix, la licence exacte, la redistribution et le protocole de controle restent a verifier. A ne pas telecharger, modifier ou redistribuer avant achat et clarification des droits; a comparer ensuite a des cotes connues."
+}

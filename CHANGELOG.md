@@ -10,6 +10,19 @@ Phase 1, lot 1 — catalogues officiels, manuels accessibles et mesures :
 - statuts d’accès réels consignés, y compris les refus, paywalls et URL mortes ;
 - journal d’inventaire et liste motivée des sources écartées.
 
+Phase 1, lots 2 et 5 — recherche allemande, scans et passation de mesure,
+30 août 2026 :
+
+- registre porté à 225 fiches de sources valides, avec fabricants, forums,
+  mesures déclarées et pistes CAO/CT/LiDAR évalués séparément ;
+- aucun scan 993 étalonné et librement réutilisable ajouté, et aucun fichier
+  tiers copié sans licence établie ;
+- ajout de deux pistes allemandes distinctes : supports de pare-chocs 964/993
+  avec cotes commerciales déclarées, et réparation amateur du déflecteur de toit
+  ouvrant avec référence de pièce ;
+- campagne de mesure priorisée pour les trois pilotes polymères, avec procédure
+  de passation, règles de confidentialité et brief CT optionnel.
+
 Environnement de calcul :
 
 - deux images conteneurs, `recon` (CUDA) et `cadsim` (CPU), avec test de fumée ;

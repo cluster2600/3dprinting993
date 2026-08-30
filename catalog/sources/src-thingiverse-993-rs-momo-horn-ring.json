@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-THINGIVERSE-993-RS-MOMO-HORN-RING",
+  "title": "Thingiverse - Bague de klaxon pour volant Momo de Porsche 993 RS",
+  "url": "https://www.thingiverse.com/thing:4427893",
+  "publisher": "Thingiverse; auteur non identifie dans la page indexee",
+  "source_type": "community",
+  "content_types": ["cad", "mesh", "measurement", "technical_data"],
+  "coverage": {
+    "generation": "993",
+    "variants": ["993_RS", "Momo_wheel"],
+    "parts": ["momo_horn_ring", "steering_wheel_horn_button"]
+  },
+  "access": {
+    "status": "not_checked",
+    "method": "not_accessed",
+    "accessed_on": null
+  },
+  "rights": {
+    "license": "thingiverse-original-page-not-verified",
+    "redistribution": "unknown",
+    "attribution": "Thingiverse; author not identified"
+  },
+  "quality": {
+    "evidence_level": "D",
+    "dimensional_accuracy": "declared",
+    "verified_against": []
+  },
+  "notes": "Un index secondaire associe ce fichier Thingiverse au volant Momo de 993 RS reference 993-0347-084-80-8 et declare un ajustement presse dans un trou de 52 mm, un diametre exterieur de 59 mm et une saillie de 3 mm. La page primaire et sa licence n'ont pas ete verifiees, et aucune mesure independante ni essai de fonctionnement du klaxon n'est fourni. Le volant et sa commande touchent a la securite de conduite : cette piste ne peut pas etre liberee comme piece de direction sans verification de l'auteur, du materiau, de l'assemblage et une revue d'ingenierie."
+}

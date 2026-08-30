@@ -20,3 +20,9 @@ python3 scripts/capture_caliper.py --record catalog/measurements/meas-<pièce>.j
 
 Une valeur tapée à la main reste enregistrée comme telle : `manual_entry`, jamais
 `instrument_stream`.
+
+La campagne prête à être exécutée et son ordre de priorité sont décrits dans
+[`docs/MEASUREMENT_CAMPAIGN.md`](../../docs/MEASUREMENT_CAMPAIGN.md). Tant qu'un
+contributeur n'a pas fourni une pièce, un véhicule et les lectures brutes, le
+registre peut rester vide : il vaut mieux zéro mesure vérifiable qu'une cote
+inventée.

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-CULTS-993-DOOR-POCKET-REINFORCEMENT",
+  "title": "Cults3D - Renfort de vide-poches de porte Porsche 993",
+  "url": "https://cults3d.com/en/3d-model/tool/porsche-911-993-door-pocket-reinforcement",
+  "publisher": "ITMonkey; Cults3D",
+  "source_type": "marketplace",
+  "content_types": ["cad", "mesh", "measurement", "photograph", "technical_data"],
+  "coverage": {
+    "generation": "993",
+    "variants": ["993", "non_hifi"],
+    "parts": ["door_pocket_reinforcement"]
+  },
+  "access": {
+    "status": "access_blocked",
+    "method": "browser_page_read",
+    "accessed_on": "2026-08-30"
+  },
+  "rights": {
+    "license": "platform-license-field-unverified",
+    "redistribution": "unknown",
+    "attribution": "ITMonkey; Cults3D"
+  },
+  "quality": {
+    "evidence_level": "D",
+    "dimensional_accuracy": "unknown",
+    "verified_against": []
+  },
+  "notes": "La fiche indexee annonce deux STL, gauche et droite, pour renforcer la poche de porte d'une Porsche 993 non-Hifi. Les bboxes affichees sont respectivement 75,184 x 12,7 x 73,660 mm. La description recommande un collage ou un assemblage avec poncage d'ajustement; elle ne fournit ni datum OEM, ni tolerance, ni mesure independante. La page detaillee a renvoye 403 lors de l'acces : prix, fichier, historique et champ de licence doivent etre confirmes directement aupres de l'auteur ou de Cults avant achat, telechargement, redistribution ou comparaison metrologique. Piste de reparation interieure, pas une preuve de cote de la porte OEM."
+}

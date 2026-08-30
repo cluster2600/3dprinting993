@@ -21,12 +21,13 @@ Journal détaillé : [docs/PHASE1_SOURCE_INVENTORY.md](docs/PHASE1_SOURCE_INVENT
 
 - [x] Recenser catalogues officiels, manuels légalement accessibles et mesures
 - [x] Recenser les modèles 3D avec licence vérifiable
-- [ ] Classer les références par variante, année et disponibilité
-- [ ] Identifier les pièces manquantes ou difficiles à obtenir
-- [ ] Évaluer chaque source : provenance, licence, précision, réutilisation
+- [x] Classer les références par variante, année et disponibilité
+- [x] Identifier les pièces manquantes ou difficiles à obtenir
+- [x] Évaluer chaque source : provenance, licence, précision, réutilisation
 
 Critère de sortie : vingt candidats documentés, sans importer de contenu non
-autorisé. Avancement : dix-huit fiches valides dans `catalog/sources/`.
+autorisé. Avancement : 225 fiches de sources valides dans `catalog/sources/`;
+l'acquisition de mesures directes reste à faire.
 
 ## Phase 2 — Pilotes polymères
 
@@ -44,6 +45,9 @@ Trois pièces non critiques sélectionnées, fiches créées au statut `concept`
 - [ ] Mesurer les trois pièces sur véhicule
 - [ ] Imprimer et monter les prototypes
 - [ ] Photographier et consigner les écarts
+
+Plan d'exécution et dossier de passation :
+[docs/MEASUREMENT_CAMPAIGN.md](docs/MEASUREMENT_CAMPAIGN.md).
 
 Critère de sortie : trois prototypes montés, photographiés et mesurés.
 **Conditionné à un contributeur disposant des pièces** : voir la contrainte
@@ -111,7 +115,7 @@ documentées et sourcées, via `make twin`.
 
 | Jalon | Couverture | État |
 |---|---:|---|
-| Premier relevé | 30,4 % | atteint le 28 août 2026, 416,5 kg sur 1 370 kg |
+| Premier relevé | 30,5 % | atteint le 28 août 2026, 417,5 kg sur 1 370 kg |
 | Carrosserie et habillage complets | ~45 % | en cours |
 | Groupe motopropulseur détaillé | ~60 % | moteur global connu, pièces à détailler |
 | Train roulant et freins | ~75 % | non commencé |
@@ -137,7 +141,7 @@ Le catalogue d'usine a fourni l'ossature : dix systèmes, 239 illustrations,
 
 Deux couvertures cohabitent, et elles ne disent pas la même chose : **0,18 % des
 références** portent une masse documentée, mais ces quelques pièces représentent
-**30,4 % de la masse à vide**. Le jumeau se remplit par la masse avant de se
+**30,5 % de la masse à vide**. Le jumeau se remplit par la masse avant de se
 remplir par le nombre.
 
 ### Position — non commencé
