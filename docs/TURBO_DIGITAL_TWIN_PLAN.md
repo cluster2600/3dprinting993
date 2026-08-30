@@ -16,6 +16,12 @@ qu'une piece est exacte, ajustee, testee, sure ou liberable.
 | Encombrement et masse des K16 complets | FVD : 280 x 190 x 210 mm ; 5,76 kg gauche / 5,6 kg droite | Controle de masse et de packaging ; declaration fournisseur |
 | Diametres de roues du K16 droit | 54,96/48,97 mm turbine ; 40,6/60,5 mm compresseur | Bornes de parametrage ; declaration fournisseur, pas profils aero |
 | A/R 8.00 | Declaration TurboMaster sur 5316-988-6735 | A ne pas transformer en cote de fabrication |
+| Durites de pression turbo-echangeur | FVD : 430 x 70 x 90 mm droite / 430 x 70 x 115 mm gauche ; 0,42 kg chacune | Encombrement de remplacements fournisseur ; masses alternatives EQ 0,52/0,44 kg |
+| Conduit d'air d'echangeur `993 110 340 54` | FVD : 600 x 280 x 50 mm ; 0,9 kg | Produit FVD developpe en propre ; reference de packaging, pas geometrie OEM |
+| Support renforce d'echangeur FVD11011050 | FVD : 255 x 80 x 23 mm ; 0,2 kg | Upgrade aftermarket ; resistance et interfaces a mesurer |
+| Echangeur de remplacement `993 110 330 53` | AKS DASIS 177020T : faisceau 260 x 270 x 60 mm ; 7,06 kg | Noyau de remplacement, pas encombrement complet OEM |
+| Echangeur Motorsport FVD110330 | FVD : 870 x 410 x 190 mm ; 10,1 kg | Upgrade avec modifications d'installation ; borne de packaging/thermique |
+| Ecran thermique gauche `993 123 113 51` | FVD : 160 x 110 x 105 mm ; 0,23 kg | Encombrement produit ; epaisseur et fixations inconnues |
 | Geometrie 3D et tolerances | Absente | Bloquante |
 | Cartes debit/pression/rendement | Absentes | Bloquante pour CFD calibree |
 | Materiaux et traitements | Absents par sous-ensemble | Bloquante pour FEA thermique/fatigue |
@@ -34,6 +40,29 @@ maintenant tracees dans `catalog/reference/993-declared-part-data.json` et dans
 les fiches sources correspondantes. Elles permettent un parametrage initial et
 un controle de coherence ; elles ne remplacent ni une piece, ni une metrologie,
 ni une carte compresseur.
+
+## Pieces adjacentes et nouvelles bornes
+
+La recherche germanophone a aussi produit des bornes autour du turbo. Les
+durites `993 110 632 56` et `993 110 633 56` ont un encombrement annonce de
+430 mm de long, 70 mm de large, avec 90 mm de haut a droite et 115 mm a gauche.
+Le conduit `993 110 340 54` est annonce a 600 x 280 x 50 mm. Ces trois fiches
+FVD indiquent qu'il s'agit de produits developpes par FVD : elles sont utiles
+pour le packaging et la reconstruction d'une enveloppe, mais ne donnent pas la
+section, les rayons, les epaisseurs, les embouts ou les entraxes OEM.
+
+Pour l'echangeur, la fiche allemande AKS DASIS 177020T associee a `993 110 330
+53` declare un faisceau de 260 x 270 x 60 mm et une masse de 7,06 kg. Ce sont
+les dimensions du noyau, pas celles de l'ensemble complet. Une autre borne est
+fournie par l'echangeur Motorsport FVD110330 : 870 x 410 x 190 mm et 10,1 kg,
+avec modifications d'installation annoncees. Elle ne doit pas etre melangee
+avec l'OEM.
+
+Les valeurs sont enregistrees dans
+`catalog/reference/993-declared-part-data.json`, avec un `source_id` distinct
+pour chaque fiche. Leur statut reste `declared` : aucune n'est une mesure
+physique du projet. Les pages PET de Porsche Fanatics servent a confirmer les
+references adjacentes et leurs positions, pas leurs cotes.
 
 ## Ce qu'il faut encore obtenir
 

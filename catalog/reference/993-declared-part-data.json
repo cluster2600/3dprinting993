@@ -271,6 +271,120 @@
       "quantity_per_car": 1
     },
     {
+      "entry_id": "993-TURBO-HEAT-SHIELD-COVER-LEFT",
+      "name": "Couvercle de protection thermique du turbo gauche",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-TURBO-HEAT-SHIELD-DIMENSIONS",
+      "notes": "FVD declare un encombrement produit de 160 x 110 x 105 mm et une masse de 0,23 kg pour la reference Porsche 99312311351. La valeur ne donne ni l'epaisseur, ni les points de fixation, ni la geometrie cote chaud ; le couvercle reste une reference de packaging a confirmer sur une piece.",
+      "mass_kg": 0.23,
+      "dimensions_mm": [
+        160.0,
+        110.0,
+        105.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 123 113 51",
+      "quantity_per_car": 1
+    },
+    {
+      "entry_id": "993-INTERCOOLER-PRESSURE-HOSE-RIGHT",
+      "name": "Durite de pression turbo-echangeur droite",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-INTERCOOLER-HOSE-RIGHT-DIMENSIONS",
+      "notes": "FVD declare 430 x 70 x 90 mm et 0,42 kg pour son remplacement reference 99311063256. La fiche precise qu'il s'agit d'un produit de son propre developpement ; ce n'est donc pas une cote de l'OEM. Une autre variante 99311063256EQ affiche 0,52 kg avec le meme encombrement, ce qui confirme que la masse depend du fournisseur et de la construction.",
+      "mass_kg": 0.42,
+      "dimensions_mm": [
+        430.0,
+        70.0,
+        90.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 110 632 56",
+      "quantity_per_car": 1
+    },
+    {
+      "entry_id": "993-INTERCOOLER-PRESSURE-HOSE-LEFT",
+      "name": "Durite de pression turbo-echangeur gauche",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-INTERCOOLER-HOSE-LEFT-DIMENSIONS",
+      "notes": "FVD declare 430 x 70 x 115 mm et 0,42 kg pour son remplacement reference 99311063356. La fiche precise qu'il s'agit d'un produit de son propre developpement ; ce n'est donc pas une cote de l'OEM. Une autre variante 99311063356EQ affiche 0,44 kg avec le meme encombrement, ce qui confirme que la masse depend du fournisseur et de la construction.",
+      "mass_kg": 0.42,
+      "dimensions_mm": [
+        430.0,
+        70.0,
+        115.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 110 633 56",
+      "quantity_per_car": 1
+    },
+    {
+      "entry_id": "993-INTERCOOLER-AIR-DUCT",
+      "name": "Conduit d'air d'echangeur",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-INTERCOOLER-AIR-DUCT-DIMENSIONS",
+      "notes": "FVD declare 600 x 280 x 50 mm et 0,9 kg pour le produit reference 99311034054. FVD indique qu'il s'agit d'une piece de son propre developpement : l'encombrement ne doit pas etre confondu avec une definition OEM, une section de passage ou un entraxe de fixation.",
+      "mass_kg": 0.9,
+      "dimensions_mm": [
+        600.0,
+        280.0,
+        50.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 110 340 54",
+      "quantity_per_car": 1
+    },
+    {
+      "entry_id": "993-INTERCOOLER-BRACKET-REINFORCED",
+      "name": "Support renforce d'echangeur",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-INTERCOOLER-BRACKET-DIMENSIONS",
+      "notes": "Le support aftermarket FVD11011050 est declare a 255 x 80 x 23 mm et 0,2 kg. Il remplace le support d'origine pour les grands echangeurs, mais ses dimensions et sa resistance ne sont pas celles du support OEM ni une qualification structurale.",
+      "mass_kg": 0.2,
+      "dimensions_mm": [
+        255.0,
+        80.0,
+        23.0
+      ],
+      "material": "a_determiner"
+    },
+    {
+      "entry_id": "993-INTERCOOLER-REPLACEMENT-AKS",
+      "name": "Echangeur de remplacement AKS DASIS 177020T",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-AKS-DASIS-993-INTERCOOLER-DIMENSIONS",
+      "notes": "La fiche allemande associe le remplacement aux references OE 99311033053 et declare 7,06 kg. Les 260 x 270 x 60 mm sont les dimensions du faisceau (Netzlange x Netzbreite x Netztiefe), pas l'encombrement complet de l'echangeur, des boitiers, des raccords et des fixations. Cette piece aftermarket fournit une borne de masse et de noyau, pas une geometrie Porsche validee.",
+      "mass_kg": 7.06,
+      "dimensions_mm": [
+        260.0,
+        270.0,
+        60.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 110 330 53"
+    },
+    {
+      "entry_id": "993-INTERCOOLER-MOTORSPORT-FVD",
+      "name": "Echangeur Motorsport FVD 993 Turbo GT2",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-MOTORSPORT-INTERCOOLER-DIMENSIONS",
+      "notes": "FVD declare 870 x 410 x 190 mm et 10,1 kg pour son echangeur Motorsport FVD110330, avec jusqu'a 100 % de surface de refroidissement supplementaire et des modifications d'installation. C'est une reference d'upgrade et de packaging, pas une piece OEM ni une cible de reproduction directe.",
+      "mass_kg": 10.1,
+      "dimensions_mm": [
+        870.0,
+        410.0,
+        190.0
+      ],
+      "material": "a_determiner"
+    },
+    {
       "entry_id": "993-FRONT-LID-ALU-MOTORSPORT",
       "name": "Capot avant aluminium Porsche Motorsport",
       "generation": "993",

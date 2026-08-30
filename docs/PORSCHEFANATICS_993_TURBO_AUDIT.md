@@ -31,6 +31,32 @@ de ventilation, les supports `993 107 005 52` / `993 107 005 53`, les boitiers
 de commande et les joints. Les groupes `107-20` et `107-45` complètent le
 contexte d'air comprimé et de refroidissement de charge.
 
+## Mesures de pieces adjacentes retrouvees en allemand
+
+Les pages FVD ajoutees au registre donnent des bornes d'encombrement et de masse
+pour les pieces de remplacement ou d'upgrade suivantes :
+
+| Piece | Valeur declaree | Statut |
+| --- | --- | --- |
+| Durite droite `993 110 632 56` | `430 x 70 x 90 mm`, `0,42 kg` | Remplacement FVD developpe en propre |
+| Durite gauche `993 110 633 56` | `430 x 70 x 115 mm`, `0,42 kg` | Remplacement FVD developpe en propre |
+| Conduit d'air `993 110 340 54` | `600 x 280 x 50 mm`, `0,9 kg` | Produit FVD developpe en propre |
+| Support renforce FVD11011050 | `255 x 80 x 23 mm`, `0,2 kg` | Upgrade aftermarket |
+| Ecran thermique gauche `993 123 113 51` | `160 x 110 x 105 mm`, `0,23 kg` | Fiche de remplacement, details d'interface inconnus |
+| Noyau d'echangeur AKS DASIS 177020T pour `993 110 330 53` | `260 x 270 x 60 mm` de faisceau, `7,06 kg` | Remplacement aftermarket, noyau seulement |
+| Echangeur Motorsport FVD110330 | `870 x 410 x 190 mm`, `10,1 kg` | Upgrade avec modifications annoncees |
+
+Les pages FVD donnent parfois une masse differente pour la variante suffixee
+`EQ` d'une meme durite (`0,52 kg` a droite et `0,44 kg` a gauche). Cette
+variation est conservee comme reserve fournisseur dans les fiches sources ; la
+masse ne doit pas etre utilisee comme critere d'identite de l'OEM.
+
+Les cotes et masses ci-dessus sont des declarations commerciales, pas des
+mesures instrumentees. Elles n'autorisent pas la fabrication ni ne permettent
+de deduire une section de passage, une epaisseur, des rayons ou des entraxes.
+Les sept fiches sources et les entrees correspondantes sont dans
+`catalog/sources/` et `catalog/reference/993-declared-part-data.json`.
+
 ## Mesures et masses déjà disponibles dans le projet
 
 Tu as raison : le projet possède déjà des cotes et des masses de pièces. Elles
@@ -55,7 +81,9 @@ datums et protocole complet.
 
 ## Ce que les pages PET turbo n'apportent pas
 
-Cette collecte PET ne produit pas de nouvelle cote de fabrication pour le K16.
+Cette collecte PET ne produit pas de nouvelle cote de fabrication pour le K16 ni
+pour ses interfaces. Les fiches allemandes ajoutees produisent des enveloppes
+et masses de produits commerciaux, mais pas une definition OEM.
 Les pages
 signalent elles-mêmes que les lignes sont « transcribed, not read » : une
 reference, une description constructeur, une position et une page PET ne
