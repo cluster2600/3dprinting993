@@ -13,6 +13,8 @@ qu'une piece est exacte, ajustee, testee, sure ou liberable.
 | Puissance/couple de la version de base | 408 ch / 540 Nm | Cas moteur public, pas carte turbo |
 | Famille K16 et references 5316-988-6735/6 | Recoupee fabricant/distributeurs | Identification a confirmer |
 | References des sous-ensembles K16 | Catalogue fournisseur | Pistes de nomenclature uniquement |
+| Encombrement et masse des K16 complets | FVD : 280 x 190 x 210 mm ; 5,76 kg gauche / 5,6 kg droite | Controle de masse et de packaging ; declaration fournisseur |
+| Diametres de roues du K16 droit | 54,96/48,97 mm turbine ; 40,6/60,5 mm compresseur | Bornes de parametrage ; declaration fournisseur, pas profils aero |
 | A/R 8.00 | Declaration TurboMaster sur 5316-988-6735 | A ne pas transformer en cote de fabrication |
 | Geometrie 3D et tolerances | Absente | Bloquante |
 | Cartes debit/pression/rendement | Absentes | Bloquante pour CFD calibree |
@@ -24,6 +26,14 @@ fonctionnent en parallele, alimentent chacun un banc et comportent une wastegate
 integree. Elles ne constituent pas un plan de definition. Voir les sources
 enregistrees dans `catalog/sources/` et la fiche cible
 `catalog/parts/993-turbocharger-k16-pair-0001.json`.
+
+La recherche germanophone a apporte des bornes supplementaires : FVD publie les
+dimensions et masses des deux ensembles K16, et Invasion Auto Products publie des
+references de roues et quelques diametres pour le K16 droit. Ces donnees sont
+maintenant tracees dans `catalog/reference/993-declared-part-data.json` et dans
+les fiches sources correspondantes. Elles permettent un parametrage initial et
+un controle de coherence ; elles ne remplacent ni une piece, ni une metrologie,
+ni une carte compresseur.
 
 ## Ce qu'il faut encore obtenir
 
@@ -69,6 +79,14 @@ reproductible :
 Le modele de langage peut orchestrer les variantes, verifier les fichiers et
 produire des hypotheses. Il ne remplace ni le solveur, ni la metrologie, ni la
 qualification du procede additif.
+
+Le premier cas est maintenant dans
+`simulation/993-k16-cold-side-baseline/`. Il contient une geometrie OpenSCAD
+editable de diffuseur fixe et un harnais OpenFOAM `blockMesh` + `simpleFoam`.
+Le maillage est un conduit rectangulaire a section equivalente : il sert a
+valider la chaine et comparer des variantes, pas a pretendre reproduire le K16.
+Les commandes sont `make turbo-cold-side` puis, dans le conteneur cadsim,
+`blockMesh`, `checkMesh` et `simpleFoam`.
 
 ## Premier demonstrateur recommande
 

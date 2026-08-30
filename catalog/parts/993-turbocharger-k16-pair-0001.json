@@ -47,6 +47,22 @@
         "notes": "Association commerciale de la 993 Turbo aux K16-6735 et K16-6736 ; aucune geometrie complete."
       },
       {
+        "title": "FVD Brombacher - encombrement et masse des K16 993",
+        "url": "https://www.fvd.net/de/shop/turbolader-k16-rechts-993-serie-99312301452-993123014dx~p239094",
+        "source_type": "community",
+        "license": "vendor-site-copyright-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Declarations produit : 280 x 190 x 210 mm et 5,6 kg pour le K16 droit 99312301452 ; la fiche gauche 99312301352 annonce 5,76 kg avec le meme encombrement. Voir SRC-FVD-993-K16-OEM-DIMENSIONS."
+      },
+      {
+        "title": "Invasion Auto Products - donnees catalogue internes du K16 droit",
+        "url": "https://www.invasionautoproducts.com/94pocark16tu.html",
+        "source_type": "community",
+        "license": "vendor-site-copyright-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Declarations de references, diametres d'inducer/exducer, angles de carter, A/R et reglage wastegate pour 53169886735 ; aucune surface aero, tolerance ou CAO. Voir SRC-INVASIONAUTOPRODUCTS-993-K16-INTERNAL-DATA."
+      },
+      {
         "title": "Design911 - Cross-reference des turbocompresseurs K16 de 993 Turbo",
         "url": "https://www.design911.co.uk/b/borgwarner/2/",
         "source_type": "community",
@@ -110,8 +126,10 @@
     "reviewed_by": "",
     "reviewed_on": null,
     "known_limits": [
-      "Aucun exemplaire K16, plaque signaletique K16, mesure physique K16, scan K16 ou CAO K16 licenciée n'est disponible dans le projet ; le projet contient en revanche des masses et cotes declarees pour d'autres pieces 993 Turbo.",
+      "Aucun exemplaire K16, plaque signaletique K16, mesure physique K16, scan K16 ou CAO K16 licenciée n'est disponible dans le projet ; des masses et encombrements K16 sont maintenant disponibles comme declarations de fournisseurs, sans tolerances ni interfaces.",
       "Les references gauche/droite sont issues de cross-references publiques et doivent etre confirmees sur une piece ou dans une source Porsche autorisee.",
+      "FVD declare 5,76 kg pour le K16 gauche et 5,6 kg pour le K16 droit, avec un encombrement produit de 280 x 190 x 210 mm ; ces valeurs servent au controle d'encombrement et de masse, pas a la reconstruction du turbo nu.",
+      "Invasion Auto Products declare pour le K16 droit des diametres de roue (turbine 54,96/48,97 mm ; compresseur 40,6/60,5 mm), des references et un A/R 8 ; ces valeurs doivent etre confirmees avant toute geometrie de roue ou calcul rotordynamique.",
       "Aucune carte compresseur/turbine, courbe de rendement, debit massique, vitesse maximale, jeu de pointe, jeu axial/radial, pression d'huile ou temperature d'entree turbine n'a ete recueillie.",
       "Les references de roue, carters, CHRA, actionneur et A/R sont des declarations de catalogue fournisseur ; elles ne definissent pas les surfaces aero ni les tolerances.",
       "Le manuel Porsche 993 local est une source de procedures et specifications de service ; il ne fournit pas ici une definition CAO complete du K16.",

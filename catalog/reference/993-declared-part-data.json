@@ -237,6 +237,40 @@
       "quantity_per_car": 1
     },
     {
+      "entry_id": "993-TURBOCHARGER-K16-LEFT",
+      "name": "Turbocompresseur K16 gauche complet",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-K16-OEM-DIMENSIONS",
+      "notes": "Masse et encombrement produit annonces par FVD pour la reference Porsche 993 123 013 52 / FVD 993123013CX : 5,76 kg et 280 x 190 x 210 mm. L'ordre des dimensions est longueur x largeur x hauteur tel qu'affiche par le vendeur ; il s'agit d'un encombrement produit, pas d'une mesure du turbo nu ni d'une definition de montage.",
+      "mass_kg": 5.76,
+      "dimensions_mm": [
+        280.0,
+        190.0,
+        210.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 123 013 52",
+      "quantity_per_car": 1
+    },
+    {
+      "entry_id": "993-TURBOCHARGER-K16-RIGHT",
+      "name": "Turbocompresseur K16 droit complet",
+      "generation": "993",
+      "confidence": "declared",
+      "source_id": "SRC-FVD-993-K16-OEM-DIMENSIONS",
+      "notes": "Masse et encombrement produit annonces par FVD pour la reference Porsche 993 123 014 52 / FVD 993123014DX : 5,6 kg et 280 x 190 x 210 mm. L'ordre des dimensions est longueur x largeur x hauteur tel qu'affiche par le vendeur ; il s'agit d'un encombrement produit, pas d'une mesure du turbo nu ni d'une definition de montage.",
+      "mass_kg": 5.6,
+      "dimensions_mm": [
+        280.0,
+        190.0,
+        210.0
+      ],
+      "material": "a_determiner",
+      "oem_reference": "993 123 014 52",
+      "quantity_per_car": 1
+    },
+    {
       "entry_id": "993-FRONT-LID-ALU-MOTORSPORT",
       "name": "Capot avant aluminium Porsche Motorsport",
       "generation": "993",
