@@ -61,6 +61,14 @@
         "license": "commercial-catalogue-copyright-reference-only",
         "accessed_on": "2026-08-30",
         "notes": "References de sous-ensembles et A/R declare ; pas de plan metrologique."
+      },
+      {
+        "title": "Porsche Fanatics - releve PET des groupes turbo 993",
+        "url": "https://porschefanatics.com/oem/993/202-16/",
+        "source_type": "community",
+        "license": "site-owner-confirmed-reference-only",
+        "accessed_on": "2026-08-30",
+        "notes": "Le depot local du site expose les groupes PET 202-16, 107-20 et 107-45 : nomenclature des turbocompresseurs, conduites, commande, suralimentation et echangeur. Les lignes sont des transcriptions PET, sans cotes, tolerances ou CAO ; voir SRC-PORSCHEFANATICS-993-TURBO-PET."
       }
     ]
   },
@@ -107,6 +115,7 @@
       "Aucune carte compresseur/turbine, courbe de rendement, debit massique, vitesse maximale, jeu de pointe, jeu axial/radial, pression d'huile ou temperature d'entree turbine n'a ete recueillie.",
       "Les references de roue, carters, CHRA, actionneur et A/R sont des declarations de catalogue fournisseur ; elles ne definissent pas les surfaces aero ni les tolerances.",
       "Le manuel Porsche 993 local est une source de procedures et specifications de service ; il ne fournit pas ici une definition CAO complete du K16.",
+      "Le releve Porsche Fanatics ajoute une nomenclature PET des groupes 202-16, 107-20 et 107-45, mais aucune mesure dimensionnelle nouvelle ; les lignes listed restent a lire en contexte avant toute conclusion de fitment.",
       "Une roue de turbine, une roue de compresseur, un arbre, un palier ou un carter chaud sont des pieces chargees, thermiques et/ou tournantes : aucune impression, montage, essai moteur ou mise sur route n'est autorise par cette fiche.",
       "Le premier demonstrateur du jumeau doit cibler un conduit ou adaptateur non rotatif cote froid, avec prototype d'encombrement avant toute version metal."
     ]
