@@ -31,12 +31,40 @@ de ventilation, les supports `993 107 005 52` / `993 107 005 53`, les boitiers
 de commande et les joints. Les groupes `107-20` et `107-45` complètent le
 contexte d'air comprimé et de refroidissement de charge.
 
-## Ce que le site n'apporte pas
+## Mesures et masses déjà disponibles dans le projet
 
-Cette collecte ne produit aucune nouvelle cote de fabrication. Les pages
+Tu as raison : le projet possède déjà des cotes et des masses de pièces. Elles
+sont enregistrées dans le registre de références et les fiches de sources,
+avec un niveau de confiance explicite. Quelques exemples utiles au jumeau :
+
+| Pièce ou ensemble | Données disponibles | Nature de la donnée |
+| --- | --- | --- |
+| Berceau moteur Turbo `993 115 021 53` | `600 x 50 x 50 mm`, `1,96 kg` | Déclaration de fiche produit, déjà structurée dans `catalog/reference/993-declared-part-data.json` |
+| Bielle PAUTER 993/993 Turbo | longueur `127,00 mm`, axe `23,01 mm`, logement `58,01 mm`, masse `535 g` | Cotes et masse fabricant, pièce fortement chargée |
+| Soupape d'admission 993 Turbo | queue `8 mm`, tête `49 mm`, environ `120 g` | Déclaration de produit, à distinguer de l'encombrement commercial `50 x 110 x 50 mm` |
+| Soupape d'échappement 993 Turbo | `108,9 x 43,5 x 8 mm` | Déclaration de produit, sans tolérances ni plan |
+| Spoiler arrière Bi-Turbo 993 | `145 x 63 x 27 cm`, `6,7 kg` | Enveloppe et masse aftermarket |
+| 993 Turbo complète | environ `1 500 kg` | Masse à vide de variante, pas masse d'une pièce |
+
+Ces valeurs sont déjà dans `catalog/sources/` et, pour les masses et
+enveloppes retenues, dans `catalog/reference/`. Elles peuvent alimenter des
+bornes, des priors et des contrôles de cohérence du jumeau. Elles ne doivent
+pas être converties silencieusement en mesures métrologiques : la plupart sont
+des déclarations fournisseur ou des relevés communautaires, sans répétitions,
+datums et protocole complet.
+
+## Ce que les pages PET turbo n'apportent pas
+
+Cette collecte PET ne produit pas de nouvelle cote de fabrication pour le K16.
+Les pages
 signalent elles-mêmes que les lignes sont « transcribed, not read » : une
 reference, une description constructeur, une position et une page PET ne
 constituent ni une mesure, ni une tolerance, ni un plan de definition.
+
+En particulier, aucun poids public fiable du turbocompresseur K16 lui-même,
+aucune masse de CHRA et aucune géométrie cotée de roue ou de carter n'ont été
+trouvés dans les trois groupes PET. Les masses du berceau, des soupapes, de la
+bielle ou du spoiler ne peuvent pas être attribuées au K16.
 
 Il manque toujours, pour une reconstruction du K16 :
 
