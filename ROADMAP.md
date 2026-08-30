@@ -149,12 +149,17 @@ références** portent une masse documentée, mais ces quelques pièces représe
 **30,5 % de la masse à vide**. Le jumeau se remplit par la masse avant de se
 remplir par le nombre.
 
-### Position — non commencé
+### Position — amorcé par une enveloppe de référence
 
 Une masse sans position ne donne ni centre de gravité, ni répartition, ni
-inertie. La dimension suivante du jumeau est donc la **position des pièces**, que
-les catalogues ne donnent pas et qu'un relevé de géométrie de caisse pourrait
-amorcer côté ancrages.
+inertie. Une première cage 3D d'encombrement et de repères, basée sur sept
+dimensions du manuel Porsche, est disponible dans
+[`twin/993/`](twin/993/). Elle sert de datum visuel pour le profil USA, mais ne
+reconstruit pas la carrosserie et ne positionne pas encore les pièces.
+
+La suite est de remplacer cette cage par une géométrie de caisse sous licence ou
+par un relevé à l'échelle, puis de rattacher les ancrages et sous-ensembles à
+des mesures vérifiables.
 
 ## Phase 4 — Catalogue public
 

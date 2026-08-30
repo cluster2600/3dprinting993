@@ -61,6 +61,7 @@ catalog/parts/       fiches structurées des pièces
 catalog/sources/     registre des sources, droits et niveaux de preuve
 catalog/manual/      registre quantitatif dérivé du manuel 993, avec pages
 catalog/measurements/ mesures physiques et spécifications documentaires sourcées
+twin/                géométries et repères du jumeau numérique
 parts/               géométries et livrables par pièce
 schemas/             contrat de données du catalogue
 containers/          images de calcul reproductibles, GPU et CPU
@@ -80,6 +81,8 @@ mesure sont recensés dans `catalog/sources/`
 données publiques de Porsche Fanatics aux pages techniques du manuel. Les
 spécifications sont importées dans le registre de mesures avec leur statut
 documentaire, sans importer le PDF ni les présenter comme des relevés physiques.
+Une première enveloppe 3D paramétrique de référence est disponible dans
+[`twin/993/`](twin/993/) ; elle ne prétend pas reconstruire la carrosserie.
 Aucune pièce n’est encore déclarée imprimable ou validée. Voir
 [ROADMAP.md](ROADMAP.md) et [docs/PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md).
 
