@@ -74,7 +74,10 @@ tests/               tests du catalogue et de ses garde-fous
 La **Phase 0 — Fondation** est terminée. La **Phase 1 — Inventaire des
 sources** est engagée : catalogues officiels, manuels accessibles et sources de
 mesure sont recensés dans `catalog/sources/`
-(voir [docs/PHASE1_SOURCE_INVENTORY.md](docs/PHASE1_SOURCE_INVENTORY.md)).
+(voir [docs/PHASE1_SOURCE_INVENTORY.md](docs/PHASE1_SOURCE_INVENTORY.md)). La
+[cartographie du manuel 993](docs/993_MANUAL_DATA_MAP.md) relie désormais les
+données publiques de Porsche Fanatics aux pages techniques du manuel, sans
+importer le PDF ni créer de fausses mesures.
 Aucune pièce n’est encore déclarée imprimable ou validée. Voir
 [ROADMAP.md](ROADMAP.md) et [docs/PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md).
 

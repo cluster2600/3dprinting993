@@ -29,6 +29,17 @@ Environnement de calcul :
 - chaîne d’outils réorientée vers des commandes et API scriptables (ADR 0002) ;
 - procédure de déploiement sur machine GPU louée et règles d’hygiène des données.
 
+Phase 1, lot 7 — manuel et données Porsche Fanatics, 30 août 2026 :
+
+- pont de provenance vers l’index public Porsche Fanatics : 235 procédures,
+  195 couples de serrage et 111 données techniques ;
+- cartographie française des pages et valeurs du manuel, avec séparation des
+  variantes ROW/USA, Carrera/Carrera 4/Carrera 4S et Carrera RS ;
+- ajout d’une piste Printables pour la patte d’interrupteur de console 964/993,
+  sans copie du fichier et avec licence encore non vérifiée ;
+- aucune mesure projet créée : le registre reste vide faute de véhicule et de
+  pièce donneuse.
+
 Traçabilité des mesures :
 
 - schéma, validateur et registre des séances de mesure ;

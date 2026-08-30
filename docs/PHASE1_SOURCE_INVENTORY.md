@@ -28,6 +28,7 @@ Consulté le 28 août 2026. Chaque URL a été ouverte avant d’être inscrite 
 | `SRC-WIKIPEDIA-993` | Encombrement véhicule et variantes | libre | attribution requise | D |
 | `SRC-STUTTCARS-993-PARTS` | Diagrammes PET annoncés | payant | inconnue | non noté |
 | `SRC-STUTTCARS-993-TORQUE` | Couples de serrage moteur | payant | inconnue | non noté |
+| `SRC-PORSCHEFANATICS-993-MANUAL-DATA` | Index public et données dérivées du manuel : 235 procédures, 195 couples et 111 valeurs techniques | disponible | référence seulement | C |
 
 ### Mesures et données dimensionnelles
 
@@ -522,13 +523,14 @@ nommés continue de les refuser depuis n'importe quelle infrastructure.
       Turbo. Les trois candidats polymères de la phase 2 restent, eux, choisis sur
       critères d'ingénierie et non sur une rareté documentée.
 - [x] Évaluation croisée provenance, licence, précision, réutilisation — les
-  225 fiches indiquent les droits connus, le niveau de preuve et les limites
+  227 fiches indiquent les droits connus, le niveau de preuve et les limites
       d'usage; aucune donnée non vérifiée n'est promue en géométrie de catalogue.
 
 État : vingt candidats documentés, le seuil de sortie de phase est atteint en
-nombre; le registre contient maintenant 225 fiches de sources valides. L'archive
+nombre; le registre contient maintenant 227 fiches de sources valides. L'archive
 Renn 3D Parts ajoute neuf pistes de fichiers STL publics, mais leurs licences
 restent attachées à chaque fiche et leurs bboxes ne remplacent pas une mesure.
-Les nouveaux scans et sources allemandes augmentent la couverture des pistes,
+Les données du projet Porsche Fanatics et du manuel augmentent la couverture
+technique, tandis que les nouveaux scans et sources allemandes augmentent la couverture des pistes,
 mais ne transforment aucun candidat en pièce libérable. Les sources sans accès
 automatisé comptent comme candidats recensés, pas comme données exploitées.

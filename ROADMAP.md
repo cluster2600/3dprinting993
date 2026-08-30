@@ -26,7 +26,7 @@ Journal détaillé : [docs/PHASE1_SOURCE_INVENTORY.md](docs/PHASE1_SOURCE_INVENT
 - [x] Évaluer chaque source : provenance, licence, précision, réutilisation
 
 Critère de sortie : vingt candidats documentés, sans importer de contenu non
-autorisé. Avancement : 225 fiches de sources valides dans `catalog/sources/`;
+autorisé. Avancement : 227 fiches de sources valides dans `catalog/sources/`;
 l'acquisition de mesures directes reste à faire.
 
 ## Phase 2 — Pilotes polymères
@@ -48,6 +48,9 @@ Trois pièces non critiques sélectionnées, fiches créées au statut `concept`
 
 Plan d'exécution et dossier de passation :
 [docs/MEASUREMENT_CAMPAIGN.md](docs/MEASUREMENT_CAMPAIGN.md).
+
+Les spécifications de préparation issues du manuel et de Porsche Fanatics sont
+cartographiées dans [docs/993_MANUAL_DATA_MAP.md](docs/993_MANUAL_DATA_MAP.md).
 
 Critère de sortie : trois prototypes montés, photographiés et mesurés.
 **Conditionné à un contributeur disposant des pièces** : voir la contrainte
