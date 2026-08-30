@@ -10,6 +10,7 @@ validate:
 	python3 scripts/validate_sources.py
 	python3 scripts/validate_measurements.py
 	python3 scripts/validate_reference.py
+	python3 scripts/validate_manual_measurements.py
 
 test:
 	python3 -m unittest discover -s tests -v

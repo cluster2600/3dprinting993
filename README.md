@@ -59,6 +59,7 @@ Compléter ensuite la fiche, ajouter les fichiers CAO autorisés dans
 ```text
 catalog/parts/       fiches structurées des pièces
 catalog/sources/     registre des sources, droits et niveaux de preuve
+catalog/manual/      registre quantitatif dérivé du manuel 993, avec pages
 catalog/measurements/ séances de mesure, instruments et incertitudes
 parts/               géométries et livrables par pièce
 schemas/             contrat de données du catalogue
