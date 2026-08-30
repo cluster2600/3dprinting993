@@ -142,6 +142,26 @@ La masse d'un remplacement, d'un kit ou d'un noyau ne doit jamais etre
 additionnee comme masse OEM. Les references source et la qualification sont
 conservees dans le registre JSON.
 
+## Forums germanophones
+
+Les forums ont ete recherches separement des sources constructeur. Ils sont
+utiles pour trouver des configurations, des pannes recurrentes et des donnees
+a demander a un proprietaire, mais leurs messages ne sont pas des mesures
+metrologiques par defaut.
+
+| Forum | Information utile | Decision de modelisation |
+| --- | --- | --- |
+| [PFF, 408/430/450 ch](https://www.pff.de/thread/2651537-993-biturbo-408-430-450-ps-unterschiede/) | Retours indiquant K16 sur 408/430 et K24 sur 450/WLS II, avec modifications ECU/refroidissement | Recoupement de variante uniquement ; ne remplace pas la plaque du turbo ou le VIN |
+| [Carpassion, pression affichee](https://www.carpassion.com/forum/thema/26748-ladedruckanzeige/) | Le combiné serait plafonne a 0,8 bar ; des voitures modifiees sont rapportees a 1,3-1,4 bar ; durites et colliers peuvent poser probleme | Le plafond est traite comme une limite d'affichage ; les pressions modifiees sont exclues du cas stock |
+| [Motor-Talk, compilation 993 Turbo](https://www.motor-talk.de/forum/993-turbo-fragen-zum-kauf-t1226876.html) | Pistes sur WLS, K16/K24, limites supposees du refroidisseur et du debitmetre | Pistes d'achat/inspection, pas conditions aux limites |
+
+Le signal commun le plus utile est la maintenance du circuit : verifier le
+siege des durites, les colliers, les raccords et les fuites avant d'interpreter
+une pression faible. Les forums ne fournissent toutefois ni section interne,
+ni profil de raccord, ni carte K16, ni debit massique HFM reproductible. Les
+valeurs de pression et de puissance de vehicules prepares ne doivent pas etre
+injectees dans le jumeau stock.
+
 ## Conditions moteur disponibles
 
 | Parametre | Valeur | Nature |
@@ -287,5 +307,7 @@ ce banc.
 - `SRC-FVD-993-K16-OEM-DIMENSIONS`
 - `SRC-ELFERCLASSIC-993-TURBO-TECHNICAL-DATA`
 - `SRC-WS-AUTOTEILE-993-MAF-IDENTIFICATION`
+- `SRC-PFF-993-BITURBO-VARIANT-FORUM`
+- `SRC-CARPASSION-993-TURBO-BOOST-HOSE-FORUM`
+- `SRC-MOTOR-TALK-993-TURBO-FORUM-TECHNICAL-LEADS`
 - sources FVD, AKS DASIS et TA Technix des pieces adjacentes.
-
