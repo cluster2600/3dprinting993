@@ -64,7 +64,7 @@ catalog/measurements/ mesures physiques et spécifications documentaires sourcé
 twin/                géométries et repères du jumeau numérique
 parts/               géométries et livrables par pièce
 schemas/             contrat de données du catalogue
-containers/          images de calcul reproductibles, GPU et CPU
+containers/          images de calcul reproductibles, GPU, CPU et Physics ML
 templates/           modèles de fiche, mesure et demande de fabrication
 docs/                plan, outils, workflows et critères qualité
 scripts/             contrôles automatiques sans dépendance externe

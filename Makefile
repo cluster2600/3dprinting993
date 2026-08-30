@@ -1,7 +1,8 @@
-.PHONY: check validate test twin twin-validate container-recon container-cadsim container-smoke container-push
+.PHONY: check validate test twin twin-validate container-recon container-cadsim container-physicsml container-smoke container-smoke-physicsml container-smoke-all container-push
 
 REGISTRY ?= ghcr.io/cluster2600
 IMAGE_TAG ?= dev
+PHYSICSNEMO_EXTRAS ?= cu12,sym,mesh-extras,model-extras
 
 check: validate test
 
@@ -28,12 +29,22 @@ container-recon:
 container-cadsim:
 	docker build -f containers/cadsim.Dockerfile -t 3dprinting993-cadsim:$(IMAGE_TAG) .
 
+container-physicsml:
+	docker build --build-arg PHYSICSNEMO_EXTRAS=$(PHYSICSNEMO_EXTRAS) -f containers/physicsml.Dockerfile -t 3dprinting993-physicsml:$(IMAGE_TAG) .
+
 container-smoke:
 	docker run --rm 3dprinting993-recon:$(IMAGE_TAG) smoke-test.sh recon
 	docker run --rm 3dprinting993-cadsim:$(IMAGE_TAG) smoke-test.sh cadsim
 
+container-smoke-physicsml:
+	docker run --rm 3dprinting993-physicsml:$(IMAGE_TAG) smoke-test.sh physicsml
+
+container-smoke-all: container-smoke container-smoke-physicsml
+
 container-push:
 	docker tag 3dprinting993-recon:$(IMAGE_TAG) $(REGISTRY)/3dprinting993-recon:$(IMAGE_TAG)
 	docker tag 3dprinting993-cadsim:$(IMAGE_TAG) $(REGISTRY)/3dprinting993-cadsim:$(IMAGE_TAG)
+	docker tag 3dprinting993-physicsml:$(IMAGE_TAG) $(REGISTRY)/3dprinting993-physicsml:$(IMAGE_TAG)
 	docker push $(REGISTRY)/3dprinting993-recon:$(IMAGE_TAG)
 	docker push $(REGISTRY)/3dprinting993-cadsim:$(IMAGE_TAG)
+	docker push $(REGISTRY)/3dprinting993-physicsml:$(IMAGE_TAG)
