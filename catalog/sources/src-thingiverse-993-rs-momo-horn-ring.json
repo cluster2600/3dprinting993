@@ -2,29 +2,29 @@
   "schema_version": "1.0.0",
   "source_id": "SRC-THINGIVERSE-993-RS-MOMO-HORN-RING",
   "title": "Thingiverse - Bague de klaxon pour volant Momo de Porsche 993 RS",
-  "url": "https://www.thingiverse.com/thing:4427893",
-  "publisher": "Thingiverse; auteur non identifie dans la page indexee",
+  "url": "https://www.thingiverse.com/thing:4427893/files",
+  "publisher": "LimeyBoy on Thingiverse",
   "source_type": "community",
-  "content_types": ["cad", "mesh", "measurement", "technical_data"],
+  "content_types": ["mesh", "measurement", "photograph", "technical_data"],
   "coverage": {
     "generation": "993",
-    "variants": ["993_RS", "Momo_wheel"],
-    "parts": ["momo_horn_ring", "steering_wheel_horn_button"]
+    "variants": ["993_RS_Momo_steering_wheel"],
+    "parts": ["Momo_horn_retaining_ring"]
   },
   "access": {
-    "status": "not_checked",
-    "method": "not_accessed",
-    "accessed_on": null
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-08-29"
   },
   "rights": {
-    "license": "thingiverse-original-page-not-verified",
+    "license": "Thingiverse-license-not-visible-in-index",
     "redistribution": "unknown",
-    "attribution": "Thingiverse; author not identified"
+    "attribution": "LimeyBoy"
   },
   "quality": {
     "evidence_level": "D",
     "dimensional_accuracy": "declared",
     "verified_against": []
   },
-  "notes": "Un index secondaire associe ce fichier Thingiverse au volant Momo de 993 RS reference 993-0347-084-80-8 et declare un ajustement presse dans un trou de 52 mm, un diametre exterieur de 59 mm et une saillie de 3 mm. La page primaire et sa licence n'ont pas ete verifiees, et aucune mesure independante ni essai de fonctionnement du klaxon n'est fourni. Le volant et sa commande touchent a la securite de conduite : cette piste ne peut pas etre liberee comme piece de direction sans verification de l'auteur, du materiau, de l'assemblage et une revue d'ingenierie."
+  "notes": "STL attribué à LimeyBoy pour le volant Momo Porsche 993 RS déclaré PN 993-0347-084-80-8 : emmanchement dans un alésage de 52 mm, diamètre extérieur de 59 mm et dépassement de 3 mm. La licence exacte n'est pas lisible dans l'index public et doit être confirmée avant import ; aucune mesure indépendante ni aucun essai de fonctionnement du klaxon n'est fourni. Le volant et sa commande touchent à la sécurité de conduite : cette piste ne peut pas être libérée sans vérification du matériau, de l'assemblage, de la fonction avertisseur et revue d'ingénierie."
 }

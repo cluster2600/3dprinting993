@@ -1,19 +1,20 @@
 # Environnement de calcul
 
 Le travail lourd du projet — reconstruction photogrammétrique, maillage, calcul
-EF et CFD — ne tient pas sur un poste ordinaire. Il est décrit ici comme trois
+EF et CFD — ne tient pas sur un poste ordinaire. Il est décrit ici comme quatre
 images conteneurs reproductibles, exécutables localement ou sur une machine GPU
 louée à l’heure.
 
 Aucun conteneur n’est nécessaire pour contribuer au catalogue. `make check`
 reste une commande Python sans dépendance.
 
-## Trois images, trois besoins
+## Quatre images, quatre besoins
 
 | Image | Besoin | Contenu | Ordre de grandeur |
 |---|---|---|---|
 | `3dprinting993-recon` | CUDA | COLMAP, GLOMAP, Blender, Open3D, pymeshlab, OpenCV | photos → maillage à l’échelle |
 | `3dprinting993-cadsim` | cœurs et mémoire | build123d, CadQuery, Gmsh, CalculiX, OpenFOAM, PrusaSlicer | code → STEP → calcul → G-code |
+| `3dprinting993-mesh-cfd` | cœurs et mémoire | Blender, pymeshlab, trimesh, build123d, Gmsh, OpenFOAM | scan OBJ → segmentation → proxy STEP → domaine CFD |
 | `3dprinting993-physicsml` | CUDA + mémoire GPU | contenu de `cadsim`, JAX-FEM, PhysicsNeMo, DeepXDE | maillage → solveur différentiable → modèle physique |
 
 La séparation est volontaire. La reconstruction a besoin d’un GPU et d’une image
@@ -24,15 +25,21 @@ physique.
 
 Les choix logiciels sont justifiés dans
 [decisions/0002-scriptable-toolchain.md](decisions/0002-scriptable-toolchain.md) :
-tout outil retenu s’exécute sans interface graphique.
+tout outil retenu s'exécute sans interface graphique.
+
+Le LLM n'est volontairement pas ajouté à ces images : on lance l'image vLLM
+sur une instance GPU séparée, puis les images de reconstruction et de calcul au
+besoin. Le modèle retenu, le dimensionnement GPU et la frontière d'autorité du
+LLM sont décrits dans [AI_DIGITAL_TWIN_STACK.md](AI_DIGITAL_TWIN_STACK.md).
 
 ## Construire et vérifier
 
 ```bash
 make container-recon      # image GPU
 make container-cadsim     # image CPU
+make container-mesh-cfd   # image CPU dédiée aux gros scans et à la CFD
 make container-physicsml  # image GPU pour JAX-FEM / PhysicsNeMo
-make container-smoke-all  # vérifie les trois images
+make container-smoke-all  # exécute smoke-test.sh dans les quatre images
 ```
 
 `containers/smoke-test.sh` échoue si un outil annoncé ne répond pas. Une image

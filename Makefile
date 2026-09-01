@@ -1,4 +1,4 @@
-.PHONY: check validate test twin twin-validate turbo-cold-side turbo-cold-side-check turbo-variants turbo-variants-check turbo-dyno turbo-dyno-check container-recon container-cadsim container-physicsml container-smoke container-smoke-physicsml container-smoke-all container-push
+.PHONY: check validate test twin twin-validate turbo-cold-side turbo-cold-side-check turbo-variants turbo-variants-check turbo-dyno turbo-dyno-check container-recon container-cadsim container-mesh-cfd container-physicsml container-smoke container-smoke-physicsml container-smoke-all container-push container-push-mesh-cfd
 
 REGISTRY ?= ghcr.io/cluster2600
 IMAGE_TAG ?= dev
@@ -13,6 +13,9 @@ validate:
 	python3 scripts/validate_reference.py
 	python3 scripts/validate_manual_measurements.py
 	python3 scripts/validate_twin.py
+	python3 scripts/validate_specifications.py
+	python3 scripts/validate_twins.py
+	python3 scripts/validate_components.py
 
 test:
 	python3 -m unittest discover -s tests -v
@@ -47,12 +50,20 @@ container-recon:
 container-cadsim:
 	docker build -f containers/cadsim.Dockerfile -t 3dprinting993-cadsim:$(IMAGE_TAG) .
 
+container-mesh-cfd:
+	docker build -f containers/mesh-cfd.Dockerfile -t 3dprinting993-mesh-cfd:$(IMAGE_TAG) .
+
 container-physicsml:
 	docker build --build-arg PHYSICSNEMO_EXTRAS=$(PHYSICSNEMO_EXTRAS) -f containers/physicsml.Dockerfile -t 3dprinting993-physicsml:$(IMAGE_TAG) .
 
 container-smoke:
 	docker run --rm 3dprinting993-recon:$(IMAGE_TAG) smoke-test.sh recon
 	docker run --rm 3dprinting993-cadsim:$(IMAGE_TAG) smoke-test.sh cadsim
+	docker run --rm 3dprinting993-mesh-cfd:$(IMAGE_TAG) smoke-test.sh mesh-cfd
+
+container-push-mesh-cfd:
+	docker tag 3dprinting993-mesh-cfd:$(IMAGE_TAG) $(REGISTRY)/3dprinting993-mesh-cfd:$(IMAGE_TAG)
+	docker push $(REGISTRY)/3dprinting993-mesh-cfd:$(IMAGE_TAG)
 
 container-smoke-physicsml:
 	docker run --rm 3dprinting993-physicsml:$(IMAGE_TAG) smoke-test.sh physicsml

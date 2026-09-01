@@ -16,7 +16,7 @@
       "Carrera_1995_1998",
       "Carrera_4"
     ],
-    "parts": []
+    "parts": ["volume_4_running_gear", "volume_5_body", "body_constructional_dimensions", "body_repair_dimensions", "floor_assembly_dimensions"]
   },
   "access": {
     "status": "available",
@@ -33,5 +33,5 @@
     "dimensional_accuracy": "unknown",
     "verified_against": []
   },
-  "notes": "Manuel d'atelier d'usine, huit volumes, 1481 pages, couvrant 911 Carrera et Carrera 4 du 993. Un exemplaire numerise a ete consulte localement le 2026-08-28 ; sa provenance n'est pas documentee et le document n'est pas verse au depot. Seules des valeurs factuelles en sont reportees, avec leur emplacement. Releve utile : table « Tightening torques: Removing and installing the engine », groupe 10, qui donne berceau moteur vers support moteur M12 a 85 Nm, support de boite vers caisse M12 a 46 Nm, traverse arriere vers panneaux lateraux M12x1,5 a 120 Nm. Aucun volume Turbo : la reference 993 115 021 53 n'y est donc pas traitee. Conforme a l'attendu, le manuel donne procedures et couples, aucun plan cote de piece. Les copies PDF circulant sur Scribd, SlideShare et revendeurs de manuels restent ecartees du registre."
+  "notes": "Manuel d'atelier d'usine en huit volumes et 1481 pages, vendu sous la référence WKD 483 121 ; une référence WKD 483 150 apparaît également. Les index publics consultés le 2026-08-29 confirment que le volume IV couvre le train roulant et que le volume V contient les dimensions de construction, de réparation de caisse et du plancher. Un exemplaire numérisé de provenance non documentée a été consulté localement le 2026-08-28 sans être versé au dépôt ; seules des valeurs factuelles sont reportées avec leur emplacement. La table « Tightening torques: Removing and installing the engine », groupe 10, donne berceau moteur vers support moteur M12 à 85 Nm, support de boîte vers caisse M12 à 46 Nm et traverse arrière vers panneaux latéraux M12x1,5 à 120 Nm. Aucun volume Turbo : la référence 993 115 021 53 n'y est pas traitée. Les cotes du manuel ne constituent pas une géométrie CAO et les copies intégrales circulant en ligne restent écartées faute de droit de rediffusion démontrable."
 }

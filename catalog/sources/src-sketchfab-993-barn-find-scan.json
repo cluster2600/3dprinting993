@@ -3,13 +3,13 @@
   "source_id": "SRC-SKETCHFAB-993-BARN-FIND-SCAN",
   "title": "Sketchfab Store - Scan exterieur d'une Porsche Carrera 993",
   "url": "https://sketchfab.com/3d-models/porsche-carrera-993-barn-find-3d-scan-6d150c0982f9416e94bd4aaca1bf02ab",
-  "publisher": "21 Design sur Sketchfab",
+  "publisher": "21 Design on Sketchfab",
   "source_type": "marketplace",
-  "content_types": ["scan", "mesh"],
+  "content_types": ["scan", "mesh", "photograph"],
   "coverage": {
     "generation": "993",
-    "variants": ["Carrera"],
-    "parts": ["exterior_body"]
+    "variants": ["Carrera_barn_find_exact_variant_pending"],
+    "parts": ["exterior_body", "visible_restoration_context"]
   },
   "access": {
     "status": "purchase_required",
@@ -17,14 +17,14 @@
     "accessed_on": "2026-08-29"
   },
   "rights": {
-    "license": "sketchfab-store-royalty-free-terms-not-verified",
-    "redistribution": "unknown",
-    "attribution": "21 Design / Sketchfab"
+    "license": "Sketchfab-Store-Royalty-Free-terms-require-purchase-verification",
+    "redistribution": "prohibited",
+    "attribution": "21 Design"
   },
   "quality": {
     "evidence_level": "D",
     "dimensional_accuracy": "declared",
     "verified_against": []
   },
-  "notes": "La fiche Store decrit un scan grandeur reelle d'une Carrera 993, annonce a 2 mm pour un projet de restauration, avec 1,6 million de triangles et la possibilite de fichiers plus precis sur demande. Le fichier n'est pas accessible dans la page lue; le prix, la licence exacte, la redistribution et le protocole de controle restent a verifier. A ne pas telecharger, modifier ou redistribuer avant achat et clarification des droits; a comparer ensuite a des cotes connues."
+  "notes": "La fiche Store décrit un scan grandeur réelle d'une Carrera 993, annoncé à 2 mm pour un projet de restauration, avec 1,6 million de triangles et la possibilité de fichiers plus précis sur demande. Aucun rapport de calibration, repère, tolérance locale ou fichier échantillon n'est public. Le fichier et les conditions exactes ne sont pas accessibles dans la page lue : prix, licence, variante et protocole de contrôle restent à vérifier après achat. Candidat pour une enveloppe de carrosserie F1/F2 seulement après ces contrôles ; ne pas télécharger, modifier ou redistribuer dans le dépôt avant clarification des droits."
 }

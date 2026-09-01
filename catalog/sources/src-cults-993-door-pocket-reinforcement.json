@@ -3,13 +3,13 @@
   "source_id": "SRC-CULTS-993-DOOR-POCKET-REINFORCEMENT",
   "title": "Cults3D - Renfort de vide-poches de porte Porsche 993",
   "url": "https://cults3d.com/en/3d-model/tool/porsche-911-993-door-pocket-reinforcement",
-  "publisher": "ITMonkey; Cults3D",
+  "publisher": "ITMonkey on Cults",
   "source_type": "marketplace",
-  "content_types": ["cad", "mesh", "measurement", "photograph", "technical_data"],
+  "content_types": ["mesh", "measurement", "photograph", "technical_data"],
   "coverage": {
     "generation": "993",
-    "variants": ["993", "non_hifi"],
-    "parts": ["door_pocket_reinforcement"]
+    "variants": ["993_non_HiFi_door_pocket"],
+    "parts": ["left_door_pocket_reinforcement", "right_door_pocket_reinforcement"]
   },
   "access": {
     "status": "access_blocked",
@@ -18,13 +18,13 @@
   },
   "rights": {
     "license": "platform-license-field-unverified",
-    "redistribution": "unknown",
-    "attribution": "ITMonkey; Cults3D"
+    "redistribution": "prohibited",
+    "attribution": "ITMonkey"
   },
   "quality": {
     "evidence_level": "D",
-    "dimensional_accuracy": "unknown",
+    "dimensional_accuracy": "declared",
     "verified_against": []
   },
-  "notes": "La fiche indexee annonce deux STL, gauche et droite, pour renforcer la poche de porte d'une Porsche 993 non-Hifi. Les bboxes affichees sont respectivement 75,184 x 12,7 x 73,660 mm. La description recommande un collage ou un assemblage avec poncage d'ajustement; elle ne fournit ni datum OEM, ni tolerance, ni mesure independante. La page detaillee a renvoye 403 lors de l'acces : prix, fichier, historique et champ de licence doivent etre confirmes directement aupres de l'auteur ou de Cults avant achat, telechargement, redistribution ou comparaison metrologique. Piste de reparation interieure, pas une preuve de cote de la porte OEM."
+  "notes": "La fiche indexée annonce deux STL, gauche et droite, aux enveloppes respectives de 75,184 x 12,7 x 73,660 mm, pour renforcer la poche de porte non-HiFi fissurée. Elle propose FDM ou SLA et recommande une résine assouplie ainsi qu'un ajustement par ponçage, mais ne donne ni datum OEM, ni tolérance, ni mesure indépendante. La page détaillée a renvoyé 403 lors du contrôle du 2026-08-30 : prix, historique et champ de licence doivent être confirmés directement auprès de l'auteur ou de Cults avant achat ou comparaison métrologique. Ne pas redistribuer les fichiers ; cette piste de réparation intérieure n'est pas une preuve de cote de la porte OEM."
 }

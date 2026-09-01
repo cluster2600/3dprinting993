@@ -106,8 +106,12 @@ dérive d'images appartenant à un tiers. En revanche, l'archive
 déclarées par fiche (CC-BY, CC-BY-SA, CC-BY-NC, CC-BY-NC-SA ou domaine public).
 Ces meshes de pièces ne sont ni un scan de véhicule ni une preuve de précision
 d'interface; la licence primaire et les unités doivent être confirmées avant
-redistribution. Les deux scans de carrosserie commerciaux restent donc des
-pistes d'achat et de comparaison, pas des substituts libres.
+redistribution. La
+[recherche germanophone complémentaire](research/phase-1-recherche-allemande.md)
+a recensé d'autres assets communautaires à licence déclarée, à confirmer sur
+leurs publications originales. Aucun de ces assets n'est dimensionnellement
+qualifié. Les deux scans de carrosserie commerciaux restent donc des pistes
+d'achat et de comparaison, pas des substituts libres.
 
 ### Ce qui existe, mais hors de portée
 
@@ -523,14 +527,18 @@ nommés continue de les refuser depuis n'importe quelle infrastructure.
       Turbo. Les trois candidats polymères de la phase 2 restent, eux, choisis sur
       critères d'ingénierie et non sur une rareté documentée.
 - [x] Évaluation croisée provenance, licence, précision, réutilisation — les
-  227 fiches indiquent les droits connus, le niveau de preuve et les limites
+      294 fiches indiquent les droits connus, le niveau de preuve et les limites
       d'usage; aucune donnée non vérifiée n'est promue en géométrie de catalogue.
 
 État : vingt candidats documentés, le seuil de sortie de phase est atteint en
-nombre; le registre contient maintenant 227 fiches de sources valides. L'archive
+nombre; le registre contient maintenant 294 fiches de sources valides. L'archive
 Renn 3D Parts ajoute neuf pistes de fichiers STL publics, mais leurs licences
 restent attachées à chaque fiche et leurs bboxes ne remplacent pas une mesure.
 Les données du projet Porsche Fanatics et du manuel augmentent la couverture
-technique, tandis que les nouveaux scans et sources allemandes augmentent la couverture des pistes,
+technique, tandis que les nouveaux scans et sources allemandes augmentent la
+couverture des pistes,
 mais ne transforment aucun candidat en pièce libérable. Les sources sans accès
-automatisé comptent comme candidats recensés, pas comme données exploitées.
+automatisé comptent comme candidats recensés, pas comme données exploitées. Deux
+exemples, `SRC-TEILE-COM-993-ENGINE-CARRIER` et
+`SRC-RENNLINE-TUBULAR-ENGINE-CARRIER`, refusent l'accès automatisé : ils comptent
+comme candidats recensés, pas comme sources exploitées.
