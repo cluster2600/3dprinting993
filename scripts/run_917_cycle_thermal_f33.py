@@ -67,26 +67,71 @@ TOP_LEVEL_KEYS = {
     "schema_version",
     "phase",
     "status",
+    "program",
+    "upstream_manifest",
     "authority_boundary",
     "requested_power_target",
     "engine_variants",
-    "operating_points",
-    "fluid_domains",
-    "component_groups",
+    "variant_registry",
+    "cooling_architecture_registry",
+    "operating_point_registry",
+    "domain_registry",
+    "component_registry",
     "port_registry",
-    "network_edges",
-    "thermal_couplings",
-    "sealing_interfaces",
-    "pump_models",
-    "heat_exchanger_models",
+    "network_edge_defaults",
+    "network_edge_registry",
+    "thermal_coupling_registry",
+    "joint_and_seal_registry",
+    "pump_and_fan_registry",
+    "heat_exchanger_registry",
     "sensor_registry",
-    "safety_interlocks",
-    "load_cases",
+    "safety_interlock_registry",
+    "load_case_registry",
     "f13_case_crosswalk",
     "unknown_registry",
     "validation_policy",
-    "semantic_topology",
+    "topology_acceptance",
     "release_gates",
+    "prohibited_claims",
+}
+AUTHORITY_KEYS = {
+    "f33_authority",
+    "semantic_topology_closure_may_be_claimed",
+    "semantic_topology_closure_definition",
+    "semantic_topology_closure_is_physical_closure",
+    "legacy_variant_identity_equivalence",
+    "legacy_mechanical_injection_transferred",
+    "f32_efi_intent_retained_as_unreleased_design_hypothesis",
+    "f29_head_contains_released_coolant_jackets",
+    "f32_algebraic_screening_is_solver_result",
+    "allowed_claims",
+    "all_physical_geometry_known",
+    "all_dimensions_known",
+    "all_pressure_temperature_boundaries_known",
+    "all_seals_defined",
+    "all_material_properties_known",
+    "all_component_maps_known",
+    "all_sensor_chains_calibrated",
+    "solver_ready",
+    "physicsnemo_dataset_authorized",
+    "omniverse_simready_authorized",
+    "test_bench_start_authorized",
+    "manufacturing_authorized",
+}
+UPSTREAM_KEYS = {
+    "id",
+    "path",
+    "sha256",
+    "reuse_scope",
+    "geometry_or_dimension_transfer_authorized",
+    "manufacturing_authority",
+    "boundary_condition_transfer_authorized",
+    "result_transfer_authorized",
+    "legacy_variant_identity_equivalence",
+    "coolant_jacket_geometry_transfer_authorized",
+    "load_or_result_transfer_authorized",
+    "screening_values_are_physical_evidence",
+    "engine_cycle_solver_executed",
 }
 VARIANT_KEYS = {
     "id",
@@ -102,6 +147,17 @@ VARIANT_KEYS = {
     "solver_ready",
     "geometry_released",
     "engine_operation_authorized",
+}
+TURBO_DATA_KEYS = {
+    "candidate_model",
+    "candidate_role",
+    "compressor_map_evidence",
+    "turbine_map_evidence",
+    "compressor_map_digitized",
+    "turbine_map_digitized",
+    "map_interpolation_executed",
+    "shaft_balance_forward_closed",
+    "turbo_match_validated",
 }
 COMMON_FORWARD_KEYS = {
     "bore_mm",
@@ -536,16 +592,26 @@ def validate_contract(contract: Any, project_root: Path = ROOT) -> list[str]:
                 turbo_data = variant.get("turbo_data")
                 if not isinstance(turbo_data, dict):
                     errors.append(f"{label}.turbo_data must be an object")
-                elif any(
-                    turbo_data.get(key) is not False
-                    for key in (
-                        "compressor_map_digitized",
-                        "turbine_map_digitized",
-                        "map_interpolation_executed",
-                        "turbo_match_validated",
+                else:
+                    errors.extend(
+                        _unexpected_keys(turbo_data, TURBO_DATA_KEYS, f"{label}.turbo_data")
                     )
-                ):
-                    errors.append(f"{label}.turbo_data validation flags must be false")
+                    if set(turbo_data) != TURBO_DATA_KEYS:
+                        errors.append(f"{label}.turbo_data must contain exact keys")
+                    if any(
+                        turbo_data.get(key) is not False
+                        for key in (
+                            "compressor_map_digitized",
+                            "turbine_map_digitized",
+                            "map_interpolation_executed",
+                            "shaft_balance_forward_closed",
+                            "turbo_match_validated",
+                        )
+                    ):
+                        errors.append(f"{label}.turbo_data validation flags must be false")
+                    for key in ("compressor_map_evidence", "turbine_map_evidence"):
+                        if turbo_data.get(key) is not None:
+                            errors.append(f"{label}.turbo_data.{key} must remain null")
             errors.extend(
                 _validate_forward_input(
                     variant.get("forward_solver_input"), expected_count, f"{label}.forward_solver_input"
@@ -558,34 +624,73 @@ def validate_contract(contract: Any, project_root: Path = ROOT) -> list[str]:
     elif any(value is not False for value in gates.values()):
         errors.append("all F33 physical release gates must remain false")
 
-    semantic = contract.get("semantic_topology")
+    semantic = contract.get("topology_acceptance")
     if not isinstance(semantic, dict):
-        errors.append("semantic_topology must be an object")
+        errors.append("topology_acceptance must be an object")
     else:
-        if semantic.get("semantic_topology_closed") is not True:
-            errors.append("semantic topology must be explicitly closed")
+        if semantic.get("engine_variant_count") != 2:
+            errors.append("topology_acceptance.engine_variant_count must be 2")
+        if set(semantic.get("engine_variant_ids", [])) != set(EXPECTED_VARIANTS):
+            errors.append("topology_acceptance.engine_variant_ids mismatch")
+        if semantic.get("cooling_architecture_separate_from_engine_variant_identity") is not True:
+            errors.append("cooling architecture must remain separate from variant identity")
+        for branch_name in ("na", "turbo"):
+            branch = semantic.get(branch_name)
+            if not isinstance(branch, dict):
+                errors.append(f"topology_acceptance.{branch_name} must be an object")
+                continue
+            if branch.get("semantic_topology_closed") is not True:
+                errors.append(f"topology_acceptance.{branch_name} must be semantically closed")
+            for key in (
+                "physical_bom_complete",
+                "geometry_complete",
+                "boundary_conditions_complete",
+                "solver_ready",
+            ):
+                if branch.get(key) is not False:
+                    errors.append(f"topology_acceptance.{branch_name}.{key} must remain false")
         for key in (
-            "physical_bom_complete",
-            "solver_ready",
-            "cooling_validated",
-            "target_power_proven",
-            "engine_start_authorized",
-            "vehicle_installation_authorized",
+            "all_pressure_boundaries_released",
+            "all_seal_definitions_released",
+            "all_sensor_chains_calibrated",
+            "porsche_993_packaging_validated",
+            "physical_correlation_complete",
         ):
             if semantic.get(key) is not False:
-                errors.append(f"semantic_topology.{key} must remain false")
+                errors.append(f"topology_acceptance.{key} must remain false")
 
     authority = contract.get("authority_boundary")
-    parents = authority.get("parents") if isinstance(authority, dict) else None
+    errors.extend(_unexpected_keys(authority, AUTHORITY_KEYS, "authority_boundary"))
+    if isinstance(authority, dict):
+        if set(authority) != AUTHORITY_KEYS:
+            errors.append("authority_boundary must contain exact keys")
+        if authority.get("semantic_topology_closure_may_be_claimed") is not True:
+            errors.append("semantic topology closure claim must be explicit")
+        if authority.get("semantic_topology_closure_is_physical_closure") is not False:
+            errors.append("semantic topology must not claim physical closure")
+        for key in AUTHORITY_KEYS - {
+            "f33_authority",
+            "semantic_topology_closure_may_be_claimed",
+            "semantic_topology_closure_definition",
+            "allowed_claims",
+            "f32_efi_intent_retained_as_unreleased_design_hypothesis",
+        }:
+            if authority.get(key) is not False:
+                errors.append(f"authority_boundary.{key} must remain false")
+        if authority.get("f32_efi_intent_retained_as_unreleased_design_hypothesis") is not True:
+            errors.append("F32 EFI intent hypothesis flag must remain true")
+
+    parents = contract.get("upstream_manifest")
     if not isinstance(parents, list) or not parents:
-        errors.append("authority_boundary.parents must be a non-empty array")
+        errors.append("upstream_manifest must be a non-empty array")
     else:
         seen_paths: set[str] = set()
         for index, parent in enumerate(parents):
-            label = f"authority_boundary.parents[{index}]"
+            label = f"upstream_manifest[{index}]"
             if not isinstance(parent, dict):
                 errors.append(f"{label} must be an object")
                 continue
+            errors.extend(_unexpected_keys(parent, UPSTREAM_KEYS, label))
             path_value = parent.get("path")
             digest_value = parent.get("sha256")
             if not isinstance(path_value, str) or not path_value:
@@ -981,6 +1086,20 @@ def build_report(
     target_delta_hp = predicted_hp - float(target["value"])
     image_publication_path = project_root / IMAGE_PUBLICATION.relative_to(ROOT)
     image_publication = _read_json(image_publication_path)
+    topology = contract["topology_acceptance"]
+    normalized_topology = {
+        "source": "topology_acceptance",
+        "semantic_topology_closed": bool(
+            topology["na"]["semantic_topology_closed"]
+            and topology["turbo"]["semantic_topology_closed"]
+        ),
+        "physical_bom_complete": False,
+        "solver_ready": False,
+        "cooling_validated": False,
+        "target_power_proven": False,
+        "engine_start_authorized": False,
+        "vehicle_installation_authorized": False,
+    }
     report = {
         "schema_version": "1.0.0",
         "phase": "F33",
@@ -1012,7 +1131,7 @@ def build_report(
             <= 0.01,
             "target_power_proven": False,
         },
-        "semantic_topology": copy.deepcopy(contract["semantic_topology"]),
+        "semantic_topology": normalized_topology,
         "model_scope": {
             "maximum_model_dimension": "0D",
             "cantera_role": "zero_dimensional_thermochemistry_only_not_engine_cycle_proof",
