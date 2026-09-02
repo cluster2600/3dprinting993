@@ -3,11 +3,12 @@
 ## Résultat et statut
 
 F33 définit le prochain modèle physique du flat-12 clean-sheet 2026 décrit par
-[F32](917_CLEAN_SHEET_2026_F32.md). Il ne contient encore ni exécution Cantera,
-ni réseau OpenWAM, ni calcul CFD/CHT, ni entraînement PhysicsNeMo, ni résultat
-de banc. Il fixe les équations, les interfaces entre solveurs, les domaines de
-DOE et les critères qui empêcheront un calcul inverse d'être présenté comme
-une prédiction.
+[F32](917_CLEAN_SHEET_2026_F32.md). Il contient désormais un écran forward 0D
+Cantera à quatre états, exécuté séparément pour les variantes atmosphérique et
+biturbo. Il ne contient encore ni cylindre ouvert résolu au vilebrequin, ni
+réseau OpenWAM, ni calcul CFD/CHT, ni entraînement PhysicsNeMo, ni résultat de
+banc. Il fixe aussi les interfaces entre solveurs, les domaines de DOE et les
+critères qui empêchent ce calcul non corrélé d'être présenté comme une preuve.
 
 La cible de programme reste une **exigence utilisateur** :
 
@@ -34,6 +35,49 @@ La variante de travail est le moteur hybride retenu comme candidat par F32 :
 Le montage dans une 993 demeure une étude ultérieure. La 993 de série est un
 véhicule air/huile ; les boucles liquides F33 seraient une conversion nouvelle,
 pas un système Porsche d'origine.
+
+### Écran forward reproductible
+
+L'exécution F33 utilise l'image publique immuable
+`ghcr.io/cluster2600/3dprinting993-engine-cycle-f33@sha256:287bd6ea04ff97205cbea9f63b2cc5a7c63ff754b27a183eb482e7896d1e9251`,
+sans réseau, en lecture seule et sous l'identité non-root `9133:9133`.
+Le contrat est
+[`clean-sheet-cycle-thermal-f33.json`](../twins/reference-917-engine/clean-sheet-cycle-thermal-f33.json)
+et le résultat suivi est
+[`cycle-thermal-report.json`](../twins/reference-917-engine/evidence/f33/cycle-thermal-report.json).
+
+| Sortie forward 0D non corrélée à 9 000 tr/min | Atmosphérique | Biturbo |
+| --- | ---: | ---: |
+| Puissance frein | 620,410 mechanical hp | 1 601,196 mechanical hp |
+| Couple | 490,876 N·m | 1 266,886 N·m |
+| BMEP | 11,478 bar | 29,622 bar |
+| Rendement thermique frein | 33,625 % | 25,012 % |
+| BSFC | 248,981 g/kWh | 334,727 g/kWh |
+| Charge boucle HT culasses | 192,621 kW | 668,333 kW |
+| Débit HT hypothétique | 3,567 kg/s | 12,377 kg/s |
+| Charge refroidisseur de suralimentation | sans objet | 158,476 kW |
+| Débit LT hypothétique | sans objet | 3,668 kg/s |
+| Charge huile hypothétique | 127,587 kW | 285,793 kW |
+| Débit huile hypothétique | 2,454 kg/s | 5,496 kg/s |
+
+Le biturbo tombe à `+1,196 mechanical_hp`, soit `+0,0747 %`, de la cible.
+Ce rapprochement n'est pas une preuve : la pression de collecteur reste un seed
+de dimensionnement inverse, la combustion est un équilibre à volume constant,
+les pertes sont des hypothèses et aucune carte turbo n'est interpolée. Un test
+adversarial remplace la cible par 1 400 hp et confirme que les deux sorties
+forward ne changent pas ; la cible n'entre donc pas dans `solve_forward`.
+
+L'écran turbo calcule `3,2156` de rapport de pression, `80,680 lb/min` corrigés
+par turbo et `191,573 kW` de puissance compresseur totale. Les `23,43 %` de
+wastegate sont une inversion algébrique de capacité, pas une fermeture d'arbre
+ni un matching de carte. Les seize gates physiques et de fabrication restent
+à `false`.
+
+```bash
+make 917-cycle-thermal-f33
+make 917-cycle-thermal-f33-check
+make 917-cycle-thermal-f33-test
+```
 
 ## Quatre classes de puissance qui ne doivent jamais être mélangées
 
@@ -110,7 +154,13 @@ thermochimiques, la cinétique, les bilans ouverts et le réseau de réacteurs. 
 illustre piston, soupapes et injection ; il est explicitement simplifié et ne
 constitue pas une calibration essence du flat-12.
 
-Le premier exécutable devra contenir :
+L'exécutable de référence F33 résout pour l'instant compression isentropique,
+équilibre `UV`, détente isentropique, rétention de travail indiqué, FMEP,
+pompage et auxiliaires. Il utilise le mécanisme `nDodecane_IG` fourni par
+Cantera 3.2.0. C'est une garde de calcul et un point de départ DOE, pas encore
+le modèle moteur ouvert décrit ci-dessous.
+
+Le prochain exécutable devra contenir :
 
 - un cylindre 0D répliqué douze fois, avec ordre d'allumage versionné ;
 - volumes bielle-manivelle, soupapes, injecteur, paroi mobile et plénums ;
@@ -704,9 +754,12 @@ Le banc doit progresser par gates :
 
 ## Frontière de preuve F33
 
-F33 documente une architecture de calcul et des hypothèses de DOE. À ce stade :
+F33 documente une architecture de calcul, des hypothèses de DOE et un écran
+forward 0D non corrélé. À ce stade :
 
-- le point `1600 mechanical_hp` est demandé, non simulé et non mesuré ;
+- le point `1600 mechanical_hp` reste une exigence non mesurée et non prouvée ;
+- l'écran Cantera produit `1601,196 mechanical_hp`, mais sans cycle ouvert,
+  convergence cyclique, calibration combustion/frottement ou corrélation ;
 - les débits F32 sont inverses et hypothétiques ;
 - le G42-1325 est un candidat, pas un turbo sélectionné ;
 - aucune carte brute n'est intégrée au solveur ;
