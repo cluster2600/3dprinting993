@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - codex/917-f40-unsteady-convergence
+      - codex/917-f40-vast-image-publish
     paths:
       - .github/workflows/917-engine-wave-f40-vast-image.yml
       - containers/917-engine-wave-f40-vast/**
