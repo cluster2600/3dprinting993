@@ -8,6 +8,16 @@ name: Build engine-cycle F33 image
 # - tests/test_engine_cycle_f33_image.py
 # Le workflow ne recoit aucun scan, modele moteur, dataset, poids IA ou secret.
 on:
+  push:
+    branches:
+      - main
+      - codex/917-f33-cycle-thermal
+    paths:
+      - containers/engine-cycle-f33.Dockerfile
+      - containers/engine-cycle-f33.Dockerfile.dockerignore
+      - containers/engine-cycle-f33.requirements.txt
+      - scripts/smoke_engine_cycle_f33.py
+      - tests/test_engine_cycle_f33_image.py
   workflow_dispatch:
 
 permissions:
