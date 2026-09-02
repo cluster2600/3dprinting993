@@ -229,7 +229,7 @@ engine-components:
 		--pids-limit 64 --cap-drop ALL --security-opt no-new-privileges \
 		--mount type=bind,src="$(CURDIR)",dst=/workspace,readonly \
 		-w /workspace $(F33_ENGINE_CYCLE_IMAGE) \
-		python -m unittest tests.test_917_cycle_thermal_f33 -v
+		python tests/test_917_cycle_thermal_f33.py -v
 
 valve-variants:
 	docker run --rm --platform linux/amd64 --entrypoint /opt/venv/bin/python -v "$(CURDIR):/workspace" -w /workspace $(VALVE_IMAGE) twins/reference-935-cylinder-head/source/build_valve_variants.py work/valve-variants-f1
