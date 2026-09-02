@@ -965,7 +965,6 @@ def build_report(
             {
                 "variant_id": variant["id"],
                 "configuration": variant["configuration"],
-                "turbo_match_validated": False,
                 "forward_prediction": forward_prediction,
             }
         )
