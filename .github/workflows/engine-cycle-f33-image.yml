@@ -13,6 +13,7 @@ on:
       - main
       - codex/917-f33-cycle-thermal
     paths:
+      - .github/workflows/engine-cycle-f33-image.yml
       - containers/engine-cycle-f33.Dockerfile
       - containers/engine-cycle-f33.Dockerfile.dockerignore
       - containers/engine-cycle-f33.requirements.txt
