@@ -2,15 +2,24 @@
 
 ## Résultat et frontière de preuve
 
-F34 transforme les domaines de travail de
-[F33](917_CYCLE_THERMAL_F33.md) en un **contrat de planification** séparé pour
-le flat-12 atmosphérique (`NA`) et le flat-12 biturbo (`TT`). Il réserve
-exactement **2 542 identités de cas**. Aucun cas n'a été exécuté, convergé,
-attesté ou étiqueté ; aucun modèle n'a été entraîné.
+F34 applique la décision 2026 suivante : le cœur du flat-12 conserve un
+refroidissement **air forcé + huile**, sans chemise, jacket ou galerie d'eau
+dans le carter, les cylindres ou les culasses. La version turbo peut employer
+un liquide auxiliaire pour les échangeurs de suralimentation et, si le matériel
+retenu l'exige, pour les CHRA ; ces circuits restent isolés du cœur moteur.
+
+Le contrat transforme ensuite les centres numériques hérités de
+[F33](917_CYCLE_THERMAL_F33.md) en seeds air/huile distincts pour le flat-12
+atmosphérique (`NA`) et le flat-12 biturbo (`TT`). Les résultats F33 à culasses
+liquides restent une étude antérieure non transférable. Le générateur
+matérialise exactement **2 570 entrées forward planifiées** dans le
+[manifeste suivi](../twins/reference-917-engine/evidence/f34/doe-case-manifest.json).
+Aucun cas n'a été exécuté, convergé, attesté ou étiqueté ; aucun modèle n'a été
+entraîné.
 
 | Objet | État F34 |
 | --- | --- |
-| Cas planifiés | 2 542 |
+| Cas planifiés | 2 570 |
 | Cas exécutés / convergés / attestés | 0 / 0 / 0 |
 | Dataset apte au ML | aucun |
 | Poids PhysicsNeMo | aucun |
@@ -24,12 +33,58 @@ future puissance frein pourra être un label uniquement parce qu'elle aura été
 calculée par un solveur forward accepté. F34 ne prétend donc ni atteindre ni
 approcher 1 600 ch.
 
-Le présent document est un manifeste déterministe **au niveau du plan** : il
-fixe variantes, blocs, nombres, identifiants et règles de génération. Les
-vecteurs numériques et résultats n'existent pas encore. Leur matérialisation
-devra refuser tout espace de facteurs sans unités, bornes, version et SHA-256.
+Cette exclusion directe n'est pas une indépendance complète : le point central
+TT F33, notamment sa pression de collecteur, descend du dimensionnement inverse
+établi autour de la cible. Le manifeste conserve explicitement
+`inverse_sizing_seed_ancestry_present: true` et
+`full_target_independence_proven: false`. Une future itération devra reconstruire
+l'espace depuis des frontières physiques indépendantes avant d'ouvrir ce gate.
 
-## Manifeste des 2 542 cas planifiés
+Le [contrat machine-readable](../twins/reference-917-engine/doe-surrogate-f34.json)
+fixe variantes, facteurs, unités, bornes, graines et règles de génération. Les
+vecteurs numériques existent désormais au niveau du plan ; les résultats,
+labels et décisions de convergence n'existent pas. Chaque ligne ne contient
+que son vecteur d'entrée, son hash et le statut `planned_not_executed`.
+
+## Architecture moderne verrouillée
+
+« Moderne » signifie ici une architecture contrôlable et testable, pas une
+marque d'ECU déjà sélectionnée :
+
+- injection électronique multipoint séquentielle, avec 12 voies au minimum et
+  24 voies étagées comme candidat pour la version haute puissance ;
+- double allumage électronique indépendant, 24 voies candidates, sans
+  distributeur mécanique ;
+- référence vilebrequin et phase de chaque arbre actionné, VVT et levée variable
+  comme candidats fail-closed ;
+- deux actionneurs de papillon au minimum, un par banc, chacun avec mesure
+  redondante ; wastegates électroniques ouvertes en état désénergisé et retour
+  à la pression de ressort sur défaut ;
+- mesure CHT et EGT par cylindre, lambda, cliquetis, pression différentielle
+  carburant, huile, air de suralimentation et vitesses turbos ;
+- boucles candidates lambda large bande et knock attribué au cylindre, sans
+  matériel, carte ni seuil encore sélectionné ;
+- journalisation synchronisée, communication CAN-FD, arrêt câblé indépendant
+  de l'ECU et interlock de survitesse turbo non encore validé.
+
+La page officielle du [RUF Tribute](https://www.ruf-automobile.de/en/modelle/ruf-tribute/)
+établit un précédent pertinent : flat-six 3,6 l biturbo refroidi par air,
+quatre arbres à cames, calage et levée variables, 550 hp. Elle ne documente
+ni son injection, ni son ECU, ni son allumage et ne prouve évidemment pas la
+faisabilité thermique de notre cible. La fiche officielle
+[Bosch Motorsport MS 7.8](https://www.bosch-motorsport.com/media/catalog_content/downloads_catalog/pdf_catalog/data_sheet_326570507_engine_control_unit_ms_7-8.pdf)
+sert seulement de référence de classe I/O : jusqu'à 12 cylindres en injection
+basse pression, 12 commandes d'allumage, deux papillons, VVT, turbo, CAN-FD et
+logging. Le double allumage 24 voies du projet dépasse cette configuration
+seule et exigera une architecture additionnelle validée.
+
+Injection directe, actionneurs VVT/VVL, injecteurs et ECU définitifs, pression
+carburant, énergie d'étincelle, triggers, pinout, faisceau, topologie CAN-FD et
+calibrations restent ouverts.
+Le solveur L0 ne modélise encore aucune réponse à l'avance, au phasage
+d'injection, au knock control ou aux lois DBW/boost.
+
+## Manifeste des 2 570 cas planifiés
 
 Les nombres séparés par une barre sont toujours ordonnés `NA / TT`. Les deux
 branches ont des frontières physiques et thermiques indépendantes ; `variant`
@@ -38,27 +93,30 @@ recopié silencieusement vers TT.
 
 | Bloc | NA | TT | Total | Rôle futur | État |
 | --- | ---: | ---: | ---: | --- | --- |
-| Ancre F33 | 1 | 1 | 2 | reproduire le seed forward de chaque branche | non exécuté |
-| Morris | 204 | 416 | 620 | screening des facteurs | non exécuté |
+| Ancre transformée | 1 | 1 | 2 | seed F33 dépouillé du liquide cœur et verrouillé air/huile | non exécuté |
+| Morris | 216 | 432 | 648 | screening des facteurs | non exécuté |
 | LHS centrée | 512 | 1 024 | 1 536 | couverture intérieure, sans jitter | non exécuté |
 | OOD réservé | 128 | 256 | 384 | test d'abstention hors enveloppe | non exécuté |
-| **Total** | **845** | **1 697** | **2 542** | — | **0 exécuté** |
+| **Total** | **857** | **1 713** | **2 570** | — | **0 exécuté** |
 
-Le bloc Morris fixe 16 facteurs et 12 trajectoires pour NA,
-`12 × (16 + 1) = 204`, et 25 facteurs et 16 trajectoires pour TT,
-`16 × (25 + 1) = 416`. La liste des facteurs doit encore être versionnée ; ces
-dimensions ne l'inventent pas.
+Le bloc Morris fixe 17 facteurs et 12 trajectoires pour NA,
+`12 × (17 + 1) = 216`, et 26 facteurs et 16 trajectoires pour TT,
+`16 × (26 + 1) = 432`. Les facteurs et leurs unités sont versionnés dans
+`axis_registry` : 17 facteurs communs, plus 9 facteurs turbo. Les axes
+`head_heat_to_oil_fraction` et `cooling_air_delta_t_k` remplacent le faux axe
+de liquide-culasse. Leurs plages sont
+des hypothèses numériques F34, pas des limites sûres ou mesurées.
 
 Les plages d'identifiants sont réservées comme suit :
 
 | Variante | Bloc | Identifiants |
 | --- | --- | --- |
 | NA | ancre | `F34-NA-ANCHOR-0001` |
-| NA | Morris | `F34-NA-MORRIS-0001` à `F34-NA-MORRIS-0204` |
+| NA | Morris | `F34-NA-MORRIS-0001` à `F34-NA-MORRIS-0216` |
 | NA | LHS | `F34-NA-LHS-0001` à `F34-NA-LHS-0512` |
 | NA | OOD | `F34-NA-OOD-0001` à `F34-NA-OOD-0128` |
 | TT | ancre | `F34-TT-ANCHOR-0001` |
-| TT | Morris | `F34-TT-MORRIS-0001` à `F34-TT-MORRIS-0416` |
+| TT | Morris | `F34-TT-MORRIS-0001` à `F34-TT-MORRIS-0432` |
 | TT | LHS | `F34-TT-LHS-0001` à `F34-TT-LHS-1024` |
 | TT | OOD | `F34-TT-OOD-0001` à `F34-TT-OOD-0256` |
 
@@ -68,33 +126,44 @@ dictionnaire, ni du parcours du système de fichiers, ni du nombre de workers.
 
 ### Règles déterministes
 
-1. L'ancre reprend exactement le vecteur forward F33 de sa branche, sans cible
-   de puissance.
-2. Morris suit l'ordre du futur `factor_space` et doit produire exactement
-   204 ou 416 lignes.
+1. L'ancre reprend les paramètres de cycle F33 de sa branche, retire les champs
+   liquide-culasse, ajoute le partage chaleur culasse vers huile/air et verrouille
+   la gestion électronique moderne, sans cible de puissance.
+2. Morris utilise six niveaux, des directions `+/-` équilibrées par axe et des
+   départs compatibles couvrant les deux bornes ; il doit produire exactement
+   216 ou 432 lignes.
 3. La LHS centrée évalue le centre de chaque strate, sans tirage continu ; ses
    permutations doivent produire 512 ou 1 024 vecteurs uniques.
-4. Les cas OOD dépassent au moins une borne d'entraînement tout en restant dans
-   une enveloppe de calcul sûre. Ils ne peuvent entrer dans aucun split
-   in-domain.
-5. Chaque bloc pseudo-aléatoire dérive sa graine de
-   `SHA-256("917-F34|manifest-v1|<variant>|<block>")`. La conversion des huit
-   premiers octets et le générateur doivent être épinglés par version.
+4. Les cas OOD dépassent au moins une borne d'entraînement de 5 %. Ce dépassement
+   est un challenge numérique, pas une enveloppe déclarée sûre. Ils ne peuvent
+   entrer dans aucun split in-domain.
+5. Chaque bloc possède une graine de base distincte. La graine effective est
+   dérivée par SHA-256 du namespace, de cette graine, de la variante, du bloc
+   et du suffixe d'axe ou de trajectoire ; les huit premiers octets sont lus en
+   entier non signé big-endian. Les permutations utilisent ensuite un compteur
+   SHA-256 et un Fisher–Yates versionnés, sans dépendre de `random` ni de la
+   version Python.
 6. Les valeurs doivent être finies, ordonnées selon `factor_space` et
    sérialisées avec clés triées. Un SHA-256 doit couvrir en-tête, espace de
    facteurs et lignes ordonnées.
 7. Une collision d'identifiant, un doublon non déclaré ou un nombre différent
-   de 2 542 invalide le manifeste.
+   de 2 570 invalide le manifeste.
 
-Aucun hash de manifeste n'est annoncé ici : les lignes n'ont pas encore été
-matérialisées.
+Le manifeste enregistre séparément le SHA-256 du contrat, le SHA-256 du fichier,
+le SHA-256 des entrées historiques F33, celui des seeds F34 air/huile et une
+racine du plan DOE. Un test remplace
+uniquement le scalaire `1600` par `1400` et confirme qu'il n'est pas lu
+directement par le générateur. Un second test doit montrer qu'une modification
+de l'entrée inverse dérivée change bien les cas ; la racine n'est donc jamais
+présentée comme indépendante de toute ascendance cible.
 
-## Contrat d'une future ligne
+## Contrat d'une ligne planifiée
 
-Une ligne contient au plan `case_id`, `manifest_version`, `variant`,
-`design_block`, `design_index`, `factor_space_ref`, `generator_ref`,
-`execution_status: not_executed`, le digest du solveur,
-`dataset_attested: false` et `training_eligible: false`.
+Une ligne contient `case_id`, `variant_id`, `configuration`, `design_block`,
+`design_index`, `design_block_id`, le vecteur ordonné `feature_values`, le hash
+de l'entrée forward reconstruite, `execution_status: planned_not_executed` et
+`training_eligible: false`. Les IDs et unités correspondants sont définis une
+seule fois dans le schéma du manifeste pour éviter de les répéter 2 570 fois.
 
 Avant exécution, `solver_result_ref`, `solver_result_sha256`, `convergence` et
 `labels` restent absents ou `null`. Des zéros ne remplacent jamais une valeur
@@ -108,26 +177,21 @@ débits, températures, flux et bilans. Ils ne deviennent éligibles qu'avec
 unité, solveur et frontières versionnés, convergence acceptée et hash
 d'artefact. Un cas divergent reste dans le ledger mais hors dataset ML.
 
-## Exécution CPU F33, sans Vast
+## Nouvelle image CPU requise, sans Vast
 
 F34 ne justifie ni une nouvelle image multi-logiciels, ni une location Vast.ai.
-La génération du plan et la première exécution 0D restent CPU et réutilisent
-l'image publique immuable déjà attestée par F33 :
+La génération du plan utilise uniquement la bibliothèque standard Python de
+l'hôte et ne lance aucun solveur. Ce runtime hôte est explicitement classé
+`unattested_host_python_stdlib_only` : il n'atteste ni isolement réseau, ni
+rootfs read-only, ni version Python.
 
-```text
-ghcr.io/cluster2600/3dprinting993-engine-cycle-f33@sha256:287bd6ea04ff97205cbea9f63b2cc5a7c63ff754b27a183eb482e7896d1e9251
-```
-
-Le mode demeure sans réseau, en lecture seule et sous l'identité non-root
-`9133:9133`. Le contrat source est
-[`clean-sheet-cycle-thermal-f33.json`](../twins/reference-917-engine/clean-sheet-cycle-thermal-f33.json).
-Le digest empêche qu'un changement de dépendance soit confondu avec un effet de
-facteur.
-
-Cette image reste un écran 0D non corrélé. Elle n'autorise ni OpenWAM, ni
-CFD/CHT, ni entraînement. Aucun job Vast ou GPU n'est autorisé par F34 ; un GPU
-ne devient pertinent qu'après attestation d'un dataset, condition actuellement
-fausse.
+L'image F33 ne doit pas être réutilisée : son solveur affecte encore la chaleur
+des culasses à une boucle liquide HT. F34 impose donc `immutable_ref: null`,
+`execution_authorized: false` et `future_solver_image_available: false` jusqu'à
+la construction, le test et la publication d'une image CPU minimale contenant
+le nouveau solveur air/huile. Cette étape précède toute exécution des 2 570 cas.
+Aucun job Vast ou GPU n'est autorisé ; un GPU ne devient pertinent qu'après
+attestation d'un dataset classique, condition actuellement fausse.
 
 ## Choix PhysicsNeMo observé live
 
@@ -178,8 +242,10 @@ Elles ne fixent ni notre schéma, ni les pertes, ni les hyperparamètres.
 
 ```mermaid
 flowchart LR
-    F33["F33<br/>screen 0D CPU"] --> PLAN["F34 plan<br/>2 542 cas<br/>0 exécuté"]
-    PLAN --> CLASSIC["Exécution classique<br/>Cantera 0D CPU"]
+    F33["F33 historique<br/>culasses liquides"] --> XFORM["Transformation F34<br/>cœur air + huile<br/>gestion moderne"]
+    XFORM --> PLAN["F34 plan<br/>2 570 cas<br/>0 exécuté"]
+    PLAN --> IMAGE["Nouvelle image CPU<br/>air/huile<br/>non construite"]
+    IMAGE --> CLASSIC["Exécution classique<br/>Cantera 0D CPU"]
     CLASSIC --> ONE_D["OpenWAM 1D futur"]
     ONE_D --> CFD["CFD classique"]
     CFD --> CHT["CHT classique"]
@@ -203,15 +269,29 @@ prédiction PhysicsNeMo, ni le nombre de cas planifiés n'autorise un claim.
 
 | Gate | Condition | État F34 |
 | --- | --- | --- |
-| `plan_count_exact` | 845 NA + 1 697 TT = 2 542 | défini, non matérialisé |
-| `factor_space_pinned` | facteurs, unités, bornes et SHA-256 | `false` |
-| `manifest_regeneration_identical` | mêmes lignes et même hash | `false` |
-| `target_absent_from_ml_contract` | cible absente des features/labels | exigé, à tester |
+| `plan_count_exact` | 857 NA + 1 713 TT = 2 570 | `true` technique |
+| `engine_core_air_oil_locked` | aucun liquide carter/cylindres/culasses | `true` architecture |
+| `modern_controls_contract_valid` | injection, allumage, DBW et sûreté exigés | `true` contractuel, `false` matériel |
+| `future_solver_image_available` | image air/huile immuable publiée et testée | `false` |
+| `factor_space_pinned` | facteurs, unités et bornes | `true` technique, sans autorité physique |
+| `manifest_regeneration_identical` | mêmes lignes et même hash | `true` technique |
+| `target_scalar_absent_from_ml_fields` | scalaire cible absent des features/labels | `true` par tests adversariaux |
+| `full_target_independence_proven` | aucun seed ou borne dérivé de la cible | `false` |
 | `classical_execution_complete` | ledger et artefacts classiques | `false` |
 | `dataset_attested` | provenance, convergence, splits et OOD | `false` |
 | `physicsnemo_training_authorized` | approbation distincte | `false` |
 | `vast_spend_authorized` | besoin et autorisation explicites | `false` |
 | `bench_claim_authorized` | mesure, protocole et incertitude | `false` |
 
-La prochaine mutation autorisée est la matérialisation puis la validation du
-manifeste. L'entraînement d'un surrogate reste interdit.
+```bash
+make 917-doe-f34
+make 917-doe-f34-check
+make 917-doe-f34-test
+```
+
+La prochaine mutation autorisée est la construction de l'image CPU minimale et
+du solveur thermique air/huile, puis seulement l'exécution contrôlée des cas 0D
+avec un ledger exhaustif des réussites et échecs. En parallèle, la gestion
+électronique doit recevoir un modèle crank-angle/combustion, un banc SIL/HIL et
+une caractérisation des injecteurs et bobines. L'entraînement d'un surrogate
+reste interdit.
