@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-AUTOMOBILIA-LADENBURG-935-HEAD-PHOTO",
+  "title": "Automobilia Ladenburg - Original Zylinderkopf Porsche 935",
+  "url": "https://www.automobilia-ladenburg.de/aAPI/catalogs/de/dc5ecd43cada9c9c4295b3da30cc2dc4/page/17?layout=print",
+  "publisher": "Automobilia Ladenburg - Marcel Seidel Auktionen",
+  "source_type": "marketplace",
+  "content_types": ["photograph"],
+  "coverage": {
+    "generation": "other_porsche",
+    "variants": ["935_air_cooled"],
+    "parts": ["cylinder_head"]
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-09-03"
+  },
+  "rights": {
+    "license": "publisher-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "Automobilia Ladenburg"
+  },
+  "quality": {
+    "evidence_level": "C",
+    "dimensional_accuracy": "visual_only",
+    "verified_against": ["SRC-RETRO-SPORT-935-CYLINDER-HEADS"]
+  },
+  "notes": "Annonce allemande NOS identifiant visuellement une culasse Porsche 935 par le numero moule 930.104.341.2R. Elle ajoute une vue independante de provenance allemande mais aucune cote; elle ne remplace ni le scan ni la reference de piece de course declaree 930 104 048 01."
+}

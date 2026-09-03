@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-PORSCHE-NEWSROOM-TURBO-MOTORSPORT-HISTORY",
+  "title": "Porsche Newsroom DEU - Die Anfaenge und die Turbo-Technologie im Motorsport",
+  "url": "https://newsroom.porsche.com/de/pressemappen/50-Jahre-Porsche-Turbo-36122/Die-Anf%C3%A4nge-und-die-Turbo-Technologie-im-Motorsport.html",
+  "publisher": "Dr. Ing. h.c. F. Porsche AG",
+  "source_type": "manufacturer",
+  "content_types": ["technical_data", "photograph"],
+  "coverage": {
+    "generation": "other_porsche",
+    "variants": ["917_30", "935_1976", "935_1977", "935_78_moby_dick", "936_1978"],
+    "parts": ["vehicle", "engine", "cylinder_head", "turbocharger"]
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-09-03"
+  },
+  "rights": {
+    "license": "porsche-ag-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "Porsche AG"
+  },
+  "quality": {
+    "evidence_level": "A",
+    "dimensional_accuracy": "unknown",
+    "verified_against": ["SRC-PORSCHE-NEWSROOM-935-78-MOBY-DICK"]
+  },
+  "notes": "La source allemande officielle publie 434 kW pour la 935 2,85 l de 1976, 463 kW pour le biturbo de 1977 et 621 kW pour la 935/78 3,2 l. Elle qualifie la 935/78 de premiere application 935 a culasses mult soupapes refroidies par eau. Elle ne donne ni cotes de culasse, ni CAO. Elle sert a separer les architectures historiques et a interdire de presenter le concept F40 refroidi par air comme une replique 935/78."
+}

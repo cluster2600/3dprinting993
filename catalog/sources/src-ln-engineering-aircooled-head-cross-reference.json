@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-LN-ENGINEERING-AIRCOOLED-HEAD-CROSS-REFERENCE",
+  "title": "LN Engineering - Aircooled Porsche 911 Cylinder Head Part Number Cross Reference",
+  "url": "https://docs.lnengineering.com/article/35-aircooled-porsche-911-cylinder-head-part-number-cross-reference",
+  "publisher": "LN Engineering LLC",
+  "source_type": "manufacturer",
+  "content_types": ["technical_data"],
+  "coverage": {
+    "generation": "other_porsche",
+    "variants": ["911_1965_1989", "930_turbo_1975_1987"],
+    "parts": ["cylinder_head", "valve", "intake_port", "exhaust_port"]
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-09-03"
+  },
+  "rights": {
+    "license": "publisher-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "LN Engineering LLC"
+  },
+  "quality": {
+    "evidence_level": "C",
+    "dimensional_accuracy": "declared",
+    "verified_against": ["SRC-PORSCHE-CLASSIC-911-EXCHANGE-HEAD-CATALOG"]
+  },
+  "notes": "La table secondaire associe le moulage 930.104.341.2R du Turbo 1975-77 a des soupapes 49/41,5 mm, des conduits 32/36 mm et une chambre de 90 cm3. Les photos de la culasse 935 datee 10-78 montrent ce numero de moulage, mais la piece de course declaree 930 104 048 01 possede des conduits modifies a 41/40 mm. Ces valeurs de serie sont donc uniquement un contexte et ne dimensionnent ni les soupapes 935 de course ni le concept 4V F40."
+}

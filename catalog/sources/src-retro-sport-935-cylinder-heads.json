@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-RETRO-SPORT-935-CYLINDER-HEADS",
+  "title": "Retro Sport - Porsche 935 Cylinder Heads with New TRW Valves",
+  "url": "https://retro-sport.com/products/porsche-race-cars/porsche-934-935/engine/porsche-935-cylinder-heads-with-new-trw-valves-set-of-6",
+  "publisher": "Retro-Sport LLC",
+  "source_type": "marketplace",
+  "content_types": ["technical_data", "photograph"],
+  "coverage": {
+    "generation": "other_porsche",
+    "variants": ["935_air_cooled_date_code_10_78"],
+    "parts": ["cylinder_head", "valve", "valve_guide"]
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-09-03"
+  },
+  "rights": {
+    "license": "publisher-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "Retro-Sport LLC"
+  },
+  "quality": {
+    "evidence_level": "B",
+    "dimensional_accuracy": "declared",
+    "verified_against": ["SRC-WOLFE-CLASSICS-935-BILLET-CYLINDER-HEAD-SCAN"]
+  },
+  "notes": "Annonce d'un jeu de six culasses 935 datees 10-78, reference declaree 930 104 048 01. Le vendeur indique une hauteur de culasse de 84,20 a 84,21 mm, un conduit d'admission de 41 mm, un conduit d'echappement de 40 mm, douze soupapes TRW remplies de sodium et des guides d'echappement rares refroidis par huile. La galerie publie 23 vues liees. Elles montrent notamment le moulage 930.104.341.2R, une seule interface d'admission, une seule interface d'echappement, deux soupapes, deux bougies et des ailettes droites par culasse. Elles servent uniquement a la morphologie et a la nomenclature; aucune cote n'est relevee depuis les pixels et aucun media n'est redistribue."
+}

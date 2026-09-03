@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-PORSCHE-CLASSIC-911-EXCHANGE-HEAD-CATALOG",
+  "title": "Porsche Austauschprogramm Kat 097 - Zylinderkoepfe 911 und 911 Turbo",
+  "url": "https://www.porsche.at/media/Kwc_Basic_DownloadTag_Component/4740-45397-124836-downloadTag/default/9a180e6f/1733997420/kat097-d-atk-12-katalog.pdf",
+  "publisher": "Dr. Ing. h.c. F. Porsche AG",
+  "source_type": "manufacturer",
+  "content_types": ["parts_catalogue", "technical_data"],
+  "coverage": {
+    "generation": "other_porsche",
+    "variants": ["911_1977_1989", "911_turbo_1976_1989"],
+    "parts": ["cylinder_head", "valve"]
+  },
+  "access": {
+    "status": "available",
+    "method": "direct_download",
+    "accessed_on": "2026-09-03"
+  },
+  "rights": {
+    "license": "porsche-ag-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "Porsche AG"
+  },
+  "quality": {
+    "evidence_level": "A",
+    "dimensional_accuracy": "declared",
+    "verified_against": []
+  },
+  "notes": "Catalogue allemand Porsche, planche 103-02 page PDF 159 et planche 103-10 page PDF 165. Il relie les culasses 930 104 019 BX/HX aux moteurs 930.02/.12/.03/.04/.13/.05/.15/.09/.10/.17 et publie 39 mm admission, 35 mm echappement. Il relie les 930 104 011 BX/CX aux moteurs 930.20/.21/.25/.26 et publie 42 mm admission, 41 mm echappement. Pour les culasses Turbo 930 104 023 FX/GX, le texte extrait affiche 32 mm admission et 38 mm echappement; cette paire contredit la table de correspondance independante et est donc conservee comme libelle ambigu non utilisable pour dimensionner une soupape. Ce catalogue de serie ne prouve pas les cotes de la reference de course 930 104 048 01."
+}

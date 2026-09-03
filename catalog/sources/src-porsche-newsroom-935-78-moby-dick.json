@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "SRC-PORSCHE-NEWSROOM-935-78-MOBY-DICK",
+  "title": "Porsche Newsroom - Porsche 935/78 Moby Dick",
+  "url": "https://newsroom.porsche.com/de/pressemappen/Porsche-Museum/Porsche-935-78-%E2%80%9EMoby-Dick%E2%80%9C.html",
+  "publisher": "Dr. Ing. h.c. F. Porsche AG",
+  "source_type": "manufacturer",
+  "content_types": ["technical_data", "photograph"],
+  "coverage": {
+    "generation": "other_porsche",
+    "variants": ["935_78_moby_dick"],
+    "parts": ["vehicle", "engine", "cylinder_head"]
+  },
+  "access": {
+    "status": "available",
+    "method": "browser_page_read",
+    "accessed_on": "2026-09-03"
+  },
+  "rights": {
+    "license": "porsche-ag-copyright-reference-only",
+    "redistribution": "prohibited",
+    "attribution": "Porsche AG"
+  },
+  "quality": {
+    "evidence_level": "A",
+    "dimensional_accuracy": "declared",
+    "verified_against": []
+  },
+  "notes": "Porsche identifie la 935/78 Moby Dick comme sa premiere voiture de course munie de culasses refroidies par eau. La fiche publie 3 211 cm3 et 621 kW. Cette variante ne doit jamais fournir l'enveloppe, les ailettes ou les conditions de refroidissement de la culasse 935 refroidie par air du scan; elle sert a empecher la fusion de variantes portant toutes le nom 935."
+}

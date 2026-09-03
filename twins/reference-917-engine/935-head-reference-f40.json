@@ -1,0 +1,157 @@
+{
+  "$comment": "F40 verrouille la morphologie exterieure sur le scan 935 refroidi par air et separe la 935/78 refroidie par eau. Les valeurs de sources servent a controler l'echelle et les interfaces; elles n'autorisent ni une copie OEM 917 ni une fabrication.",
+  "schema_version": "1.0.0",
+  "phase": "F40",
+  "status": "air_cooled_935_scan_baseline_locked_four_valve_internal_redesign_only",
+  "baseline": {
+    "source_id": "SRC-WOLFE-CLASSICS-935-BILLET-CYLINDER-HEAD-SCAN",
+    "sha256": "4623d5d3b73fe3d03ca988a47543a8dd1be7834d3040e6f7efd1e1e95c766486",
+    "outer_geometry_authority": "scan_surface_and_explicitly_identified_functional_interfaces",
+    "outer_shape_change_allowed_without_quantified_AB_benefit": false,
+    "global_ellipse_or_box_substitution_allowed": false,
+    "raw_and_derived_geometry_policy": "local_only_not_committed"
+  },
+  "variant_separation": {
+    "selected_reference_family": "935_air_cooled_two_valve_twin_plug",
+    "excluded_as_outer_geometry_reference": "935_78_moby_dick_water_cooled_multivalve",
+    "exclusion_source_ids": [
+      "SRC-PORSCHE-NEWSROOM-935-78-MOBY-DICK",
+      "SRC-PORSCHE-NEWSROOM-TURBO-MOTORSPORT-HISTORY"
+    ]
+  },
+  "documentary_constraints": {
+    "retro_sport_935_race_head": {
+      "source_id": "SRC-RETRO-SPORT-935-CYLINDER-HEADS",
+      "part_number": "930 104 048 01",
+      "casting_mark_observed_in_photographs": "930.104.341.2R",
+      "date_mark": "10-78",
+      "linked_photograph_count": 23,
+      "head_height_mm": {"minimum": 84.20, "maximum": 84.21},
+      "external_intake_port_diameter_mm": 41.0,
+      "external_exhaust_port_diameter_mm": 40.0,
+      "external_intake_interface_count_per_head": 1,
+      "external_exhaust_interface_count_per_head": 1,
+      "spark_plug_count_per_head": 2,
+      "valve_count_per_head": 2,
+      "valves": "TRW_sodium_filled_declared",
+      "exhaust_guide_feature": "oil_cooled_declared"
+    },
+    "scan_visible_interfaces_obj_units": {
+      "source_report": "work/wolfe-classics-935-cylinder-head/pipeline/reports/interfaces.json",
+      "high_B_port_sections": [41.48592283294603, 41.40422816139098, 41.59836328130461, 41.491297167419994, 42.15785838955251, 42.24617700701625, 42.632305655803464],
+      "low_B_port_sections": [45.64345270756523, 40.03604867719088, 40.714918056354456],
+      "chamber_step_diameter": 90.81248542471899,
+      "outer_register_diameter": 113.52636742684189,
+      "stud_pattern": [86.74276999873196, 85.91583774915041]
+    },
+    "historical_917_type_912": {
+      "source_id": "FIA_HOMOLOGATION_250_ALREADY_REGISTERED_AS_S01_F29",
+      "intake_valve_head_diameter_mm": 47.5,
+      "exhaust_valve_head_diameter_mm": 40.5,
+      "intake_valve_max_lift_mm": 12.1,
+      "exhaust_valve_max_lift_mm": 10.5,
+      "intake_port_diameter_mm": 41.0,
+      "architecture": "two_valves_twin_plug_four_camshafts_bucket_tappets"
+    },
+    "secondary_casting_context_not_design_input": {
+      "source_id": "SRC-LN-ENGINEERING-AIRCOOLED-HEAD-CROSS-REFERENCE",
+      "casting_mark": "930.104.341.2R",
+      "standard_turbo_valve_diameters_mm": [49.0, 41.5],
+      "standard_turbo_port_diameters_mm": [32.0, 36.0],
+      "standard_turbo_chamber_volume_cm3": 90.0,
+      "usage": "variant_identification_and_sanity_check_only_not_935_race_or_F40_dimensioning"
+    }
+  },
+  "four_valve_design_rules": {
+    "external_intake_interface_count": 1,
+    "external_exhaust_interface_count": 1,
+    "internal_branching": "one_to_two_smooth_Y_per_gas_family",
+    "external_manifold_interface_preserved": true,
+    "outer_fins_and_local_bosses_preserved_from_scan": true,
+    "functional_surfaces_to_reconstruct": [
+      "deck_and_register",
+      "four_valve_seats_and_guides",
+      "two_spark_plug_seats_and_threads",
+      "intake_and_exhaust_flange_faces",
+      "stud_holes",
+      "cam_or_rocker_carrier_datums",
+      "oil_feed_and_drain_service_openings"
+    ],
+    "comparison_baseline": "unchanged_scan_outer_geometry_two_valve_reference",
+    "same_solver_and_boundary_conditions_required": true,
+    "reject_change_without_material_benefit": true
+  },
+  "scale_checks": {
+    "status": "cross_source_consistent_not_metrological_certification",
+    "intake_scale_candidates_mm_per_obj_unit": [0.9882865537477673, 0.9902370887868842, 0.9856159302663163, 0.9881581373420207],
+    "exhaust_scale_candidates_mm_per_obj_unit": [0.9990995947629739, 0.9824399528892673],
+    "working_scale_mm_per_obj_unit": 0.9882230369205911,
+    "working_scale_selection": "median_of_near_flange_port_sections_excluding_visible_transition_outliers",
+    "metrologically_confirmed": false,
+    "porsche_917_fitment_certified": false
+  },
+  "outer_brep_evidence": {
+    "method": "thirty_scan_cross_sections_resampled_to_local_closed_BSplines_then_single_ruled_OCCT_loft",
+    "solid_count": 1,
+    "fin_count": 14,
+    "global_ellipse_used": false,
+    "global_box_used": false,
+    "scan_external_skin_deviation_obj_units": {
+      "median": 0.39997,
+      "p95": 1.80557,
+      "p99": 6.83787,
+      "maximum": 17.875
+    },
+    "section_profile_deviation_obj_units": {
+      "median": 0.16340,
+      "p95": 1.02749,
+      "p99": 1.71379,
+      "maximum": 3.77733
+    },
+    "screen_status": "passed_for_external_side_skin_only",
+    "functional_geometry_status": "triangulated_boolean_trial_integrated_not_editable_BRep",
+    "local_reproduction_targets": [
+      "917-f40-scan-locked-outer",
+      "917-f40-4v-packaging",
+      "917-f40-functional-trial"
+    ]
+  },
+  "functional_trial_evidence": {
+    "classification": "triangulated_boolean_trial_not_editable_functional_BRep_or_manufacturing_master",
+    "result_body_count": 1,
+    "watertight": true,
+    "winding_consistent": true,
+    "is_volume": true,
+    "vertices": 193740,
+    "triangles": 387604,
+    "volume_obj_units3": 1051402.6236652087,
+    "mass_kg_if_obj_unit_is_mm_and_cp1_density_2_73_g_cm3": 2.8703291626060197,
+    "integrated_openings": {
+      "gas_and_chamber_core": 1,
+      "valve_stem_guide_and_seat_cutters": 12,
+      "spark_plug_pilots": 2,
+      "head_stud_passages": 4,
+      "valvetrain_bay": 1
+    },
+    "oil_galleries_included": false,
+    "thread_forms_included": false,
+    "continuous_wall_thickness_verified": false,
+    "release_status": "blocked"
+  },
+  "release_gates": {
+    "surface_reconstruction_scan_deviation_passed": true,
+    "functional_interfaces_dimensionally_validated": false,
+    "minimum_wall_continuously_verified": false,
+    "material_card_from_printed_hot_coupons": false,
+    "openfoam_cht_converged": false,
+    "independent_cfd_cross_check_converged": false,
+    "thermomechanical_fatigue_passed": false,
+    "lpbf_process_simulation_calibrated": false,
+    "ct_cnd_and_leak_test_passed": false,
+    "flow_bench_correlated": false,
+    "engine_bench_correlated": false,
+    "professional_engineering_release": false,
+    "metal_print_authorized": false,
+    "engine_start_authorized": false
+  }
+}
