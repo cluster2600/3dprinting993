@@ -126,17 +126,36 @@ Une première soustraction booléenne robuste a été exécutée dans l'envelopp
 F40 : noyau chambre/conduits en Y, douze volumes de passage pour tiges, guides
 et sièges, deux pilotes de bougie, quatre passages de goujon et une baie de
 distribution protégée autour des composants. Le résultat triangulé comporte
-`387 604` faces, est étanche, cohérent en orientation et reconnu comme un seul
-volume. Son volume vaut `1 051 403 unités³`, soit une masse indicative de
-`2,870 kg` en CP1 si — et seulement si — l'unité OBJ est assimilée au
+`391 668` faces, est étanche, cohérent en orientation et reconnu comme un seul
+volume. Son volume vaut `1 039 007 unités³`, soit une masse indicative de
+`2,836 kg` en CP1 si — et seulement si — l'unité OBJ est assimilée au
 millimètre.
 
+Un noyau d'huile candidat est maintenant soustrait : collecteur transversal de
+6 mm, quatre branches doseuses de 3 mm et deux retours de 8 mm. Tous les
+passages sont droits et ouverts vers une face de service ou la baie. Les
+booléens donnent zéro intersection avec le noyau gaz, les pilotes de bougie et
+les passages de goujon. Une communication de `288,21 unités³` avec les poches
+de guide est volontaire pour préparer leur alimentation; elle ne sera étanche
+qu'après définition des guides rainurés/percés et de leurs frettages. Les
+positions sont issues du packaging F40, pas de cotes Porsche historiques, et le
+débit/pression d'huile n'est pas encore validé.
+
 Ce résultat vérifie la topologie générale des ouvertures, pas la fabricabilité.
-Il n'est pas un B-Rep fonctionnel éditable; les galeries d'huile, drains,
-filetages, rayons de raccordement, surépaisseurs d'usinage et chaîne de cotes
-restent absents. La masse est donc un indicateur de contrôle, pas une masse de
-définition. Les portes d'impression métal et de démarrage moteur restent
-fermées.
+Il n'est pas un B-Rep fonctionnel éditable; filetages, rayons de raccordement,
+surépaisseurs d'usinage, chaîne de cotes et calage hydraulique restent absents.
+La masse est donc un indicateur de contrôle, pas une masse de définition. Les
+portes d'impression métal et de démarrage moteur restent fermées.
+
+L'écran VTK a ensuite lancé un rayon intérieur depuis le centre de chacune des
+`391 666` facettes non dégénérées du STL exporté. `391 409` cordes sont résolues
+(`99,934 %`). La cible héritée de 1,5 unité échoue : `8,823 %` de la surface
+résolue est sous la cible, avec un P01 de `0,0085` unité et un P05 de `0,1050`
+unité. `83,2 %` de la surface trop mince se situe à `z ≥ 50`, ce qui concentre
+la correction sur la baie de distribution et ses transitions. Cette carte est
+exhaustive sur les facettes mais ne prouve pas une épaisseur médiale continue;
+la correction imposée est un B-Rep lisse, épaissi vers l'intérieur pour garder
+la peau extérieure du scan, suivi du même audit puis d'un CT de première pièce.
 
 ## Choix matière provisoire
 

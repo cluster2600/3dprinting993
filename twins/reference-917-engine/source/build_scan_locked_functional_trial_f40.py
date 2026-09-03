@@ -123,6 +123,54 @@ def stud_cutters(interfaces: dict) -> tuple[list[trimesh.Trimesh], list[list[flo
     return cutters, centres
 
 
+def oil_core_candidate() -> tuple[trimesh.Trimesh, dict]:
+    """Construit une proposition ouverte, percable et depoudrable.
+
+    Les coordonnees proviennent du packaging F40 et non d'une cote Porsche
+    historique. Le collecteur d'alimentation debouche aux deux faces X, les
+    branches debouchent dans la baie, et les deux retours debouchent cote
+    admission. Les intersections avec les poches de guide sont volontaires :
+    elles representent les futurs percages doseurs, dont l'etancheite dependra
+    de guides rainures et perces encore a definir.
+    """
+    parts = [
+        cylinder_between(np.asarray([-65.0, 24.0, 44.0]), np.asarray([65.0, 24.0, 44.0]), 3.0, 64),
+    ]
+    for x in (-18.0, 18.0):
+        for y in (-17.0, 17.0):
+            parts.append(cylinder_between(np.asarray([x, y, 44.0]), np.asarray([x, y, 84.0]), 1.5, 48))
+            parts.append(
+                cylinder_between(
+                    np.asarray([x, min(y, 24.0), 44.0]),
+                    np.asarray([x, max(y, 24.0), 44.0]),
+                    1.5,
+                    48,
+                )
+            )
+    for x in (-30.0, 30.0):
+        parts.append(cylinder_between(np.asarray([x, 0.0, 38.0]), np.asarray([x, 0.0, 84.0]), 4.0, 64))
+        parts.append(cylinder_between(np.asarray([x, -96.0, 42.0]), np.asarray([x, 0.0, 42.0]), 4.0, 64))
+    core = trimesh.boolean.union(parts, engine="manifold", check_volume=True)
+    require(isinstance(core, trimesh.Trimesh) and core.is_volume, "noyau_huile_invalide")
+    parameters = {
+        "status": "packaging_candidate_not_historical_Porsche_dimensions",
+        "supply_header": {"diameter_mm_if_scale_is_mm": 6.0, "axis": [[-65.0, 24.0, 44.0], [65.0, 24.0, 44.0]]},
+        "metering_branches": {"count": 4, "diameter_mm_if_scale_is_mm": 3.0, "top_open_z": 84.0},
+        "return_drains": {"count": 2, "diameter_mm_if_scale_is_mm": 8.0, "x": [-30.0, 30.0]},
+        "all_passages_straight_and_open_ended": True,
+        "guide_groove_and_metering_orifice_definition_complete": False,
+        "oil_flow_and_pressure_validated": False,
+    }
+    return core, parameters
+
+
+def intersection_volume(left: trimesh.Trimesh, right: trimesh.Trimesh) -> float:
+    intersection = trimesh.boolean.intersection([left, right], engine="manifold", check_volume=False)
+    if intersection is None or len(intersection.faces) == 0:
+        return 0.0
+    return float(abs(intersection.volume))
+
+
 def bay_cutter(protected: list[trimesh.Trimesh]) -> trimesh.Trimesh:
     floor = 49.15
     top = 88.0
@@ -135,13 +183,31 @@ def bay_cutter(protected: list[trimesh.Trimesh]) -> trimesh.Trimesh:
     return result
 
 
-def build(outer: trimesh.Trimesh, flow: trimesh.Trimesh, interfaces: dict) -> tuple[trimesh.Trimesh, dict]:
+def build(
+    outer: trimesh.Trimesh,
+    flow: trimesh.Trimesh,
+    interfaces: dict,
+) -> tuple[trimesh.Trimesh, trimesh.Trimesh, dict]:
     cfg = architecture()
     valves, valve_protection = valve_cutters(cfg)
     plugs, plug_protection = plug_cutters(cfg)
     studs, stud_centres = stud_cutters(interfaces)
     bay = bay_cutter(valve_protection + plug_protection)
-    functional_cutters = [main_volume(flow), bay] + valves + plugs + studs
+    gas = main_volume(flow)
+    oil, oil_parameters = oil_core_candidate()
+    valve_union = trimesh.boolean.union(valves, engine="manifold", check_volume=True)
+    plug_union = trimesh.boolean.union(plugs, engine="manifold", check_volume=True)
+    stud_union = trimesh.boolean.union(studs, engine="manifold", check_volume=True)
+    oil_intersections = {
+        "gas_core_obj_units3": intersection_volume(oil, gas),
+        "valve_guide_pockets_intentional_obj_units3": intersection_volume(oil, valve_union),
+        "spark_plug_pilots_obj_units3": intersection_volume(oil, plug_union),
+        "head_stud_passages_obj_units3": intersection_volume(oil, stud_union),
+    }
+    require(oil_intersections["gas_core_obj_units3"] <= 1.0e-6, "huile_en_communication_avec_gaz")
+    require(oil_intersections["spark_plug_pilots_obj_units3"] <= 1.0e-6, "huile_en_communication_avec_bougie")
+    require(oil_intersections["head_stud_passages_obj_units3"] <= 1.0e-6, "huile_en_communication_avec_goujon")
+    functional_cutters = [gas, bay, oil] + valves + plugs + studs
     combined = trimesh.boolean.union(functional_cutters, engine="manifold", check_volume=True)
     require(isinstance(combined, trimesh.Trimesh) and combined.is_volume, "union_volumes_fonctionnels_invalide")
     result = trimesh.boolean.difference([outer, combined], engine="manifold", check_volume=True)
@@ -162,10 +228,12 @@ def build(outer: trimesh.Trimesh, flow: trimesh.Trimesh, interfaces: dict) -> tu
             "valvetrain_bay": 1,
         },
         "stud_centres_obj_units": stud_centres,
-        "oil_galleries_included": False,
+        "oil_gallery_candidate_geometry_included": True,
+        "oil_gallery_candidate": oil_parameters,
+        "oil_gallery_intersection_screen": oil_intersections,
         "thread_forms_included": False,
     }
-    return result, topology
+    return result, oil, topology
 
 
 def add_mesh(axis: object, mesh: trimesh.Trimesh, colour: str, alpha: float, *, half_x: bool = False) -> None:
@@ -209,7 +277,7 @@ def render_matplotlib(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Pa
     figure.text(
         0.5,
         0.935,
-        "CHAMBRE + Y 4V + SIÈGES + GUIDES + 2 BOUGIES + 4 GOUJONS + BAIE · ENVELOPPE EXTÉRIEURE INCHANGÉE",
+        "CHAMBRE + Y 4V + SIÈGES + GUIDES + 2 BOUGIES + 4 GOUJONS + HUILE OUVERTE · ENVELOPPE INCHANGÉE",
         ha="center",
         color="#f4c161",
         fontsize=9.5,
@@ -235,7 +303,7 @@ def render_matplotlib(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Pa
     figure.text(
         0.5,
         0.034,
-        "VOLUME ÉTANCHE D'ESSAI — MAILLAGE TRIANGULÉ, GALERIES D'HUILE ET FILETAGES ABSENTS, IMPRESSION MÉTAL INTERDITE",
+        "VOLUME ÉTANCHE D'ESSAI — HUILE CANDIDATE NON CALÉE, FILETAGES ABSENTS, IMPRESSION MÉTAL INTERDITE",
         ha="center",
         color="#f0aaa3",
         fontsize=9.5,
@@ -263,10 +331,16 @@ def font(size: int, *, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont
     return ImageFont.load_default()
 
 
-def render_pyvista(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Path) -> None:
+def render_pyvista(
+    result: trimesh.Trimesh,
+    flow: trimesh.Trimesh,
+    oil: trimesh.Trimesh,
+    output: Path,
+) -> None:
     require(pv is not None, "pyvista_absent")
     body = pv_mesh(result)
     flow_body = pv_mesh(flow)
+    oil_body = pv_mesh(oil)
     plotter = pv.Plotter(shape=(1, 3), off_screen=True, window_size=(2400, 900), border=False)
     for index in range(3):
         plotter.subplot(0, index)
@@ -283,8 +357,10 @@ def render_pyvista(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Path)
     visible_flow = flow_body.clip(normal=(1.0, 0.0, 0.0), origin=(0.0, 0.0, 0.0), invert=False)
     visible_flow = visible_flow.clip(normal=(0.0, 0.0, 1.0), origin=(0.0, 0.0, 15.0), invert=False)
     visible_flow = visible_flow.clip(normal=(0.0, 0.0, -1.0), origin=(0.0, 0.0, 62.0), invert=False)
+    visible_oil = oil_body.clip(normal=(1.0, 0.0, 0.0), origin=(0.0, 0.0, 0.0), invert=False)
     plotter.add_mesh(half, color="#c89242", smooth_shading=True, opacity=0.72)
     plotter.add_mesh(visible_flow, color="#8c63c7", smooth_shading=True, opacity=0.50)
+    plotter.add_mesh(visible_oil, color="#5fcf8e", smooth_shading=True, opacity=0.88)
     plotter.view_xz()
     plotter.camera.azimuth = 18.0
     plotter.camera.elevation = 12.0
@@ -311,14 +387,14 @@ def render_pyvista(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Path)
     )
     draw.text(
         (canvas.width / 2, 87),
-        "CHAMBRE + Y 4V + SIÈGES + GUIDES + 2 BOUGIES + 4 GOUJONS + BAIE · ENVELOPPE EXTÉRIEURE INCHANGÉE",
+        "CHAMBRE + Y 4V + SIÈGES + GUIDES + 2 BOUGIES + 4 GOUJONS + HUILE OUVERTE · ENVELOPPE INCHANGÉE",
         anchor="mm",
         fill="#f4c161",
         font=font(18, bold=True),
     )
     draw.text(
         (canvas.width / 2, canvas.height - 28),
-        "VOLUME ÉTANCHE D'ESSAI · GALERIES D'HUILE ET FILETAGES ABSENTS · IMPRESSION MÉTAL INTERDITE",
+        "VOLUME ÉTANCHE D'ESSAI · GALERIES D'HUILE CANDIDATES NON CALÉES · FILETAGES ABSENTS · IMPRESSION INTERDITE",
         anchor="mm",
         fill="#f0aaa3",
         font=font(18, bold=True),
@@ -326,9 +402,9 @@ def render_pyvista(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Path)
     canvas.save(output)
 
 
-def render(result: trimesh.Trimesh, flow: trimesh.Trimesh, output: Path) -> str:
+def render(result: trimesh.Trimesh, flow: trimesh.Trimesh, oil: trimesh.Trimesh, output: Path) -> str:
     if pv is not None:
-        render_pyvista(result, flow, output)
+        render_pyvista(result, flow, oil, output)
         return "pyvista_vtk"
     render_matplotlib(result, flow, output)
     return "matplotlib_fallback"
@@ -348,11 +424,13 @@ def main() -> int:
     require(isinstance(outer, trimesh.Trimesh) and outer.is_volume, "BRep_exterieur_tesselle_non_volumique")
     require(isinstance(flow, trimesh.Trimesh) and len(flow.faces) > 0, "noyau_fluide_absent")
 
-    result, topology = build(outer, flow, interfaces)
+    result, oil, topology = build(outer, flow, interfaces)
     mesh_path = args.output / "917-head-935-scan-locked-functional-trial-f40.local.stl"
+    oil_path = args.output / "917-head-935-scan-locked-oil-core-candidate-f40.local.stl"
     image_path = args.output / "917-head-935-scan-locked-functional-trial-f40.png"
     result.export(mesh_path)
-    renderer = render(result, main_volume(flow), image_path)
+    oil.export(oil_path)
+    renderer = render(result, main_volume(flow), oil, image_path)
     density_g_mm3 = 2.73e-3
     report = {
         "schema_version": "1.0.0",
@@ -377,6 +455,7 @@ def main() -> int:
         },
         "files": {
             "mesh_local": {"path": mesh_path.name, "sha256": sha256(mesh_path), "bytes": mesh_path.stat().st_size},
+            "oil_core_local": {"path": oil_path.name, "sha256": sha256(oil_path), "bytes": oil_path.stat().st_size},
             "image": {
                 "path": image_path.name,
                 "sha256": sha256(image_path),

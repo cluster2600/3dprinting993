@@ -15,6 +15,7 @@ AUDIT_SCRIPT = ROOT / "twins/reference-917-engine/source/audit_935_scan_scale_f4
 OUTER_BUILDER = ROOT / "twins/reference-917-engine/source/build_scan_locked_outer_brep_f40.py"
 PACKAGING_RENDERER = ROOT / "twins/reference-917-engine/source/render_scan_locked_4v_packaging_f40.py"
 FUNCTIONAL_TRIAL = ROOT / "twins/reference-917-engine/source/build_scan_locked_functional_trial_f40.py"
+THICKNESS_AUDIT = ROOT / "twins/reference-917-engine/source/audit_scan_locked_functional_f40.py"
 
 
 def load_audit_module():
@@ -96,7 +97,7 @@ class HeadReferenceF40Tests(unittest.TestCase):
         source = FUNCTIONAL_TRIAL.read_text(encoding="utf-8")
         self.assertIn('engine="manifold"', source)
         self.assertNotIn("result.merge_vertices", source)
-        self.assertIn('"oil_galleries_included": False', source)
+        self.assertIn('"oil_gallery_candidate_geometry_included": True', source)
         self.assertIn('"thread_forms_included": False', source)
         self.assertIn('"metal_print_authorized": False', source)
         self.assertIn('"engine_start_authorized": False', source)
@@ -106,9 +107,25 @@ class HeadReferenceF40Tests(unittest.TestCase):
         self.assertEqual(evidence["result_body_count"], 1)
         self.assertEqual(evidence["integrated_openings"]["spark_plug_pilots"], 2)
         self.assertEqual(evidence["integrated_openings"]["head_stud_passages"], 4)
-        self.assertFalse(evidence["oil_galleries_included"])
+        self.assertTrue(evidence["oil_gallery_candidate"]["geometry_included"])
+        self.assertTrue(evidence["oil_gallery_candidate"]["all_passages_straight_and_open_ended"])
+        self.assertEqual(evidence["oil_gallery_candidate"]["gas_core_intersection_obj_units3"], 0.0)
+        self.assertFalse(evidence["oil_gallery_candidate"]["historical_Porsche_dimensions"])
+        self.assertFalse(evidence["oil_gallery_candidate"]["flow_and_pressure_validated"])
         self.assertFalse(evidence["continuous_wall_thickness_verified"])
         self.assertEqual(evidence["release_status"], "blocked")
+
+    def test_exhaustive_thickness_screen_fails_closed(self) -> None:
+        source = THICKNESS_AUDIT.read_text(encoding="utf-8")
+        self.assertIn("exhaustive_normal_chords", source)
+        self.assertIn('"continuous_wall_thickness_verified": False', source)
+        self.assertIn('"ct_verified": False', source)
+        screen = self.contract["functional_thickness_screen"]
+        self.assertEqual(screen["triangle_count"], 391666)
+        self.assertGreater(screen["resolved_fraction"], 0.999)
+        self.assertFalse(screen["all_resolved_chords_meet_1_5_obj_units"])
+        self.assertGreater(screen["resolved_area_below_1_5_obj_units_fraction"], 0.08)
+        self.assertFalse(screen["continuous_surface_proof"])
 
     def test_scale_audit_keeps_geometry_unscaled(self) -> None:
         audit = load_audit_module()
