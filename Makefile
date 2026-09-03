@@ -16,15 +16,19 @@ F37_CAE_IMAGE ?= 3dprinting993-cae-integrated-f33:dev
 F37_CAE_IMAGE_ID ?= sha256:4a19fa7d1f253beb3106970ae2635cff85d5aeeaf062aaf807d1dab7b940fb33
 
 .PHONY: 917-scan-conforming-4v-f36-check 917-scan-conforming-4v-f36-assembly 917-scan-conforming-4v-f36-printability 917-scan-conforming-4v-f36-publish 917-scan-conforming-4v-f36-render 917-manufacturing-f37-cad 917-manufacturing-f37-head-mesh 917-manufacturing-f37-head-mesh-enrich 917-manufacturing-f37-screens 917-manufacturing-f37-carrier-fea 917-manufacturing-f37-lpbf-screen 917-manufacturing-f37-lpbf-plan 917-manufacturing-f37-lpbf-audit-check 917-manufacturing-f37-render 917-manufacturing-f37-publish 917-manufacturing-f37-evidence-check 917-f37-simready-evidence-check 917-f37-ice-engine-evidence-check 917-manufacturing-f37-check
-.PHONY: 917-f38-brep-lpbf-evidence-check 917-f38-cooling-evidence-check 917-f38-material-coupon-plan-check 917-f38-valvetrain-package-evidence-check 917-f38-engineering-check 917-f40-935-head-reference-check 917-f40-935-scale-audit 917-f40-scan-locked-outer 917-f40-4v-packaging 917-f40-functional-trial 917-f40-thickness-screen 917-f41-lpbf-evidence-check
+.PHONY: 917-f38-brep-lpbf-evidence-check 917-f38-cooling-evidence-check 917-f38-material-coupon-plan-check 917-f38-valvetrain-package-evidence-check 917-f38-engineering-check 917-f40-935-head-reference-check 917-f40-935-scale-audit 917-f40-scan-locked-outer 917-f40-4v-packaging 917-f40-functional-trial 917-f40-thickness-screen 917-f41-lpbf-evidence-check 917-f42-brep-audit-test
 
 F40_PYTHON ?= python3
+F42_PYTHON ?= python3
 F40_STOCK ?= work/917-scan-conforming-f36/run-013/917-head-scan-stock-f36.local.stl
 F40_FLOW_CORE ?= work/917-scan-conforming-f36/run-013/917-head-4v-flow-core-f36.local.stl
 F40_CAD ?= twins/reference-917-engine/evidence/f38-valvetrain-package/cad
 
 917-f41-lpbf-evidence-check:
 	python3 tests/test_917_f41_lpbf_process.py -v
+
+917-f42-brep-audit-test:
+	$(F42_PYTHON) tests/test_917_f42_brep_audit.py -v
 
 check: validate test 917-clean-sheet-2026-f32-check 917-air-oil-controls-f34a-check 917-doe-f34-check 917-air-oil-seeds-f34b-check 917-aircooled-4v-f34-check 917-manufacturing-f37-evidence-check 917-manufacturing-f37-lpbf-audit-check 917-f37-simready-evidence-check turbo-cold-side-check turbo-variants-check turbo-dyno-check
 
