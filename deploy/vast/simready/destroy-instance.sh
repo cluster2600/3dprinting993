@@ -278,7 +278,8 @@ if (
     raise SystemExit("le wrapper n'a pas confirmé la destruction")
 retrieval = json.loads(Path(sys.argv[6]).read_text(encoding="utf-8"))
 payload = {
-    "schema_version": "1.0.0", "status": "passed", "passed": True,
+    "schema_version": "1.0.0", "classification": "production_wrapper_evidence",
+    "status": "passed", "passed": True, "destroyed": True,
     "job_id": sys.argv[3], "instance_id": int(sys.argv[4]), "expected_image": sys.argv[5],
     "retrieval_waived": retrieval["retrieval_waived"],
     "artifact_archive_verified": retrieval["artifact_archive_verified"],

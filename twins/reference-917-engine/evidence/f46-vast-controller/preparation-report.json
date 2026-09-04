@@ -1,0 +1,88 @@
+{
+  "artifacts": [
+    {
+      "bytes": 5009,
+      "path": "twins/reference-917-engine/f46-vast-cfd-cae-controller.json",
+      "sha256": "5e0bd7e19b7363743c198649bc05a2420a4dd5af7df96fe1b1a9060518003d17"
+    },
+    {
+      "bytes": 4515,
+      "path": "twins/reference-917-engine/f46-vast-job-manifest.json",
+      "sha256": "0e8828cfe596e47a2919762b06a306cf5a60b039e4dff2d59f42a24473f246f3"
+    },
+    {
+      "bytes": 38189,
+      "path": "deploy/vast/f46/_f46_controller.py",
+      "sha256": "af9c91cff8a2debee42c88dd0bf230fc36d61405c91019f9aca61862a2a0fa2b"
+    },
+    {
+      "bytes": 13954,
+      "path": "deploy/vast/f46/run-controller.sh",
+      "sha256": "7862b900938b1de065142f31088a1ed29ef77821866a6b0768d0ded777e07bfe"
+    },
+    {
+      "bytes": 4159,
+      "path": "deploy/vast/simready/_controller_common.sh",
+      "sha256": "789fb110276dffd821f57a0646b046e5787f1598229bba33fd3e38f73b5fed7b"
+    },
+    {
+      "bytes": 13969,
+      "path": "deploy/vast/simready/destroy-instance.sh",
+      "sha256": "8c8f04bcf2325bacb2f0099537c65d3c62664b5b76cac5d9ed37e99a7aa6dc9f"
+    },
+    {
+      "bytes": 53899,
+      "path": "deploy/openbao/openbao-vastai",
+      "sha256": "4191bb6dd4e4cc4e4136f8f9ac77b60fe4eb20cf258662e682d11cf443e61f85"
+    },
+    {
+      "bytes": 12927,
+      "path": "deploy/openbao/openbao-ghcr",
+      "sha256": "42cdd628ca752a9b1faf2df68d413e81c3e4f1afc08c9b13292055f098077057"
+    },
+    {
+      "bytes": 7614,
+      "path": "docs/917_F46_VAST_CFD_CAE_CONTROLLER.md",
+      "sha256": "e834cbd90dba8db35c172e1050fa038d66a068b65fd779aa53b68e629d75e05c"
+    }
+  ],
+  "classification": "offline_preparation_evidence_not_live_vast_evidence",
+  "cleanup_and_billing_reserve_usd": 3.0,
+  "current_blockers": [
+    "F46 linux/amd64 image digest and committed smoke evidence absent",
+    "live eligible offer snapshot absent",
+    "live complete empty pre-launch inventory absent",
+    "2V/4V solver domains and qualified hot material card incomplete",
+    "all five job commands and input-manifest digests absent"
+  ],
+  "executable_case_count": 0,
+  "ghcr_api_called_by_preparation": false,
+  "hard_total_budget_usd": 23.0,
+  "id": "917-f46-vast-cfd-cae-controller-preparation",
+  "instance_created": false,
+  "live_image_verified": false,
+  "live_inventory_before_verified_empty": false,
+  "live_offer_selected": false,
+  "planned_case_count": 26,
+  "planned_compute_ceiling_usd": 20.0,
+  "release_gates": {
+    "F46_image_digest_verified": false,
+    "F46_linux_amd64_platform_verified": false,
+    "F46_runtime_smoke_verified": false,
+    "all_job_commands_digest_bound": false,
+    "cleanup_verified": false,
+    "eligible_offer_selected": false,
+    "empty_final_inventory_verified": false,
+    "engine_start_authorized": false,
+    "input_domains_complete": false,
+    "launch_authorized": false,
+    "launch_executed": false,
+    "live_offer_snapshot_verified": false,
+    "metal_print_authorized": false,
+    "simulation_validated": false
+  },
+  "schema_version": "1.0.0",
+  "spend_incurred_by_this_preparation_usd": 0.0,
+  "status": "controller_prepared_launch_blocked",
+  "vast_api_called_by_preparation": false
+}
